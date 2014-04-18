@@ -29,10 +29,15 @@ function wp_spl_carousel($atts) {
     'post_parent' => $id
   ); 
   $attachments = get_posts($args);
+
+  $auto = null;
+  if ( in_array('auto', $atts) ) {
+    $auto = 'data-ride="carousel"';
+  } 
   
   if ($attachments) {
     $carousel .= ''.PHP_EOL;
-    $carousel .= '<div id="spl-carousel-'.$id.'" class="carousel slide" data-ride="carousel">'.PHP_EOL;
+    $carousel .= '<div id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.'>'.PHP_EOL;
     
     $i = 0;
     $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
