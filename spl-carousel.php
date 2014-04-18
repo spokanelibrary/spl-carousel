@@ -32,7 +32,7 @@ function wp_spl_carousel($atts) {
   
   if ($attachments) {
     $carousel .= ''.PHP_EOL;
-    $carousel .= '<div id="spl-carousel-'.$id.'" class="carousel slide">'.PHP_EOL;
+    $carousel .= '<div id="spl-carousel-'.$id.'" class="carousel slide auto">'.PHP_EOL;
     
     $i = 0;
     $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
