@@ -109,9 +109,8 @@ function wp_spl_carousel($atts) {
   }
 
   if ( in_array('timer', $atts) ) {
-    $carousel = '
+    $carousel .= '
                 <script>
-                /* reload every hour */
                 setTimeout(function(){
                    window.location.reload(1);
                 }, '.$atts['timer'].');
