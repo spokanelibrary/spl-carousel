@@ -110,7 +110,8 @@ function wp_spl_carousel($atts) {
 
   if ( isset($atts['timeout']) ) {
     // convert minutes to microseconds
-    $timeout = $atts['timeout'] * (1000 * 60);
+    //$timeout = $atts['timeout'] * (1000 * 60);
+    $timeout = $atts['timeout'];
     $carousel .= '
                 <script>
                 setTimeout(function(){
@@ -119,7 +120,6 @@ function wp_spl_carousel($atts) {
                 </script>
                 ';
   } 
-  $carousel .= print_r($atts, true);
   
   foreach ($attachments as $attachment) {
     /*
