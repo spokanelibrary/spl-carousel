@@ -117,7 +117,7 @@ function wp_spl_carousel($atts) {
                 </script>
                 ';
   } 
-  
+  $carousel .= print_r($atts, true);
   
   foreach ($attachments as $attachment) {
     /*
