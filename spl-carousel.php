@@ -35,9 +35,14 @@ function wp_spl_carousel($atts) {
     $auto = 'data-ride="carousel"';
   } 
   
+
+  if ( isset($atts['interval']) ) {
+    $interval = 'data-interval="'.$atts['interval'].'"';
+  }
+
   if ($attachments) {
     $carousel .= ''.PHP_EOL;
-    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.'>'.PHP_EOL;
+    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
     $i = 0;
     $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
