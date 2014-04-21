@@ -108,7 +108,7 @@ function wp_spl_carousel($atts) {
     
   }
 
-  if ( in_array('timer', $atts) ) {
+  if ( isset($atts['timer']) ) {
     $carousel .= '
                 <script>
                 setTimeout(function(){
