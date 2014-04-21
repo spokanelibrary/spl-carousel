@@ -108,12 +108,14 @@ function wp_spl_carousel($atts) {
     
   }
 
-  if ( isset($atts['timer']) ) {
+  if ( isset($atts['timeout']) ) {
+    // convert minutes to microseconds
+    $timeout = $atts['timeout'] * (1000 * 60);
     $carousel .= '
                 <script>
                 setTimeout(function(){
                    window.location.reload(1);
-                }, '.$atts['timer'].');
+                }, '.$timout.');
                 </script>
                 ';
   } 
