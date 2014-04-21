@@ -37,7 +37,8 @@ function wp_spl_carousel($atts) {
   
 
   if ( isset($atts['interval']) ) {
-    $interval = 'data-interval="'.$atts['interval'].'"';
+
+    $interval = 'data-interval="'.($atts['interval']*1000).'"';
   }
 
   if ($attachments) {
