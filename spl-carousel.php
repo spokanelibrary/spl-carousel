@@ -107,6 +107,17 @@ function wp_spl_carousel($atts) {
     $carousel .= '</div>'.PHP_EOL;
     
   }
+
+  if ( in_array('timer', $atts) ) {
+    $carousel = '
+                <script>
+                /* reload every hour */
+                setTimeout(function(){
+                   window.location.reload(1);
+                }, '.$atts['timer'].');
+                </script>
+                ';
+  } 
   
   
   foreach ($attachments as $attachment) {
