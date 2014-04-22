@@ -45,6 +45,7 @@ function wp_spl_carousel($atts) {
     $carousel .= ''.PHP_EOL;
     $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
+
     $i = 0;
     $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
     foreach ($attachments as $attachment) {
@@ -79,27 +80,29 @@ function wp_spl_carousel($atts) {
         $carousel .= '</a>'.PHP_EOL;
       }
 
-      $carousel .= '<div class="carousel-caption">'.PHP_EOL;
+      if ( !in_array('kiosk', $atts) ) {
+        $carousel .= '<div class="carousel-caption">'.PHP_EOL;
 
-      if ( !empty($alt) ) { 
-        $carousel .= '<strong class="pull-right">'.PHP_EOL;
-        $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
-        $carousel .= 'More &rarr;'.PHP_EOL;
-        $carousel .= '</a>'.PHP_EOL;
-        $carousel .= '</strong>'.PHP_EOL;
+        if ( !empty($alt) ) { 
+          $carousel .= '<strong class="pull-right">'.PHP_EOL;
+          $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
+          $carousel .= 'More &rarr;'.PHP_EOL;
+          $carousel .= '</a>'.PHP_EOL;
+          $carousel .= '</strong>'.PHP_EOL;
+        }
+
+
+        $carousel .= '<h4>';
+        $carousel .= $attachment->post_title;
+        if ( !empty($attachment->post_excerpt) ) {
+          $carousel .= ' <small>'.$attachment->post_excerpt.'</small>';
+        }
+        $carousel .= '</h4>'.PHP_EOL;
+        
+        $carousel .= '<p>'.$attachment->post_content.'</p>'.PHP_EOL;
+
+        $carousel .= '</div>'.PHP_EOL;
       }
-
-
-      $carousel .= '<h4>';
-      $carousel .= $attachment->post_title;
-      if ( !empty($attachment->post_excerpt) ) {
-        $carousel .= ' <small>'.$attachment->post_excerpt.'</small>';
-      }
-      $carousel .= '</h4>'.PHP_EOL;
-      
-      $carousel .= '<p>'.$attachment->post_content.'</p>'.PHP_EOL;
-
-      $carousel .= '</div>'.PHP_EOL;
       $carousel .= '</div>'.PHP_EOL;
 
       $i++;
@@ -111,7 +114,7 @@ function wp_spl_carousel($atts) {
       $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
       $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
     }
-    
+
     $carousel .= '</div>'.PHP_EOL;
     
   }
