@@ -45,18 +45,19 @@ function wp_spl_carousel($atts) {
     $carousel .= ''.PHP_EOL;
     $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
-
-    $i = 0;
-    $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
-    foreach ($attachments as $attachment) {
-      $active = null;
-      if ( 0 == $i ) {
-        $active = ' class="active"';
-      } 
-      $carousel .= '<li data-target="#spl-carousel-'.$id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
-      $i++;
-    }
-    $carousel .= '</ol>'.PHP_EOL;   
+    if ( !in_array('kiosk', $atts) ) {
+      $i = 0;
+      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
+      foreach ($attachments as $attachment) {
+        $active = null;
+        if ( 0 == $i ) {
+          $active = ' class="active"';
+        } 
+        $carousel .= '<li data-target="#spl-carousel-'.$id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
+        $i++;
+      }
+      $carousel .= '</ol>'.PHP_EOL; 
+    }  
 
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
     
