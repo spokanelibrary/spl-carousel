@@ -34,7 +34,6 @@ function wp_spl_carousel($atts) {
   if ( in_array('auto', $atts) ) {
     $auto = 'data-ride="carousel"';
   } 
-  
 
   if ( isset($atts['interval']) ) {
 
