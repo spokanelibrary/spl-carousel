@@ -101,7 +101,7 @@ function wp_spl_carousel($atts) {
         $carousel .= '<h4>';
         $carousel .= $attachment->post_title;
         if ( !empty($attachment->post_excerpt) ) {
-          $carousel .= ' <small>'.$attachment->post_excerpt.'</small>';
+          $carousel .= ' <small class="help-block">'.$attachment->post_excerpt.'</small>';
         }
         $carousel .= '</h4>'.PHP_EOL;
         
