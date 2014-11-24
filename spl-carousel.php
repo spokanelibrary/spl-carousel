@@ -93,7 +93,7 @@ function wp_spl_carousel($atts) {
 
         if ( !empty($alt) ) { 
           $carousel .= '<a class="pull-right" href="'.$alt.'"> ';
-          $carousel .= '<b>More</b> <span >&rarr;</span>'.PHP_EOL;
+          $carousel .= '<b>More</b> <span class="text-muted">&rarr;</span>'.PHP_EOL;
           $carousel .= '</a>'.PHP_EOL;
         }
 
