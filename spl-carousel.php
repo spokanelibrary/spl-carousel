@@ -19,6 +19,14 @@ Version: 0.1
 function wp_spl_carousel($atts) {
   
   $id = get_the_ID();
+
+  if ( isset($atts['slug']) ) {
+    $imgPage = get_page_by_path($atts['slug']);
+  }
+  if ( $imgPage ) {
+    $id = $imgPage->ID;
+  }
+
   $carousel = null;
   $args = array(
     'post_type' => 'attachment',
