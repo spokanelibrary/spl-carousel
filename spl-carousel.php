@@ -46,16 +46,16 @@ function wp_spl_carousel($atts) {
     
     if ( !in_array('kiosk', $atts) ) {
       $i = 0;
-      //$carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
+      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
       foreach ($attachments as $attachment) {
         $active = null;
         if ( 0 == $i ) {
           $active = ' class="active"';
         } 
-        //$carousel .= '<li data-target="#spl-carousel-'.$id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
+        $carousel .= '<li data-target="#spl-carousel-'.$id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
         $i++;
       }
-      //$carousel .= '</ol>'.PHP_EOL; 
+      $carousel .= '</ol>'.PHP_EOL; 
     }  
 
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
