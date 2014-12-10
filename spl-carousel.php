@@ -27,10 +27,15 @@ function wp_spl_carousel($atts) {
     $id = $imgPage->ID;
   }
 
+  $orderby = 'menu_order';
+  if ( in_array('random', $atts) ) {
+    $orderby = 'rand';
+  }
+
   $carousel = null;
   $args = array(
     'post_type' => 'attachment',
-    'orderby'   => 'menu_order',
+    'orderby'   => $orderby,
     'order'     => 'ASC',
     'numberposts' => null,
     'post_status' => null,
