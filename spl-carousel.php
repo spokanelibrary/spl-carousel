@@ -308,6 +308,6 @@ function wp_spl_carousel_hero($atts) {
 //remove_shortcode( 'gallery', 'gallery_shortcode' ); /* Remove original shortcode */
 //add_shortcode( 'gallery', 'wp_spl_carousel' ); /* Add custom shortcode */
 
-add_shortcode('spl_carousel', 'wp_spl_carousel_hero');
+add_shortcode('spl_carousel_hero', 'wp_spl_carousel_hero');
 
 ?>
