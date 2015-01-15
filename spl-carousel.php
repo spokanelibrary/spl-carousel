@@ -265,7 +265,7 @@ function wp_spl_carousel_hero($atts) {
         */
 
 
-        $carousel .= '<h2 class="text-warning" style="margin-top:0;">';
+        $carousel .= '<h2 class="text-success" style="margin-top:0;">';
         $carousel .= $attachment->post_title;
         if ( !empty($attachment->post_excerpt) ) {
           $carousel .= ' <small style="color:#666;">'.$attachment->post_excerpt.'</small>';
@@ -275,7 +275,7 @@ function wp_spl_carousel_hero($atts) {
         $carousel .= '<p class="lead">'.$attachment->post_content.'</p>'.PHP_EOL;
 
         if ( !empty($alt) ) { 
-          $carousel .= '<a class="btn btn-lg btn-block btn-link" href="'.$alt.'"> ';
+          $carousel .= '<a class="btn btn-lg btn-block btn-default panel-transparent" href="'.$alt.'"> ';
           $carousel .= 'More <span class="text-muted">&rarr;</span>'.PHP_EOL;
           $carousel .= '</a>'.PHP_EOL;
         }
