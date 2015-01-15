@@ -256,11 +256,13 @@ function wp_spl_carousel_hero($atts) {
       if ( !in_array('kiosk', $atts) ) {
         $carousel .= '<div class="carousel-caption">'.PHP_EOL;
 
+        /*
         if ( !empty($alt) ) { 
           $carousel .= '<a class="pull-right" href="'.$alt.'"> ';
           $carousel .= '<b>More</b> <span class="text-muted">&rarr;</span>'.PHP_EOL;
           $carousel .= '</a>'.PHP_EOL;
         }
+        */
 
 
         $carousel .= '<h3>';
@@ -271,6 +273,12 @@ function wp_spl_carousel_hero($atts) {
         $carousel .= '</h3>'.PHP_EOL;
         
         $carousel .= '<p class="lead">'.$attachment->post_content.'</p>'.PHP_EOL;
+
+        if ( !empty($alt) ) { 
+          $carousel .= '<a class="btn btn-default" href="'.$alt.'"> ';
+          $carousel .= '<b>More</b> <span class="text-muted">&rarr;</span>'.PHP_EOL;
+          $carousel .= '</a>'.PHP_EOL;
+        }
 
         $carousel .= '</div>'.PHP_EOL; // carousel-caption
       }
