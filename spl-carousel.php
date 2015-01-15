@@ -263,12 +263,12 @@ function wp_spl_carousel_hero($atts) {
         }
 
 
-        $carousel .= '<h4>';
+        $carousel .= '<h3>';
         $carousel .= $attachment->post_title;
         if ( !empty($attachment->post_excerpt) ) {
           $carousel .= ' <small style="color:#666;">'.$attachment->post_excerpt.'</small>';
         }
-        $carousel .= '</h4>'.PHP_EOL;
+        $carousel .= '</h3>'.PHP_EOL;
         
         $carousel .= '<p class="lead">'.$attachment->post_content.'</p>'.PHP_EOL;
 
