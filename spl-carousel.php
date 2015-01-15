@@ -275,7 +275,7 @@ function wp_spl_carousel_hero($atts) {
         $carousel .= '<p class="lead">'.$attachment->post_content.'</p>'.PHP_EOL;
 
         if ( !empty($alt) ) { 
-          $carousel .= '<a class="btn btn-lg btn-block btn-link" href="'.$alt.'"> ';
+          $carousel .= '<a class="btn btn-lg btn-block btn-default" href="'.$alt.'"> ';
           $carousel .= '<b>More</b> <span class="text-muted">&rarr;</span>'.PHP_EOL;
           $carousel .= '</a>'.PHP_EOL;
         }
