@@ -270,7 +270,7 @@ function wp_spl_carousel_hero($atts) {
         }
         $carousel .= '</h4>'.PHP_EOL;
         
-        $carousel .= '<p>'.$attachment->post_content.'</p>'.PHP_EOL;
+        $carousel .= '<p class="lead">'.$attachment->post_content.'</p>'.PHP_EOL;
 
         $carousel .= '</div>'.PHP_EOL; // carousel-caption
       }
