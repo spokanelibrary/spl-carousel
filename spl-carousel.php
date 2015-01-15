@@ -235,8 +235,8 @@ function wp_spl_carousel_hero($atts) {
 
       $carousel .= '<div class="item'.$active.'">'.PHP_EOL;
 
-      $carousel .= '<div class="row">'.PHP_EOL;
-      $carousel .= '<div class="col-md-6">'.PHP_EOL;
+      //$carousel .= '<div class="row">'.PHP_EOL;
+      //$carousel .= '<div class="col-md-6">'.PHP_EOL;
 
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
@@ -246,8 +246,8 @@ function wp_spl_carousel_hero($atts) {
         $carousel .= '</a>'.PHP_EOL;
       }
 
-      $carousel .= '</div>'.PHP_EOL; // col
-      $carousel .= '<div class="col-md-6">'.PHP_EOL;
+      //$carousel .= '</div>'.PHP_EOL; // col
+      //$carousel .= '<div class="col-md-6">'.PHP_EOL;
 
       if ( !in_array('kiosk', $atts) ) {
         $carousel .= '<div class="carousel-caption">'.PHP_EOL;
@@ -268,25 +268,26 @@ function wp_spl_carousel_hero($atts) {
         
         $carousel .= '<p>'.$attachment->post_content.'</p>'.PHP_EOL;
 
-        $carousel .= '</div>'.PHP_EOL;
+        $carousel .= '</div>'.PHP_EOL; // carousel-caption
       }
-      $carousel .= '</div>'.PHP_EOL;
 
-      $carousel .= '</div>'.PHP_EOL; // col
-      $carousel .= '</div>'.PHP_EOL; // row
+      //$carousel .= '</div>'.PHP_EOL; // col
+      //$carousel .= '</div>'.PHP_EOL; // row
 
+
+      $carousel .= '</div>'.PHP_EOL; // item?
 
       $i++;
     }
     
-    $carousel .= '</div>'.PHP_EOL;
+    $carousel .= '</div>'.PHP_EOL; // carousel-inner
     
     if ( !in_array('kiosk', $atts) ) {
       $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
       $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
     }
 
-    $carousel .= '</div>'.PHP_EOL;
+    $carousel .= '</div>'.PHP_EOL; // carousel
     
   }
 
