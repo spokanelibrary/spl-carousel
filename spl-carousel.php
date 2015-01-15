@@ -254,7 +254,7 @@ function wp_spl_carousel_hero($atts) {
       $carousel .= '<div class="col-md-6">'.PHP_EOL;
 
       if ( !in_array('kiosk', $atts) ) {
-        $carousel .= '<div class="carousel-caption" style="position:relative;">'.PHP_EOL;
+        $carousel .= '<div class="carousel-caption">'.PHP_EOL;
 
         /*
         if ( !empty($alt) ) { 
@@ -275,8 +275,8 @@ function wp_spl_carousel_hero($atts) {
         $carousel .= '<p class="lead">'.$attachment->post_content.'</p>'.PHP_EOL;
 
         if ( !empty($alt) ) { 
-          $carousel .= '<a class="btn btn-lg btn-block btn-default" style="position:absolute; bottom:0;" href="'.$alt.'"> ';
-          $carousel .= '<b>More</b> <span class="text-muted">&rarr;</span>'.PHP_EOL;
+          $carousel .= '<a class="btn btn-lg btn-block btn-warning" href="'.$alt.'"> ';
+          $carousel .= 'More <span class="text-muted">&rarr;</span>'.PHP_EOL;
           $carousel .= '</a>'.PHP_EOL;
         }
 
