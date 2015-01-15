@@ -208,6 +208,8 @@ function wp_spl_carousel_hero($atts) {
     $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
     if ( !in_array('kiosk', $atts) ) {
+      $carousel .= '<div class="row">'.PHP_EOL;
+      $carousel .= '<div class="col-md-6">'.PHP_EOL;
       $i = 0;
       $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
       foreach ($attachments as $attachment) {
@@ -219,6 +221,8 @@ function wp_spl_carousel_hero($atts) {
         $i++;
       }
       $carousel .= '</ol>'.PHP_EOL; 
+      $carousel .= '</div>'.PHP_EOL; // col
+      $carousel .= '</div>'.PHP_EOL; // row
     }  
 
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
@@ -236,7 +240,7 @@ function wp_spl_carousel_hero($atts) {
       $carousel .= '<div class="item'.$active.'">'.PHP_EOL;
 
       $carousel .= '<div class="row">'.PHP_EOL;
-      $carousel .= '<div class="col-md-5">'.PHP_EOL;
+      $carousel .= '<div class="col-md-6">'.PHP_EOL;
 
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
@@ -247,7 +251,7 @@ function wp_spl_carousel_hero($atts) {
       }
 
       $carousel .= '</div>'.PHP_EOL; // col
-      $carousel .= '<div class="col-md-7">'.PHP_EOL;
+      $carousel .= '<div class="col-md-6">'.PHP_EOL;
 
       if ( !in_array('kiosk', $atts) ) {
         $carousel .= '<div class="carousel-caption">'.PHP_EOL;
