@@ -265,7 +265,7 @@ function wp_spl_carousel_hero($atts) {
         */
 
 
-        $carousel .= '<h3>';
+        $carousel .= '<h3 style="margin-top:0;">';
         $carousel .= $attachment->post_title;
         if ( !empty($attachment->post_excerpt) ) {
           $carousel .= ' <small style="color:#666;">'.$attachment->post_excerpt.'</small>';
