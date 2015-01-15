@@ -237,7 +237,6 @@ function wp_spl_carousel_hero($atts) {
 
       $carousel .= '<div class="row">'.PHP_EOL;
       $carousel .= '<div class="col-md-6">'.PHP_EOL;
-      $carousel .= '<div style="background:red;">'.PHP_EOL;
 
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
@@ -247,7 +246,6 @@ function wp_spl_carousel_hero($atts) {
         $carousel .= '</a>'.PHP_EOL;
       }
 
-      $carousel .= '</div>'.PHP_EOL; // col
       $carousel .= '</div>'.PHP_EOL; // col
       $carousel .= '<div class="col-md-6">'.PHP_EOL;
 
