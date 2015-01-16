@@ -241,8 +241,8 @@ function wp_spl_carousel_hero($atts) {
     $carousel .= '<div class="item active">'.PHP_EOL;
     
     $carousel .= '<div class="row">'.PHP_EOL;
-    $carousel .= '<div class="col-md-12">'.PHP_EOL;
-    $carousel .= '<h2 class="text-primary" style="margin-top:0; z-index:16;">';
+    $carousel .= '<div class="col-md-12"  style="z-index:16;">'.PHP_EOL;
+    $carousel .= '<h2 class="text-primary" style="margin-top:0;">';
     $carousel .= 'New Year, New You, New Day for the Library';
     $carousel .= '</h2>'.PHP_EOL;
     $carousel .= '</div>'.PHP_EOL; // col
