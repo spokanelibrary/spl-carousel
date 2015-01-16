@@ -240,12 +240,9 @@ function wp_spl_carousel_hero($atts) {
     // BEGIN NEWSLETTER
     $carousel .= '<div class="item active">'.PHP_EOL;
     
-    $carousel .= '<div class="row">'.PHP_EOL;
-    $carousel .= '<div class="col-md-12" style="z-index:6;"">'.PHP_EOL;
     $carousel .= '<span class="text-primary" style="margin-top:0;">';
     $carousel .= 'New Year, New You, New Day for the Library';
     $carousel .= '</span>'.PHP_EOL;
-    $carousel .= '</div>'.PHP_EOL; // col
 
     $carousel .= '<div class="col-md-2">'.PHP_EOL;
     $carousel .= '&nbsp;'.PHP_EOL; // col
