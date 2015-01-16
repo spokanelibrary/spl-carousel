@@ -241,11 +241,11 @@ function wp_spl_carousel_hero($atts) {
     $carousel .= '<div class="item active">'.PHP_EOL;
     
     $carousel .= '<div class="row">'.PHP_EOL;
-    //$carousel .= '<div class="col-md-12">'.PHP_EOL;
+    $carousel .= '<div class="col-md-12">'.PHP_EOL;
     $carousel .= '<h2 class="text-primary" style="margin-top:0; z-index:6;">';
     $carousel .= 'New Year, New You, New Day for the Library';
     $carousel .= '</h2>'.PHP_EOL;
-    //$carousel .= '</div>'.PHP_EOL; // col
+    $carousel .= '</div>'.PHP_EOL; // col
 
     $carousel .= '<div class="col-md-2">'.PHP_EOL;
     $carousel .= '&nbsp;'.PHP_EOL; // col
