@@ -226,7 +226,7 @@ function wp_spl_carousel_hero($atts) {
     }  
 
     if ( !in_array('kiosk', $atts) ) {
-      $carousel .= '<div class="row">'.PHP_EOL;
+      $carousel .= '<div class="row" z-index:5;>'.PHP_EOL;
       $carousel .= '<div class="col-md-6">'.PHP_EOL;
       //$carousel .= '<div style="position:absolute; top:0;">'.PHP_EOL;
       $carousel .= '<a style="top:0" class="left carousel-control hero" href="#spl-carousel-'.$id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
