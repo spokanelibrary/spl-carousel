@@ -298,8 +298,8 @@ function wp_spl_carousel_hero($atts) {
       $carousel .= '<div class="row">'.PHP_EOL;
       $carousel .= '<div class="col-md-6">'.PHP_EOL;
       //$carousel .= '<div style="position:absolute; top:0;">'.PHP_EOL;
-      //$carousel .= '<a class="left carousel-control hero" href="#spl-carousel-'.$id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
-      //$carousel .= '<a class="right carousel-control hero" href="#spl-carousel-'.$id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
+      $carousel .= '<a class="left carousel-control hero" href="#spl-carousel-'.$id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
+      $carousel .= '<a class="right carousel-control hero" href="#spl-carousel-'.$id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
       //$carousel .= '</div>'.PHP_EOL;
       $carousel .= '</div>'.PHP_EOL; // col
       $carousel .= '</div>'.PHP_EOL; // row
