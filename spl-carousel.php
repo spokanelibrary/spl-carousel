@@ -237,6 +237,7 @@ function wp_spl_carousel_hero($atts) {
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
     
     $carousel .= '<div class="item active">'.PHP_EOL;
+    $carousel .= '<div class="carousel-caption">'.PHP_EOL;
     $carousel .= '<div class="row">
      
       <div class="col-md-12">
@@ -269,6 +270,8 @@ function wp_spl_carousel_hero($atts) {
 
     </div><!-- /.row -->
     ';
+
+    $carousel .= '</div>'.PHP_EOL; // caption
     $carousel .= '</div>'.PHP_EOL; // item
 
     $i = 1; //0
