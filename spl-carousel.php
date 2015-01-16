@@ -241,6 +241,10 @@ function wp_spl_carousel_hero($atts) {
     $carousel .= '<div class="item active">'.PHP_EOL;
     
     $carousel .= '<div class="row">'.PHP_EOL;
+    $carousel .= '<div class="col-md-12">'.PHP_EOL;
+    $carousel .= 'Intro'.PHP_EOL; // col
+    $carousel .= '</div>'.PHP_EOL; // col
+
     $carousel .= '<div class="col-md-6">'.PHP_EOL;
 
     $news_thumb = true;
