@@ -236,7 +236,11 @@ function wp_spl_carousel_hero($atts) {
 
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
     
-    $i = 0;
+    $carousel .= '<div class="item active">'.PHP_EOL;
+    $carousel .= 'newsletter slide';
+    $carousel .= '</div>'.PHP_EOL; // item
+
+    $i = 1; //0
     foreach ($attachments as $attachment) {
       
       $alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
@@ -300,7 +304,7 @@ function wp_spl_carousel_hero($atts) {
 
       $i++;
     }
-    
+
     $carousel .= '</div>'.PHP_EOL; // carousel-inner
     /*
     if ( !in_array('kiosk', $atts) ) {
