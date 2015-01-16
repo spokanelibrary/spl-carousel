@@ -240,7 +240,7 @@ function wp_spl_carousel_hero($atts) {
     $carousel .= '<div class="row">
      
       <div class="col-md-12">
-        <h2 style="" class="clearfix">
+        <h2 style="" class="margin-top:0;">
           <a href="http://news.spokanelibrary.org/newsletter/new-year-new-you-new-day-for-the-library/">New Year, New You, New Day for the Library</a>
         </h2>
       </div><!-- /.col -->
