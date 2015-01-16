@@ -240,7 +240,7 @@ function wp_spl_carousel_hero($atts) {
       $carousel .= '<div class="item'.$active.'">'.PHP_EOL;
 
       $carousel .= '<div class="row">'.PHP_EOL;
-      $carousel .= '<div class="col-md-5">'.PHP_EOL;
+      $carousel .= '<div class="col-md-6">'.PHP_EOL;
 
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
@@ -251,7 +251,7 @@ function wp_spl_carousel_hero($atts) {
       }
 
       $carousel .= '</div>'.PHP_EOL; // col
-      $carousel .= '<div class="col-md-7">'.PHP_EOL;
+      $carousel .= '<div class="col-md-6">'.PHP_EOL;
 
       if ( !in_array('kiosk', $atts) ) {
         $carousel .= '<div class="carousel-caption">'.PHP_EOL;
