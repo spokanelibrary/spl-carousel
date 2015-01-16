@@ -210,8 +210,9 @@ function wp_spl_carousel_hero($atts) {
     if ( !in_array('kiosk', $atts) ) {
       $carousel .= '<div class="row">'.PHP_EOL;
       $carousel .= '<div class="col-md-6">'.PHP_EOL;
-      $i = 0;
       $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
+      // ToDo: news
+      $i = 0;
       foreach ($attachments as $attachment) {
         $active = null;
         if ( 0 == $i ) {
@@ -236,43 +237,44 @@ function wp_spl_carousel_hero($atts) {
 
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
     
+    // BEGIN NEWSLETTER
     $carousel .= '<div class="item active">'.PHP_EOL;
-    $carousel .= '<div class="carousel-caption">'.PHP_EOL;
-    $carousel .= '<div class="row">
-     
-      <div class="col-md-12">
-        <h2 style="" class="margin-top:0;">
-          <a href="http://news.spokanelibrary.org/newsletter/new-year-new-you-new-day-for-the-library/">New Year, New You, New Day for the Library</a>
-        </h2>
-      </div><!-- /.col -->
+    
+    $carousel .= '<div class="row">'.PHP_EOL;
+    $carousel .= '<div class="col-md-6">'.PHP_EOL;
 
-      <div class="col-md-4">
-        <p class="">
-          <a href="http://news.spokanelibrary.org/newsletter/new-year-new-you-new-day-for-the-library/"
-          ><img style="margin:auto;" class="img-responsive img-rounded hidden-xs" src="http://news.spokanelibrary.org/wordpress/media/Shadle_Sunday_hours2-300x282.jpg"></a>
-        </p>
-      </div><!-- /.col -->
+    $news_thumb = true;
+    if ( !empty($news_thumb) ) { 
+      $carousel .= '<a href="http://news.spokanelibrary.org/newsletter/new-year-new-you-new-day-for-the-library/">'.PHP_EOL;
+    }
+    $carousel .= '<img class="img-responsive img-rounded" src="http://news.spokanelibrary.org/wordpress/media/Shadle_Sunday_hours2-300x282.jpg" alt="Read Library News">'.PHP_EOL;
+    if ( !empty($news_thumb) ) { 
+      $carousel .= '</a>'.PHP_EOL;
+    }
 
-      <div class="col-md-8">
-        <h3 style="margin-top:0;" class="text-muted">also in this issue&hellip;</h3>
-        <ul class="nav nav-pills nav-stacked">
-          <li><a href="http://news.spokanelibrary.org/new-year-new-you/">What’s on your “to do” list for 2015? <small class="text-muted">&rarr;</small></a></li>
-          <li><a href="http://news.spokanelibrary.org/dewey_1-15/">Dewey’s (self) helpful side <small class="text-muted">&rarr;</small></a></li>
-          <li><a href="http://news.spokanelibrary.org/5_magazines_1-15/">Five Magazines instead of Five Songs This Month <small class="text-muted">&rarr;</small></a></li>
-        </ul>
-        <!--
-        <p class="">
-          <a class="btn btn-block btn-success" 
-          href="http://news.spokanelibrary.org/">Get the library newsletter &rarr;</a>
-        </p>
-        -->
-      </div><!-- /.col -->
+    $carousel .= '</div>'.PHP_EOL; // col
+    $carousel .= '<div class="col-md-6">'.PHP_EOL;
 
-    </div><!-- /.row -->
-    ';
+    if ( !in_array('kiosk', $atts) ) {
+      $carousel .= '<div class="carousel-caption">'.PHP_EOL;
 
-    $carousel .= '</div>'.PHP_EOL; // caption
+      $carousel .= '<h2 class="text-success" style="margin-top:0;">';
+      $carousel .= 'Also in';
+      $carousel .= '</h2>'.PHP_EOL;
+   
+
+      $carousel .= '</div>'.PHP_EOL; // carousel-caption
+    }
+
+    $carousel .= '</div>'.PHP_EOL; // col
+    $carousel .= '</div>'.PHP_EOL; // row
+
+
+    $carousel .= 'News'.PHP_EOL;
+    $carousel .= ''.PHP_EOL;
+
     $carousel .= '</div>'.PHP_EOL; // item
+    // FINISH NEWSLETTER
 
     $i = 1; //0
     foreach ($attachments as $attachment) {
