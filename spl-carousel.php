@@ -285,10 +285,6 @@ function wp_spl_carousel_hero($atts) {
     $carousel .= '</div>'.PHP_EOL; // col
     $carousel .= '</div>'.PHP_EOL; // row
 
-
-    $carousel .= 'News'.PHP_EOL;
-    $carousel .= ''.PHP_EOL;
-
     $carousel .= '</div>'.PHP_EOL; // item
     // FINISH NEWSLETTER
 
