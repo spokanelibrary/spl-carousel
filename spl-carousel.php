@@ -242,7 +242,9 @@ function wp_spl_carousel_hero($atts) {
     
     $carousel .= '<div class="row">'.PHP_EOL;
     $carousel .= '<div class="col-md-12">'.PHP_EOL;
-    $carousel .= 'Intro'.PHP_EOL; // col
+    $carousel .= '<h2 class="text-success" style="margin-top:0;">';
+    $carousel .= 'Also in';
+    $carousel .= '</h2>'.PHP_EOL;
     $carousel .= '</div>'.PHP_EOL; // col
 
     $carousel .= '<div class="col-md-6">'.PHP_EOL;
@@ -262,10 +264,15 @@ function wp_spl_carousel_hero($atts) {
     if ( !in_array('kiosk', $atts) ) {
       $carousel .= '<div class="carousel-caption">'.PHP_EOL;
 
-      $carousel .= '<h2 class="text-success" style="margin-top:0;">';
-      $carousel .= 'Also in';
-      $carousel .= '</h2>'.PHP_EOL;
-   
+      $carousel .= '<h3 class="text-muted" style="margin-top:0;">';
+      $carousel .= 'also in this issue&hellip;';
+      $carousel .= '</h3>'.PHP_EOL;
+
+      $carousel .= '<ul class="nav nav-pills nav-stacked">'.PHP_EOL;
+      $carousel .= '<li><a href="http://news.spokanelibrary.org/new-year-new-you/">What’s on your “to do” list for 2015? <small class="text-muted">&rarr;</small></a></li>'.PHP_EOL;
+      $carousel .= '<li><a href="http://news.spokanelibrary.org/dewey_1-15/">Dewey’s (self) helpful side <small class="text-muted">&rarr;</small></a></li>'.PHP_EOL;
+      $carousel .= '<li><a href="http://news.spokanelibrary.org/5_magazines_1-15/">Five Magazines instead of Five Songs This Month <small class="text-muted">&rarr;</small></a></li>'.PHP_EOL;
+      $carousel .= '</ul>'.PHP_EOL;   
 
       $carousel .= '</div>'.PHP_EOL; // carousel-caption
     }
