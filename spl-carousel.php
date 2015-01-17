@@ -247,10 +247,10 @@ function wp_spl_carousel_hero($atts) {
     $carousel .= '</h2>'.PHP_EOL;
     $carousel .= '</div>'.PHP_EOL; // col
 
-    $carousel .= '<div class="col-md-2">'.PHP_EOL;
+    $carousel .= '<div class="col-md-1">'.PHP_EOL;
     $carousel .= '&nbsp;'.PHP_EOL;
     $carousel .= '</div>'.PHP_EOL; // col
-    $carousel .= '<div class="col-md-2">'.PHP_EOL;
+    $carousel .= '<div class="col-md-3">'.PHP_EOL;
     $news_thumb = true;
     if ( !empty($news_thumb) ) { 
       $carousel .= '<a href="http://news.spokanelibrary.org/newsletter/new-year-new-you-new-day-for-the-library/">'.PHP_EOL;
@@ -260,11 +260,11 @@ function wp_spl_carousel_hero($atts) {
       $carousel .= '</a>'.PHP_EOL;
     }
     $carousel .= '</div>'.PHP_EOL; // col
-    $carousel .= '<div class="col-md-2">'.PHP_EOL;
+    $carousel .= '<div class="col-md-1">'.PHP_EOL;
     $carousel .= '&nbsp;'.PHP_EOL;
     $carousel .= '</div>'.PHP_EOL; // col
 
-    $carousel .= '<div class="col-md-6">'.PHP_EOL;
+    $carousel .= '<div class="col-md-7">'.PHP_EOL;
 
     if ( !in_array('kiosk', $atts) ) {
       $carousel .= '<div class="carousel-caption">'.PHP_EOL;
@@ -301,10 +301,8 @@ function wp_spl_carousel_hero($atts) {
       $carousel .= '<div class="item'.$active.'">'.PHP_EOL;
 
       $carousel .= '<div class="row">'.PHP_EOL;
-      $carousel .= '<div class="col-md-1">'.PHP_EOL;
-      $carousel .= '&nbsp;'.PHP_EOL;
-      $carousel .= '</div>'.PHP_EOL; // col
-      $carousel .= '<div class="col-md-4">'.PHP_EOL;
+
+      $carousel .= '<div class="col-md-5">'.PHP_EOL;
 
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
@@ -315,10 +313,8 @@ function wp_spl_carousel_hero($atts) {
       }
 
       $carousel .= '</div>'.PHP_EOL; // col
-      $carousel .= '<div class="col-md-1">'.PHP_EOL;
-      $carousel .= '&nbsp;'.PHP_EOL;
-      $carousel .= '</div>'.PHP_EOL; // col
-      $carousel .= '<div class="col-md-6">'.PHP_EOL;
+
+      $carousel .= '<div class="col-md-7">'.PHP_EOL;
 
       if ( !in_array('kiosk', $atts) ) {
         $carousel .= '<div class="carousel-caption">'.PHP_EOL;
