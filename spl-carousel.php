@@ -343,9 +343,11 @@ function wp_spl_carousel_hero($atts) {
         $carousel .= '<p class="lead">'.$attachment->post_content.'</p>'.PHP_EOL;
 
         if ( !empty($alt) ) { 
-          $carousel .= '<a class="btn btn-block btn-default panel-transparent" href="'.$alt.'"> ';
+          $carousel .= '<p class="text-right">'.PHP_EOL;
+          $carousel .= '<a class="btn btn-default panel-transparent" href="'.$alt.'"> ';
           $carousel .= 'More <span class="text-muted">&rarr;</span>'.PHP_EOL;
           $carousel .= '</a>'.PHP_EOL;
+          $carousel .= '</p>'.PHP_EOL;
         }
 
         $carousel .= '</div>'.PHP_EOL; // carousel-caption
