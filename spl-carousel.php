@@ -226,6 +226,7 @@ function wp_spl_carousel_hero($atts) {
       $carousel .= '</div>'.PHP_EOL; // row
     }  
 
+    /*
     if ( !in_array('kiosk', $atts) ) {
       $carousel .= '<div class="row">'.PHP_EOL;
       $carousel .= '<div class="col-md-5"  style="z-index:5";>'.PHP_EOL;
@@ -234,6 +235,7 @@ function wp_spl_carousel_hero($atts) {
       $carousel .= '</div>'.PHP_EOL; // col
       $carousel .= '</div>'.PHP_EOL; // row
     }
+    */
 
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
     
