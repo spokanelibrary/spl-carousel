@@ -344,7 +344,7 @@ function wp_spl_carousel_hero($atts) {
 
         if ( !empty($alt) ) { 
           $carousel .= '<p class="text-right">'.PHP_EOL;
-          $carousel .= '<a class="btn btn-default panel-transparent" href="'.$alt.'"> ';
+          $carousel .= '<a class="btn btn-default" href="'.$alt.'"> ';
           $carousel .= 'More <span class="text-muted">&rarr;</span>'.PHP_EOL;
           $carousel .= '</a>'.PHP_EOL;
           $carousel .= '</p>'.PHP_EOL;
