@@ -54,12 +54,12 @@ class SPL_Carousel {
 
 	protected function getCarouselFormatted() {
 		$carousel = null;
-		/*
+		
 		$auto = null;
 	  if ( in_array('auto', $this->params) ) {
 	    $auto = 'data-ride="carousel"';
 	  } 
-
+	  /*
 	  $interval = null;
 	  if ( isset($this->params['interval']) ) {
 	    $interval = 'data-interval="'.($this->params['interval']*1000).'"';
