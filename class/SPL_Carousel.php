@@ -21,7 +21,32 @@ class SPL_Carousel {
 	}
 
 	public function getCarousel() {
-		return 'this is a carousel';
+		$html = 'null';
+		
+		$html .= 'this is a carousel'.'<br>'.PHP_EOL;
+		$html .= $this->getCarouselNews();
+		$html .= $this->getCarouselPromo();
+		$html .= $this->getCarouselSlides();
+
+		return $html;
+	}
+
+	protected function getCarouselNews() {
+
+
+		return 'news'.'<br>'.PHP_EOL;
+	}
+
+	protected function getCarouselPromo() {
+
+
+		return 'promo'.'<br>'.PHP_EOL;
+	}
+
+	protected function getCarouselSlides() {
+
+
+		return 'slides'.'<br>'.PHP_EOL;
 	}
 
 }
