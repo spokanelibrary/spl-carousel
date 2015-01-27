@@ -44,17 +44,18 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselSlides() {
+
 		$id = get_the_ID();
 
-	  if ( isset($atts['slug']) ) {
-	    $imgPage = get_page_by_path($atts['slug']);
+	  if ( isset($this->params['slug']) ) {
+	    $imgPage = get_page_by_path($this->params['slug']);
 	  }
 	  if ( $imgPage ) {
 	    $id = $imgPage->ID;
 	  }
 
 	  $orderby = 'menu_order';
-	  if ( in_array('random', $atts) ) {
+	  if ( in_array('random', $this->params) ) {
 	    $orderby = 'rand';
 	  }
 
