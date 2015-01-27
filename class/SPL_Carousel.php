@@ -22,9 +22,11 @@ class SPL_Carousel {
 		
 		$html .= 'this is a carousel'.'<br>'.PHP_EOL;
 
-		$news = $this->getCarouselNews();
-		$promo = $this->getCarouselPromo();
+		//$news = $this->getCarouselNews();
+		//$promo = $this->getCarouselPromo();
 		$slides = $this->getCarouselSlides();
+
+		$slides[] = $this->getCarouselNews();
 
 		$html .= '<pre>'.print_r($slides, true).'</pre>';
 
@@ -32,9 +34,16 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselNews() {
+		$slide = new stdClass;
 
+		$slide->url = '/more/';
+		$slide->img = 'img.png';
+		$slide->title = 'Title';
+		$slide->subtitle = 'Subtitle';
+		$slide->content = 'Content';
 
-		return 'news'.'<br>'.PHP_EOL;
+		//$slide = $attachment;
+		return $slide;
 	}
 
 	protected function getCarouselPromo() {
@@ -84,6 +93,7 @@ class SPL_Carousel {
 
 	protected function getCarouselSlide($attachment) {
 		$slide = new stdClass;
+
 		$slide->url = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
 		$slide->img = $attachment->guid;
 		$slide->title = $attachment->post_title;
