@@ -26,6 +26,7 @@ class SPL_Carousel {
 		//$promo = $this->getCarouselPromo();
 		$slides = $this->getCarouselSlides();
 
+		$slides[] = $this->getCarouselPromo();
 		$slides[] = $this->getCarouselNews();
 
 		$slides = array_reverse($slides);
@@ -38,7 +39,7 @@ class SPL_Carousel {
 	protected function getCarouselNews() {
 		$slide = new stdClass;
 
-		$slide->url = '/more/';
+		$slide->url = '/news/';
 		$slide->img = 'img.png';
 		$slide->title = 'Title';
 		$slide->subtitle = 'Subtitle';
@@ -49,9 +50,16 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselPromo() {
+		$slide = new stdClass;
 
+		$slide->url = '/promo/';
+		$slide->img = 'img.png';
+		$slide->title = 'Title';
+		$slide->subtitle = 'Subtitle';
+		$slide->content = 'Content';
 
-		return 'promo'.'<br>'.PHP_EOL;
+		//$slide = $attachment;
+		return $slide;
 	}
 
 	protected function getCarouselSlides() {
