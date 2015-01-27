@@ -49,7 +49,7 @@ class SPL_Carousel {
 	  }
 
 	  $carousel = null;
-	  //$carousel = '<pre>'.print_r($slides, true).'</pre>';
+	  $carousel = '<pre>'.print_r($slides, true).'</pre>';
 		return $carousel;
 	}
 
@@ -138,7 +138,7 @@ class SPL_Carousel {
 
 		$slides = null; 
 
-		$id = get_the_ID();
+		$id = $this->id;
 
 	  if ( isset($this->params['slug']) ) {
 	    $imgPage = get_page_by_path($this->params['slug']);
