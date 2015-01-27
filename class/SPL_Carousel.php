@@ -59,12 +59,12 @@ class SPL_Carousel {
 	  if ( in_array('auto', $this->params) ) {
 	    $auto = 'data-ride="carousel"';
 	  } 
-	  /*
+
 	  $interval = null;
 	  if ( isset($this->params['interval']) ) {
 	    $interval = 'data-interval="'.($this->params['interval']*1000).'"';
 	  }
-	  */
+	  
 
 	  //$carousel .= ''.PHP_EOL;
     //$carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
