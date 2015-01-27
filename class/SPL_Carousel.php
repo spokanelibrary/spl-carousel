@@ -66,7 +66,7 @@ class SPL_Carousel {
 	  }
 	  
 
-	  //$carousel .= ''.PHP_EOL;
+	  $carousel .= ''.PHP_EOL;
     //$carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
 
