@@ -48,14 +48,13 @@ class SPL_Carousel {
 	  	$carousel = $this->getCarouselFormatted();
 	  }
 
-	  $carousel = null;
-	  $carousel = '<pre>'.print_r($slides, true).'</pre>';
+	  //$carousel = '<pre>'.print_r($slides, true).'</pre>';
 		return $carousel;
 	}
 
 	protected function getCarouselFormatted() {
 		$carousel = null;
-
+		/*
 		$auto = null;
 	  if ( in_array('auto', $this->params) ) {
 	    $auto = 'data-ride="carousel"';
@@ -65,6 +64,7 @@ class SPL_Carousel {
 	  if ( isset($this->params['interval']) ) {
 	    $interval = 'data-interval="'.($this->params['interval']*1000).'"';
 	  }
+	  */
 
 	  //$carousel .= ''.PHP_EOL;
     //$carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
