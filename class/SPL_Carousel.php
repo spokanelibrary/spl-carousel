@@ -84,7 +84,11 @@ class SPL_Carousel {
 
 	protected function getCarouselSlide($attachment) {
 		$slide = new stdClass;
-		$slide->alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+		$slide->url = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+		$slide->img = $attachment->guid;
+		$slide->title = $attachment->post_title;
+		$slide->subtitle = $attachment->post_excerpt;
+		$slide->content = $attachment->post_content;
 
 		//$slide = $attachment;
 		return $slide;
