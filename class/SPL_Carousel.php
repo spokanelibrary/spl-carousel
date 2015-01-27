@@ -22,7 +22,7 @@ class SPL_Carousel {
 		
 		$slides = $this->getCarouselSlides();
 
-		$slides[] = $this->getCarouselPromo();
+		$slides[] = $this->getCarouselPromo('learning');
 
 		$slides[] = $this->getCarouselNews();
 
@@ -56,22 +56,35 @@ class SPL_Carousel {
 
 		$slide->url = '/news/';
 		$slide->img = 'img.png';
-		$slide->title = 'Title';
+		$slide->title = 'News Title';
 		$slide->subtitle = 'Subtitle';
 		$slide->content = 'Content';
 
 		return $slide;
 	}
 
-	protected function getCarouselPromo() {
+	protected function getCarouselPromo($promo) {
 		$slide = new stdClass;
 		$slide->format = 'promo';
 
-		$slide->url = '/promo/';
-		$slide->img = 'img.png';
-		$slide->title = 'Title';
-		$slide->subtitle = 'Subtitle';
-		$slide->content = 'Content';
+		switch ($promo) {
+			case 'learning':
+				$slide->url = '/promo/';
+				$slide->img = 'img.png';
+				$slide->title = 'My Promo';
+				$slide->subtitle = 'Subtitle';
+				$slide->content = 'Content';
+				break;
+			default:
+				/*
+				$slide->url = '';
+				$slide->img = '';
+				$slide->title = '';
+				$slide->subtitle = '';
+				$slide->content = '';
+				*/
+				break;
+		}
 
 		return $slide;
 	}
