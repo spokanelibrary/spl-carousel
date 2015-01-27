@@ -423,10 +423,28 @@ add_shortcode('spl_carousel_hero', 'wp_spl_carousel_hero');
 
 
 
+function wp_spl_carousel_get_news() {
 
+  return 'news';
+}
+
+function wp_spl_carousel_get_promo() {
+  return 'promo';
+}
+
+function wp_spl_carousel_get_slides() {
+  return 'slides';
+}
 
 function wp_spl_carousel_beta($atts) {
+  $html = null;
   
+  $html .= wp_spl_carousel_get_news();
+  $html .= wp_spl_carousel_get_promo();
+  $html .= wp_spl_carousel_get_slides();
+
+  return $html;
+
   $id = get_the_ID();
 
   if ( isset($atts['slug']) ) {
@@ -661,9 +679,7 @@ function wp_spl_carousel_beta($atts) {
     */
 
   }
-
-
-  $carousel = 'beta'.'<br>'.$carousel;  
+  
 
   return $carousel;
 }
