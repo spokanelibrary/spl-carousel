@@ -436,9 +436,17 @@ function wp_spl_carousel_get_slides() {
   return 'slides';
 }
 
-function wp_spl_carousel_beta($atts) {
+function wp_spl_carousel_beta($params) {
+
+  require_once 'class/SPL_Carousel.php';
+  $carousel = new SPL_Carousel($params);
+
+  if ( is_object($carousel) ) {
+    return $carousel->output();
+  }
+
   $html = null;
-  
+
   $html .= wp_spl_carousel_get_news();
   $html .= wp_spl_carousel_get_promo();
   $html .= wp_spl_carousel_get_slides();
