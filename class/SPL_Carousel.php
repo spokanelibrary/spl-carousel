@@ -90,7 +90,7 @@ class SPL_Carousel {
 		$slide->subtitle = $attachment->post_excerpt;
 		$slide->content = $attachment->post_content;
 
-		//$slide = $attachment;
+		$slide = $attachment;
 		return $slide;
 	}
 
