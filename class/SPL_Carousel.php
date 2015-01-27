@@ -18,28 +18,41 @@ class SPL_Carousel {
 	}
 
 	public function getCarousel() {
-		$html = null;
+		$carousel = null;
 		
-		$html .= 'this is a carousel'.'<br>'.PHP_EOL;
-
-		//$news = $this->getCarouselNews();
-		//$promo = $this->getCarouselPromo();
 		$slides = $this->getCarouselSlides();
 
 		$slides[] = $this->getCarouselPromo();
+
 		$slides[] = $this->getCarouselNews();
 
 		$slides = array_reverse($slides);
 
-		shuffle($slides);
+		if ( in_array('shuffle', $this->params) ) {
+	    shuffle($slides);
+	  }
 
-		$html .= '<pre>'.print_r($slides, true).'</pre>';
+	  if ( is_array($slides) ) {
+	  	foreach ( $sildes as $s => $slide ) {
+	  		$carousel .= $this->getCarouselSlideFormatted($slide);
+	  	}
+	  }
+
+	  //$carousel = '<pre>'.print_r($slides, true).'</pre>';
+		return $carousel;
+	}
+
+	protected function getCarouselSlideFormatted($slide) {
+		$html = null;
+
+		$html .= $slide->title.'<br>';
 
 		return $html;
 	}
 
 	protected function getCarouselNews() {
 		$slide = new stdClass;
+		$slide->format = 'news';
 
 		$slide->url = '/news/';
 		$slide->img = 'img.png';
@@ -47,12 +60,12 @@ class SPL_Carousel {
 		$slide->subtitle = 'Subtitle';
 		$slide->content = 'Content';
 
-		//$slide = $attachment;
 		return $slide;
 	}
 
 	protected function getCarouselPromo() {
 		$slide = new stdClass;
+		$slide->format = 'promo';
 
 		$slide->url = '/promo/';
 		$slide->img = 'img.png';
@@ -60,7 +73,6 @@ class SPL_Carousel {
 		$slide->subtitle = 'Subtitle';
 		$slide->content = 'Content';
 
-		//$slide = $attachment;
 		return $slide;
 	}
 
