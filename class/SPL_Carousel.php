@@ -45,6 +45,8 @@ class SPL_Carousel {
 
 	protected function getCarouselSlides() {
 
+		$slides = null; 
+
 		$id = get_the_ID();
 
 	  if ( isset($this->params['slug']) ) {
@@ -70,7 +72,18 @@ class SPL_Carousel {
 	  ); 
 	  $attachments = get_posts($args);
 
-		return $attachments;
+	  if ( is_array($attachements) ) {
+	  	foreach ( $attachements as $a => $attachement) {
+	  		$slides[] = $this->getCarouselSlide($attachment);
+	  	}
+
+	  }
+
+		return $slides;
+	}
+
+	protected function getCarouselSlide($attachment) {
+		return $attachment;
 	}
 
 }
