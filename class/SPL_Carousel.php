@@ -28,7 +28,7 @@ class SPL_Carousel {
 
 		$slides[] = $this->getCarouselNews();
 
-		array_reverse($slides);
+		$slides = array_reverse($slides);
 
 		$html .= '<pre>'.print_r($slides, true).'</pre>';
 
