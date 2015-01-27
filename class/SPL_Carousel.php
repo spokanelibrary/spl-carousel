@@ -72,7 +72,7 @@ class SPL_Carousel {
 	  ); 
 	  $attachments = get_posts($args);
 
-	  if ( is_array($attacements) ) {
+	  if ( is_array($attachments) ) {
 	  	foreach ( $attachments as $a => $attachment) {
 	  		$slides[] = $this->getCarouselSlide($attachment);
 	  	}
