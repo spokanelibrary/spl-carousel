@@ -80,6 +80,13 @@ class SPL_Carousel {
 			case 'learning':
 				$slide->url = '/promo/';
 				$slide->img = 'img.png';
+				$slide->title = 'Digital Promo';
+				$slide->subtitle = 'Subtitle';
+				$slide->content = 'Content';
+				break;
+			case 'digital':
+				$slide->url = '/promo/';
+				$slide->img = 'img.png';
 				$slide->title = 'My Promo';
 				$slide->subtitle = 'Subtitle';
 				$slide->content = 'Content';
