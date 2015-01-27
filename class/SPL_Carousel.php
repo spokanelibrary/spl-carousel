@@ -83,7 +83,10 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselSlide($attachment) {
-		return $attachment;
+		$slide = new stdClass;
+		$slide->alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+
+		//return $attachment;
 	}
 
 }
