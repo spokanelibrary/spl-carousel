@@ -9,11 +9,8 @@ class SPL_Carousel {
 		//parent::__construct();
 
 		$this->params = $params;
-
-		
+	
 		$this->output = $this->getCarousel();
-		
-		//$this->output = '<pre>'.print_r($this->params, true).print_r($this->filter, true).'</pre>' . $this->output;
 	}
 
 	public function output() {
@@ -21,12 +18,15 @@ class SPL_Carousel {
 	}
 
 	public function getCarousel() {
-		$html = 'null';
+		$html = null;
 		
 		$html .= 'this is a carousel'.'<br>'.PHP_EOL;
-		$html .= $this->getCarouselNews();
-		$html .= $this->getCarouselPromo();
-		$html .= $this->getCarouselSlides();
+
+		$news = $this->getCarouselNews();
+		$promo = $this->getCarouselPromo();
+		$slides = $this->getCarouselSlides();
+
+		$html .= '<pre>'.print_r($slides, true).'</pre>';
 
 		return $html;
 	}
@@ -44,9 +44,32 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselSlides() {
+		$id = get_the_ID();
 
+	  if ( isset($atts['slug']) ) {
+	    $imgPage = get_page_by_path($atts['slug']);
+	  }
+	  if ( $imgPage ) {
+	    $id = $imgPage->ID;
+	  }
 
-		return 'slides'.'<br>'.PHP_EOL;
+	  $orderby = 'menu_order';
+	  if ( in_array('random', $atts) ) {
+	    $orderby = 'rand';
+	  }
+
+	  $carousel = null;
+	  $args = array(
+	    'post_type' => 'attachment',
+	    'orderby'   => $orderby,
+	    'order'     => 'ASC',
+	    'numberposts' => null,
+	    'post_status' => null,
+	    'post_parent' => $id
+	  ); 
+	  $attachments = get_posts($args);
+
+		return $attachments;
 	}
 
 }
