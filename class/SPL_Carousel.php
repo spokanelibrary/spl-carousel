@@ -33,7 +33,7 @@ class SPL_Carousel {
 	  }
 
 	  if ( is_array($slides) ) {
-	  	foreach ( $sildes as $s => $slide ) {
+	  	foreach ( $slides as $s => $slide ) {
 	  		$carousel .= $this->getCarouselSlideFormatted($slide);
 	  	}
 	  }
