@@ -138,7 +138,7 @@ class SPL_Carousel {
 
 		$slides = null; 
 
-		$id = $this->id;
+		$id = get_the_ID();
 
 	  if ( isset($this->params['slug']) ) {
 	    $imgPage = get_page_by_path($this->params['slug']);
