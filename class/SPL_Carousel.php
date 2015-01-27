@@ -31,6 +31,8 @@ class SPL_Carousel {
 
 		$slides = array_reverse($slides);
 
+		shuffle($slides);
+
 		$html .= '<pre>'.print_r($slides, true).'</pre>';
 
 		return $html;
