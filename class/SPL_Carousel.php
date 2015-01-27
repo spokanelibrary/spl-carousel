@@ -23,12 +23,12 @@ class SPL_Carousel {
 		$slides = $this->getCarouselSlides();
 
 		if ( isset($this->params['promo']) ) {
-			$promos = explode(',' $this->params['promo']);
-			if ( is_array($promos) ) {
-				foreach ( $promos as $p => $promo ) {
-					$slides[] = $this->getCarouselPromo($promo);
-				}
-			}
+			//$promos = explode(',' $this->params['promo']);
+			//if ( is_array($promos) ) {
+				//foreach ( $promos as $p => $promo ) {
+					//$slides[] = $this->getCarouselPromo($promo);
+				//}
+			//}
 		}
 
 		if ( in_array('news', $this->params) ) {
