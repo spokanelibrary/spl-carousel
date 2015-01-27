@@ -3,6 +3,7 @@
 class SPL_Carousel { 
 
 	var $params;
+	var $slides;
 	
 	function __construct($params) {
 
@@ -42,13 +43,28 @@ class SPL_Carousel {
 	  }
 
 	  if ( is_array($slides) ) {
-	  	foreach ( $slides as $s => $slide ) {
-	  		$carousel .= $this->getCarouselSlideFormatted($slide);
-	  	}
+	  	$this->slides = $slides;
+	  	$carousel = $this->getCarouselFormatted();
+	  	//foreach ( $slides as $s => $slide ) {
+	  		//$carousel .= $this->getCarouselSlideFormatted($slide);
+	  	//}
 	  }
 
 	  //$carousel = '<pre>'.print_r($slides, true).'</pre>';
 		return $carousel;
+	}
+
+	protected function getCarouselFormatted() {
+		$carousel = null;
+
+		$slides = null;
+		foreach ( $this->slides as $s => $slide ) {
+	  	$slides .= $this->getCarouselSlideFormatted($slide);
+	  }
+
+	  $carousel .= $slides;
+
+	  return $carousel;
 	}
 
 	protected function getCarouselSlideFormatted($slide) {
