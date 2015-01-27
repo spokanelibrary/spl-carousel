@@ -661,7 +661,9 @@ function wp_spl_carousel_beta($atts) {
     */
 
   }
-  
+
+
+  $carousel = 'beta'.'<br>'.$carousel;  
 
   return $carousel;
 }
