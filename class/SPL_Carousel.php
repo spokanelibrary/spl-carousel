@@ -66,8 +66,8 @@ class SPL_Carousel {
 	    $interval = 'data-interval="'.($this->params['interval']*1000).'"';
 	  }
 
-	  $carousel .= ''.PHP_EOL;
-    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
+	  //$carousel .= ''.PHP_EOL;
+    //$carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
 
 		$slides = null;
