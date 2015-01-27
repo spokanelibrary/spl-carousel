@@ -22,10 +22,14 @@ class SPL_Carousel {
 		
 		$slides = $this->getCarouselSlides();
 
-		$slides[] = $this->getCarouselPromo('learning');
+		if ( isset($this->params['promo']) ) {
+			$slides[] = $this->getCarouselPromo('learning');
+		}
 
-		$slides[] = $this->getCarouselNews();
-
+		if ( in_array('news', $this->params) ) {
+	    $slides[] = $this->getCarouselNews();
+	  }
+		
 		$slides = array_reverse($slides);
 
 		if ( in_array('shuffle', $this->params) ) {
