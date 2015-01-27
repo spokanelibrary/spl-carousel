@@ -22,7 +22,7 @@ class SPL_Carousel {
 		
 		$slides = $this->getCarouselSlides();
 
-		if ( isset($this->params['promo']) ) {
+		if ( !isset($this->params['promo']) ) {
 			$slides[] = $this->getCarouselPromo('learning');
 		}
 
