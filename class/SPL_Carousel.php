@@ -1,7 +1,7 @@
 <?php
 
 function spl_carousel_excerpt_more( $more ) {
-	return '';
+	return '...';
 }
 
 class SPL_Carousel { 
