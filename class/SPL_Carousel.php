@@ -26,7 +26,7 @@ class SPL_Carousel {
 
 		if ( in_array('posts', $this->params) ) {
 	    $posts = $this->getCarouselPosts();
-	    if ( is_array() ) {
+	    if ( is_array( $posts ) ) {
 	    	foreach ( $posts as $p => $post ) {
 	    		$slides[] = $post; 		
 	    	}
