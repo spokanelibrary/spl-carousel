@@ -162,7 +162,7 @@ class SPL_Carousel {
 
 	  if ( isset($this->params['timeout']) ) {
 	    // convert minutes to microseconds
-	    $timeout = $atts['timeout'] * (1000 * 60);
+	    $timeout = $this->params['timeout'] * (1000 * 60);
 	    $carousel .= '
 	                <script>
 	                setTimeout(function(){
@@ -188,7 +188,55 @@ class SPL_Carousel {
     	case 'news':
     	case 'post':
     	case 'promo':
-    		//break;
+    		if ( $this->kiosk ) {
+    			if ( $slide->img ) {
+		    		$html .= '<img class="img-responsive img-rounded img-kiosk" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
+		    	}
+    		} else {
+    			$html .= '<div class="row">'.PHP_EOL;
+    			
+    			$html .= '<div class="col-md-12">'.PHP_EOL;
+    			$html .= '<h2 class="text-success" style="margin-top:0;">';
+	        $html .= $slide->title;
+	        if ( !empty($slide->subtitle) ) {
+	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
+	        }
+	        $html .= '</h2>'.PHP_EOL;
+	        $html .= '</div>'.PHP_EOL; // .col
+
+			    $html .= '<div class="col-md-5">'.PHP_EOL;
+			    if ( $slide->img ) {
+			    	$html .= '<img class="img-responsive img-rounded img-hero" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
+			    }
+			    $html .= '</div>'.PHP_EOL; // .col
+
+
+			    $html .= '<div class="col-md-7"">'.PHP_EOL;
+
+			    $html .= '<div class="carousel-caption">'.PHP_EOL;
+
+	        if ( !empty($slide->subtitle) ) {
+	        	$html .= '<h2 class="text-muted" style="margin-top:0;">';
+	          $html .= $slide->subtitle;
+	        	$html .= '</h2>'.PHP_EOL;
+	        }
+	        
+	        $html .= '<p class="lead">'.$slide->content.'</p>'.PHP_EOL;
+
+	        if ( !empty($slide->url) ) { 
+	          $html .= '<p class="text-right">'.PHP_EOL;
+	          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
+	          $html .= 'More <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= '</a>'.PHP_EOL;
+	          $html .= '</p>'.PHP_EOL;
+	        }
+
+		     	$html .= '</div>'.PHP_EOL; // carousel-caption
+
+					$html .= '</div>'.PHP_EOL; // .col
+					$html .= '</div>'.PHP_EOL; // .row
+    		}
+    		break;
 
     	default:
     		if ( $this->kiosk ) {
