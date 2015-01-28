@@ -86,7 +86,7 @@ class SPL_Carousel {
 	  
 
 	  $carousel .= PHP_EOL;
-    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.' '.$interval.'>'.PHP_EOL;
+    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.' data-pause="false" '.$interval.'>'.PHP_EOL;
     
     if ( !$this->kiosk ) {
 			$carousel .= '<div class="carousel-controls">'.PHP_EOL;
