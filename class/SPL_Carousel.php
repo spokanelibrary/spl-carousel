@@ -113,25 +113,7 @@ class SPL_Carousel {
 	  }
 		$carousel .= '</div>'.PHP_EOL; // .carousel-inner
 
-		// indicator pips
-    if ( !$this->kiosk ) {
-      $carousel .= '<div class="row">'.PHP_EOL;
-      $carousel .= '<div class="col-md-5">'.PHP_EOL;
-      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
-      $i = 0;
-      foreach ( $this->slides as $s => $slide ) {
-        $active = '';
-        if ( 0 == $i ) {
-          $active = ' class="active"';
-        } 
-        $carousel .= '<li data-target="#spl-carousel-'.$this->id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
-        $i++;
-      }
-      $carousel .= '</ol>'.PHP_EOL; 
-      $carousel .= '</div>'.PHP_EOL; // .col
-      $carousel .= '</div>'.PHP_EOL; // .row
-    } 
-    
+		
 		// next/prev links
 	  if ( !$this->kiosk ) {
 
