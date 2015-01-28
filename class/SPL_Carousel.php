@@ -113,6 +113,36 @@ class SPL_Carousel {
 	  }
 		$carousel .= '</div>'.PHP_EOL; // .carousel-inner
 
+		if ( !$this->kiosk ) {
+
+			$carousel .= '<div class="row" style="background:#ccc;">'.PHP_EOL;
+
+			$carousel .= '<div class="col-md-2"  style="z-index:5";>'.PHP_EOL;
+      $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
+      $carousel .= '</div>'.PHP_EOL; // col
+
+      $carousel .= '<div class="col-md-6">'.PHP_EOL;
+      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
+      $i = 0;
+      foreach ( $this->slides as $s => $slide ) {
+        $active = '';
+        if ( 0 == $i ) {
+          $active = ' class="active"';
+        } 
+        $carousel .= '<li data-target="#spl-carousel-'.$this->id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
+        $i++;
+      }
+      $carousel .= '</ol>'.PHP_EOL; 
+      $carousel .= '</div>'.PHP_EOL; // .col
+
+      $carousel .= '<div class="col-md-2"  style="z-index:5";>'.PHP_EOL;
+      $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
+      $carousel .= '</div>'.PHP_EOL; // col
+
+      $carousel .= '</div>'.PHP_EOL; // .row
+
+		}
+
 		// indicator pips
     if ( !$this->kiosk ) {
       $carousel .= '<div class="row">'.PHP_EOL;
