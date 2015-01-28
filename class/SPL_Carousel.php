@@ -163,7 +163,7 @@ class SPL_Carousel {
 		$slide->format = 'news';
 
 		$slide->url = '/news/';
-		$slide->img = 'img.png';
+		//$slide->img = 'img.png';
 		$slide->title = 'News Title';
 		$slide->subtitle = 'Subtitle';
 		$slide->content = 'Content';
@@ -178,14 +178,14 @@ class SPL_Carousel {
 		switch ($promo) {
 			case 'learning':
 				$slide->url = '/promo/';
-				$slide->img = 'img.png';
+				//$slide->img = 'img.png';
 				$slide->title = 'Digital Promo';
 				$slide->subtitle = 'Subtitle';
 				$slide->content = 'Content';
 				break;
 			case 'digital':
 				$slide->url = '/promo/';
-				$slide->img = 'img.png';
+				//$slide->img = 'img.png';
 				$slide->title = 'My Promo';
 				$slide->subtitle = 'Subtitle';
 				$slide->content = 'Content';
