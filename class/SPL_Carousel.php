@@ -156,7 +156,8 @@ class SPL_Carousel {
 	    'orderby'   => 'post_date',
 	    'order'     => 'DESC',
 	    'post_status' => 'publish',
-	    'numberposts' => $limit,
+	    //'numberposts' => $limit,
+	    'posts_per_page' => $limit,
 	    'category_name' => $category
 	  ); 
 	  
