@@ -163,6 +163,7 @@ class SPL_Carousel {
 				$slide->url = get_permalink();
 				if ( has_post_thumbnail() ) { 
 					$slide->img = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium');
+					$slide->img = $slide->img[0];
 				}
 
 				$slides[] = $slide;
