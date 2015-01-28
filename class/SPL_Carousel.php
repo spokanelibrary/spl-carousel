@@ -7,6 +7,7 @@ function spl_carousel_excerpt_more( $more ) {
 class SPL_Carousel { 
 
 	var $id;
+	var $kiosk;
 	var $params;
 	var $slides;
 	
@@ -25,6 +26,10 @@ class SPL_Carousel {
 
 	public function getCarousel() {
 		$this->id = get_the_ID();
+
+		if ( in_array('kiosk', $this->params) ) {
+	    $this->kiosk = true;
+	  }
 		
 		$slides = $this->getCarouselSlides();
 
@@ -83,7 +88,7 @@ class SPL_Carousel {
     $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
     // indicator pips
-    if ( !in_array('kiosk', $this->params) ) {
+    if ( !$this->kiosk ) {
       $carousel .= '<div class="row">'.PHP_EOL;
       $carousel .= '<div class="col-md-5">'.PHP_EOL;
       $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
@@ -109,7 +114,7 @@ class SPL_Carousel {
 		$carousel .= '</div>'.PHP_EOL; // .carousel-inner
 
 		// next/prev links
-	  if ( !in_array('kiosk', $atts) ) {
+	  if ( !$this->kiosk ) {
       $carousel .= '<div class="row">'.PHP_EOL;
       $carousel .= '<div class="col-md-5"  style="z-index:5";>'.PHP_EOL;
       $carousel .= '<a class="left carousel-control hero" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
@@ -138,6 +143,9 @@ class SPL_Carousel {
 		    $html .= '<div class="row">'.PHP_EOL;
 
 		    $html .= '<div class="col-md-5">'.PHP_EOL;
+		    if ( $slide->img ) {
+		    	$html .= '<img class="img-responsive img-rounded" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
+		    }
 		    $html .= '</div>'.PHP_EOL; // .col
 
 		    $html .= '<div class="col-md-7">'.PHP_EOL;
