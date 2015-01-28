@@ -292,7 +292,7 @@ class SPL_Carousel {
 		$slide->content = '
 		<ul class="nav nav-pills nav-stacked">
     <li><a href="http://news.spokanelibrary.org/new-year-new-you/">What’s on your “to do” list for 2015? <small class="text-muted">&rarr;</small></a></li>
-    <li><a href="http://news.spokanelibrary.org/dewey_1-15/">Dewey\’s (self) helpful side <small class="text-muted">&rarr;</small></a></li>
+    <li><a href="http://news.spokanelibrary.org/dewey_1-15/">Dewey’s (self) helpful side <small class="text-muted">&rarr;</small></a></li>
     <li><a href="http://news.spokanelibrary.org/5_magazines_1-15/">Five Magazines instead of Five Songs This Month <small class="text-muted">&rarr;</small></a></li>
     </ul>  
 		';
