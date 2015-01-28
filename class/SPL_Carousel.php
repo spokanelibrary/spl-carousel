@@ -86,7 +86,7 @@ class SPL_Carousel {
 
 	  $carousel .= PHP_EOL;
     $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.' '.$interval.'>'.PHP_EOL;
-    
+    /*
     // indicator pips
     if ( !$this->kiosk ) {
       $carousel .= '<div class="row">'.PHP_EOL;
@@ -105,7 +105,7 @@ class SPL_Carousel {
       $carousel .= '</div>'.PHP_EOL; // .col
       $carousel .= '</div>'.PHP_EOL; // .row
     } 
-
+		*/
     // slides
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
 		foreach ( $this->slides as $s => $slide ) {
@@ -131,7 +131,7 @@ class SPL_Carousel {
       $carousel .= '</div>'.PHP_EOL; // .col
       $carousel .= '</div>'.PHP_EOL; // .row
     } 
-    
+
 		// next/prev links
 	  if ( !$this->kiosk ) {
 
