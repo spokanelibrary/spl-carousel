@@ -159,6 +159,11 @@ class SPL_Carousel {
 	  
 	  $posts = new WP_query($args);
 	  if ($posts->have_posts()) {
+	  	function custom_excerpt_more( $more ) {
+				return '';
+			}
+			add_filter( 'excerpt_more', 'custom_excerpt_more' );
+
 	  	while ($posts->have_posts()) {
 				$posts->the_post(); 
 
@@ -174,6 +179,7 @@ class SPL_Carousel {
 
 				$slides[] = $slide;
 			}
+			remove_filter( 'excerpt_more' );
 	  }
 	  wp_reset_postdata();
 
