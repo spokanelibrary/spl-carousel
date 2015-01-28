@@ -29,9 +29,9 @@ class SPL_Carousel {
 	public function getCarousel() {
 		$this->id = get_the_ID();
 
-		//if ( in_array('kiosk', $this->params) ) {
+		if ( in_array('kiosk', $this->params) ) {
 	    $this->kiosk = true;
-	  //}
+	  }
 		if ( $this->kiosk ) {
 			$this->thumb = 'full';
 		}
