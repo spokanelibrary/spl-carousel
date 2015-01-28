@@ -61,7 +61,7 @@ class SPL_Carousel {
 	  	$carousel = $this->getCarouselFormatted();
 	  }
 
-	  $carousel = '<pre>'.print_r($slides, true).'</pre>';
+	  //$carousel = '<pre>'.print_r($slides, true).'</pre>';
 		return $carousel;
 	}
 
@@ -147,9 +147,8 @@ class SPL_Carousel {
 		return $slide;
 	}
 
-	protected function getCarouselPosts($limit=2, $category='featured') {
+	protected function getCarouselPosts($limit=3, $category='featured') {
 		$slides = null; 
-
 
 	  $args = array(
 	    'post_type' => 'post',
@@ -160,7 +159,6 @@ class SPL_Carousel {
 	    'posts_per_page' => $limit,
 	    'category_name' => $category
 	  ); 
-	  
 	  
 	  $posts = new WP_query($args);
 	  if ($posts->have_posts()) {
@@ -227,25 +225,10 @@ class SPL_Carousel {
 				$slide->content = $attachment->post_content;
 
 				$slides[] = $slide;
-	  		//$slides[] = $this->getCarouselSlide($attachment);
 	  	}
-
 	  }
 
 		return $slides;
-	}
-
-	protected function getCarouselSlide($attachment) {
-		$slide = new stdClass;
-
-		$slide->url = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
-		$slide->img = $attachment->guid;
-		$slide->title = $attachment->post_title;
-		$slide->subtitle = $attachment->post_excerpt;
-		$slide->content = $attachment->post_content;
-
-		//$slide = $attachment;
-		return $slide;
 	}
 
 }
