@@ -179,6 +179,7 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselPost($post) {
+		/*
 		$slide = new stdClass;
 
 		$slide->id = $post->ID;
@@ -190,6 +191,7 @@ class SPL_Carousel {
 
 		//$slide = $attachment;
 		return $slide;
+		*/
 	}
 
 	protected function getCarouselSlides() {
