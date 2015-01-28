@@ -86,7 +86,6 @@ class SPL_Carousel {
       $carousel .= '<div class="row">'.PHP_EOL;
       $carousel .= '<div class="col-md-5">'.PHP_EOL;
       $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
-      // ToDo: news
       $i = 0;
       foreach ( $this->slides as $s => $slide ) {
         $active = null;
@@ -97,8 +96,8 @@ class SPL_Carousel {
         $i++;
       }
       $carousel .= '</ol>'.PHP_EOL; 
-      $carousel .= '</div>'.PHP_EOL; // col
-      $carousel .= '</div>'.PHP_EOL; // row
+      $carousel .= '</div>'.PHP_EOL; // .col
+      $carousel .= '</div>'.PHP_EOL; // .row
     } 
 
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
@@ -107,11 +106,10 @@ class SPL_Carousel {
 		foreach ( $this->slides as $s => $slide ) {
 	  	$slides .= $this->getCarouselSlideFormatted($slide, $s);
 	  }
+		$carousel .= $slides;
 
-	  //$carousel .= $slides;
-
-	  $carousel .= '</div>'.PHP_EOL; //.carousel-inner
-	  $carousel .= '</div>'.PHP_EOL; //.carousel
+	  $carousel .= '</div>'.PHP_EOL; // .carousel-inner
+	  $carousel .= '</div>'.PHP_EOL; // .carousel
 	  $carousel .= PHP_EOL;
 
 	  return $carousel;
