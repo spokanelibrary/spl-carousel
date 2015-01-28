@@ -186,7 +186,7 @@ class SPL_Carousel {
 
 		    $html .= '<div class="col-md-5">'.PHP_EOL;
 		    if ( $slide->img ) {
-		    	$html .= '<img class="img-responsive img-rounded" style="margin:auto;" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
+		    	$html .= '<img class="img-responsive img-rounded" style="margin:auto; max-height:240px;" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
 		    }
 		    $html .= '</div>'.PHP_EOL; // .col
 
