@@ -114,8 +114,8 @@ class SPL_Carousel {
 		$carousel .= '</div>'.PHP_EOL; // .carousel-inner
 
 		if ( !$this->kiosk ) {
-
-			$carousel .= '<div class="row" style="background:#ccc;">'.PHP_EOL;
+			$carousel .= '<div class="clearfix" style="background:#ccc;">'.PHP_EOL;
+			$carousel .= '<div class="row">'.PHP_EOL;
 
 			$carousel .= '<div class="col-md-2"  style="z-index:5";>'.PHP_EOL;
       $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
@@ -141,8 +141,10 @@ class SPL_Carousel {
 
       $carousel .= '</div>'.PHP_EOL; // .row
 
-		}
+      $carousel .= '</div>'.PHP_EOL; // .clearfix
 
+		}
+		/*
 		// indicator pips
     if ( !$this->kiosk ) {
       $carousel .= '<div class="row">'.PHP_EOL;
@@ -172,6 +174,7 @@ class SPL_Carousel {
       $carousel .= '</div>'.PHP_EOL; // col
       $carousel .= '</div>'.PHP_EOL; // row
     }
+    */
 
 	  $carousel .= '</div>'.PHP_EOL; // .carousel
 	  $carousel .= PHP_EOL;
