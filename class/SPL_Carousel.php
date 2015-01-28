@@ -83,10 +83,14 @@ class SPL_Carousel {
 	  if ( isset($this->params['interval']) ) {
 	    $interval = 'data-interval="'.($this->params['interval']*1000).'"';
 	  }
-	  
+
+	  $pause = 'false';
+		if ( isset($this->params['pause']) ) {
+	    $pause = 'hover';
+	  }	  
 
 	  $carousel .= PHP_EOL;
-    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.' data-pause="false" '.$interval.'>'.PHP_EOL;
+    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.' data-pause="'.$pause.'" '.$interval.'>'.PHP_EOL;
     
     if ( !$this->kiosk ) {
 			$carousel .= '<div class="carousel-controls">'.PHP_EOL;
