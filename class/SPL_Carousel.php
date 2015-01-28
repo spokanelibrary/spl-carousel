@@ -82,13 +82,14 @@ class SPL_Carousel {
 	  $carousel .= PHP_EOL;
     $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
+    // indicator pips
     if ( !in_array('kiosk', $this->params) ) {
       $carousel .= '<div class="row">'.PHP_EOL;
       $carousel .= '<div class="col-md-5">'.PHP_EOL;
       $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
       $i = 0;
       foreach ( $this->slides as $s => $slide ) {
-        $active = null;
+        $active = '';
         if ( 0 == $i ) {
           $active = ' class="active"';
         } 
@@ -100,14 +101,14 @@ class SPL_Carousel {
       $carousel .= '</div>'.PHP_EOL; // .row
     } 
 
+    // slides
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
-		$slides = null;
 		foreach ( $this->slides as $s => $slide ) {
-	  	$slides .= $this->getCarouselSlideFormatted($slide, $s);
+	  	$carousel .= $this->getCarouselSlideFormatted($slide, $s);
 	  }
-		$carousel .= $slides;
-	  $carousel .= '</div>'.PHP_EOL; // .carousel-inner
+		$carousel .= '</div>'.PHP_EOL; // .carousel-inner
 
+		// next/prev links
 	  if ( !in_array('kiosk', $atts) ) {
       $carousel .= '<div class="row">'.PHP_EOL;
       $carousel .= '<div class="col-md-5"  style="z-index:5";>'.PHP_EOL;
@@ -130,18 +131,20 @@ class SPL_Carousel {
     if ( 0 == $s ) {
       $active = ' active';
     } 
-
     $html .= '<div class="item'.$active.'">'.PHP_EOL;
 
-    $html .= '<div class="row">'.PHP_EOL;
+    switch ( $slide->format ) {
+    	default:
+		    $html .= '<div class="row">'.PHP_EOL;
 
-    $html .= '<div class="col-md-5">'.PHP_EOL;
-    $html .= '</div>'.PHP_EOL; // .col
+		    $html .= '<div class="col-md-5">'.PHP_EOL;
+		    $html .= '</div>'.PHP_EOL; // .col
 
-    $html .= '<div class="col-md-7">'.PHP_EOL;
-		$html .= $slide->title.'<br>';
-		$html .= '</div>'.PHP_EOL; // .col
-		$html .= '</div>'.PHP_EOL; // .row
+		    $html .= '<div class="col-md-7">'.PHP_EOL;
+				$html .= $slide->title.'<br>';
+				$html .= '</div>'.PHP_EOL; // .col
+				$html .= '</div>'.PHP_EOL; // .row
+		}
 		$html .= '</div>'.PHP_EOL; // .item
 
 		return $html;
