@@ -8,7 +8,7 @@ class SPL_Carousel {
 
 	var $id;
 	var $kiosk;
-	var $thumb = 'medium';
+	var $thumb = 'large';
 	var $params;
 	var $slides;
 	
