@@ -212,7 +212,7 @@ class SPL_Carousel {
 			    $html .= '<div class="carousel-caption">'.PHP_EOL;
 
 	        $html .= '<h2 class="text-muted" style="margin-top:0;">';
-	         $html .= 'also in this issue:';
+	         $html .= 'also in this issue&hellip;';
 	        $html .= '</h2>'.PHP_EOL;
 	        
 	        $html .= '<p class="lead">'.$slide->content.'</p>'.PHP_EOL;
