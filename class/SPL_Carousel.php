@@ -1,7 +1,7 @@
 <?php
 
 function spl_carousel_excerpt_more( $more ) {
-	return '...';
+	return '&hellip;';
 }
 
 class SPL_Carousel { 
@@ -163,19 +163,18 @@ class SPL_Carousel {
 	  
 	  $posts = new WP_query($args);
 	  if ($posts->have_posts()) {
-	  	
 			add_filter( 'excerpt_more', 'spl_carousel_excerpt_more' );
 			while ($posts->have_posts()) {
 				$posts->the_post(); 
 
 				$slide = new stdClass;
-				$slide->id = get_the_ID();
-				$slide->title = get_the_title();
 				$slide->url = get_permalink();
 				if ( has_post_thumbnail() ) { 
 					$slide->img = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium');
 					$slide->img = $slide->img[0];
 				}
+				//$slide->id = get_the_ID();
+				$slide->title = get_the_title();
 				$slide->content = get_the_excerpt();
 
 				$slides[] = $slide;
