@@ -179,7 +179,7 @@ class SPL_Carousel {
 
 				$slides[] = $slide;
 			}
-			remove_filter( 'excerpt_more' );
+			remove_filter( 'excerpt_more', 'custom_excerpt_more' );
 	  }
 	  wp_reset_postdata();
 
