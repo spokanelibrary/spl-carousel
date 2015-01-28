@@ -154,7 +154,7 @@ class SPL_Carousel {
     	case 'news':
     	case 'post':
     	case 'promo':
-    		break;
+    		//break;
 
     	default:
 		    $html .= '<div class="row">'.PHP_EOL;
