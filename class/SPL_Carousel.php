@@ -159,9 +159,12 @@ class SPL_Carousel {
 
 				$slide = new stdClass;
 				$slide->id = get_the_ID();
-				$slide->img = get_the_thumbnail();
 				$slide->title = get_the_title();
-				
+				$slide->url = get_permalink();
+				if ( has_post_thumbnail() ) { 
+	      	$slide->img = get_the_post_thumbnail($page->ID, 'thumbnail', array('class'=>'media-object img-responsive spl-featured-thumbnail')).PHP_EOL;
+				}
+
 				$slides[] = $slide;
 			}
 	  }
