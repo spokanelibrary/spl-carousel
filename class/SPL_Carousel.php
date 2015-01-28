@@ -152,8 +152,8 @@ class SPL_Carousel {
 	    'orderby'   => $orderby,
 	    'order'     => 'ASC',
 	    'numberposts' => 3,
-	    'post_status' => null,
-	    'post_category' => 'featured'
+	    //'post_status' => null,
+	    'category_name' => 'featured'
 	  ); 
 	  $posts = get_posts($args);
 
