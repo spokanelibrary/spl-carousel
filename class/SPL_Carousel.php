@@ -153,12 +153,12 @@ class SPL_Carousel {
 	    'order'     => 'ASC',
 	    'numberposts' => 3,
 	    'post_status' => null,
-	    'post_slug' => 'featured'
+	    'post_category' => 'featured'
 	  ); 
 	  $posts = get_posts($args);
 
 	  return '<pre>'.print_r($posts, true).'</pre>';
-	  
+
 	  if ( is_array($attachments) ) {
 	  	foreach ( $attachments as $a => $attachment) {
 	  		$slides[] = $this->getCarouselSlide($attachment);
