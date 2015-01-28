@@ -9,7 +9,7 @@ class SPL_Carousel {
 	var $id;
 	var $kiosk;
 	var $thumb = 'large';
-	var $hover = 'false';
+	var $hover = 'hover'; // 'false'
 	var $params;
 	var $slides;
 	
