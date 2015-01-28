@@ -33,6 +33,10 @@ class SPL_Carousel {
 			}
 		}
 
+		if ( in_array('posts', $this->params) ) {
+	    $slides[] = $this->getCarouselPosts();
+	  }
+
 		if ( in_array('news', $this->params) ) {
 	    $slides[] = $this->getCarouselNews();
 	  }
@@ -130,6 +134,19 @@ class SPL_Carousel {
 				*/
 				break;
 		}
+
+		return $slide;
+	}
+
+	protected function getCarouselPosts() {
+		$slide = new stdClass;
+		$slide->format = 'posts';
+
+		$slide->url = '/posts/';
+		$slide->img = 'img.png';
+		$slide->title = 'Featured posts';
+		$slide->subtitle = 'Subtitle';
+		$slide->content = 'Content';
 
 		return $slide;
 	}
