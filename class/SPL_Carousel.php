@@ -151,7 +151,7 @@ class SPL_Carousel {
 	    'category_name' => $category
 	  ); 
 	  
-	  /*
+	  
 	  $posts = new WP_query($args);
 	  if ($posts->have_posts()) {
 	  	while ($posts->have_posts()) {
@@ -163,18 +163,19 @@ class SPL_Carousel {
 				$slides[] = $slide;
 			}
 	  }
-	  */
-
+	  wp_reset_postdata();
+	  
+	  /*
 	  $posts = get_posts( $args );
 		foreach ( $posts as $post ) : setup_postdata( $post );
 			$slide = new stdClass;
 			$slide->id = $post->ID;
-			$slide->title = $post->get_the_title();
+			$slide->title = get_the_title();
 
 			$slides[] = $slide;
 		endforeach; 
 		wp_reset_postdata();
-
+		*/
 	  //$posts = get_posts($args);
 
 	  //return '<pre>'.print_r($posts, true).'</pre>';
