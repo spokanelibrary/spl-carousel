@@ -223,7 +223,7 @@ class SPL_Carousel {
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
-	          $html .= 'More <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= 'Read Library News <span class="">&rarr;</span>'.PHP_EOL;
 	          $html .= '</a>'.PHP_EOL;
 	          $html .= '</p>'.PHP_EOL;
 	        }
