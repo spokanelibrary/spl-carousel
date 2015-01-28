@@ -81,21 +81,24 @@ class SPL_Carousel {
 		
 		$auto = null;
 	  if ( in_array('auto', $this->params) ) {
-	    $auto = 'data-ride="carousel"';
+	    $auto = 'data-ride="carousel" ';
 	  } 
 
 	  $interval = null;
 	  if ( isset($this->params['interval']) ) {
-	    $interval = 'data-interval="'.($this->params['interval']*1000).'"';
+	    $interval = 'data-interval="'.($this->params['interval']*1000).'" ';
 	  }
 
-	  $pause = $this->hover;
+	  $hover = $this->hover;
 		if ( isset($this->params['pause']) ) {
-	    $pause = 'hover';
-	  }	  
+	    $hover = 'hover';
+	  }
+	  if ( 'false' == $hover ) {
+	  	$pause = 'data-hover="'.$hover.'" ';
+	  }
 
 	  $carousel .= PHP_EOL;
-    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.' data-pause="'.$pause.'" '.$interval.'>'.PHP_EOL;
+    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.$pause.$interval.'>'.PHP_EOL;
     
     if ( !$this->kiosk ) {
 			$carousel .= '<div class="carousel-controls">'.PHP_EOL;
