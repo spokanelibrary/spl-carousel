@@ -85,9 +85,9 @@ class SPL_Carousel {
 	  }
 
 	  $pause = 'false';
-		if ( isset($this->params['pause']) ) {
+		//if ( isset($this->params['pause']) ) {
 	    $pause = 'hover';
-	  }	  
+	  //}	  
 
 	  $carousel .= PHP_EOL;
     $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.' data-pause="'.$pause.'" '.$interval.'>'.PHP_EOL;
