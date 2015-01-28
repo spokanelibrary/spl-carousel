@@ -129,7 +129,7 @@ class SPL_Carousel {
         $i++;
       }
       $carousel .= '</ol>'.PHP_EOL; 
-      $carousel .= '&nbsp;'.PHP_EOL; // .clearfix
+      //$carousel .= '&nbsp;'.PHP_EOL;
       $carousel .= '</div>'.PHP_EOL; // .clearfix
 
 		}
