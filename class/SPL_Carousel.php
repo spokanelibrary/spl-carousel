@@ -138,22 +138,17 @@ class SPL_Carousel {
 		return $slide;
 	}
 
-	protected function getCarouselPosts() {
+	protected function getCarouselPosts($limit=3, $category='featured') {
 		$slides = null; 
 
-	  $orderby = 'menu_order';
-	  if ( in_array('random', $this->params) ) {
-	    $orderby = 'rand';
-	  }
 
-	  $carousel = null;
 	  $args = array(
 	    'post_type' => 'post',
-	    'orderby'   => $orderby,
-	    'order'     => 'ASC',
-	    'numberposts' => 3,
-	    //'post_status' => null,
-	    'category_name' => 'featured'
+	    'orderby'   => 'post_date',
+	    'order'     => 'DESC',
+	    'post_status' => 'publish',
+	    'numberposts' => $limit,
+	    'category_name' => $category
 	  ); 
 	  $posts = get_posts($args);
 
@@ -187,7 +182,6 @@ class SPL_Carousel {
 	    $orderby = 'rand';
 	  }
 
-	  $carousel = null;
 	  $args = array(
 	    'post_type' => 'attachment',
 	    'orderby'   => $orderby,
