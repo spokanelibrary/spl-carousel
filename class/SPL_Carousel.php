@@ -8,7 +8,7 @@ class SPL_Carousel {
 
 	var $id;
 	var $kiosk;
-	var $thumb = 'large';
+	var $thumb = 'medium';
 	var $params;
 	var $slides;
 	
@@ -184,14 +184,14 @@ class SPL_Carousel {
     	default:
 		    $html .= '<div class="row">'.PHP_EOL;
 
-		    $html .= '<div class="col-md-5 col-lg-3 col-lg-push-1">'.PHP_EOL;
+		    $html .= '<div class="col-md-5">'.PHP_EOL;
 		    if ( $slide->img ) {
 		    	$html .= '<img class="img-responsive img-rounded" style="margin:auto;" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
 		    }
 		    $html .= '</div>'.PHP_EOL; // .col
 
 
-		    $html .= '<div class="col-md-7 col-lg-push-2"">'.PHP_EOL;
+		    $html .= '<div class="col-md-7"">'.PHP_EOL;
 
 		    $html .= '<div class="carousel-caption">'.PHP_EOL;
 
