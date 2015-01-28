@@ -147,7 +147,7 @@ class SPL_Carousel {
 		return $slide;
 	}
 
-	protected function getCarouselPosts($limit=1, $category='featured') {
+	protected function getCarouselPosts($limit=2, $category='featured') {
 		$slides = null; 
 
 
