@@ -170,6 +170,8 @@ class SPL_Carousel {
 			$slide = new stdClass;
 			$slide->id = $post->ID;
 			$slide->title = the_title();
+
+			$slides[] = $slide;
 		endforeach; 
 		wp_reset_postdata();
 
