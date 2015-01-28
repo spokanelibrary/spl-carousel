@@ -158,13 +158,13 @@ class SPL_Carousel {
 				$posts->the_post(); 
 
 				$slide = new stdClass;
-				$slide->id = $post->ID;
+				$slide->id = $page->ID;
 				
 				$slides[] = $slide;
 			}
 	  }
 	  wp_reset_postdata();
-	  
+
 	  /*
 	  $posts = get_posts( $args );
 		foreach ( $posts as $post ) : setup_postdata( $post );
