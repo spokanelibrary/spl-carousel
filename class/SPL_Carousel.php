@@ -27,6 +27,7 @@ class SPL_Carousel {
 		if ( in_array('posts', $this->params) ) {
 	    //$slides[] = $this->getCarouselPosts();
 	    $posts = $this->getCarouselPosts();
+	    return $posts;
 	  	array_push($slides,$posts);
 	  }
 
