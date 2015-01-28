@@ -145,7 +145,7 @@ class SPL_Carousel {
 	  $args = array(
 	    'post_type' => 'post',
 	    'orderby'   => 'post_date',
-	    'order'     => 'DESC',
+	    'order'     => 'DESC'
 	    'post_status' => 'publish',
 	    'numberposts' => $limit,
 	    'category_name' => $category
@@ -156,6 +156,10 @@ class SPL_Carousel {
 	  	while ($posts->have_posts()) {
 				$posts->the_post(); 
 
+				$slide = new stdClass();
+				$slide->id = $post->ID;
+				
+				$slides[] = $slide;
 			}
 	  }
 
