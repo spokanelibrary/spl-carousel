@@ -189,7 +189,7 @@ class SPL_Carousel {
     	default:
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
-		    		$html .= '<img class="img-responsive img-rounded img-hero" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
+		    		$html .= '<img class="img-responsive img-rounded img-kiosk" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
 		    	}
     		} else {
 			    $html .= '<div class="row">'.PHP_EOL;
