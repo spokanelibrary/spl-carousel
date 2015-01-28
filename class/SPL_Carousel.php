@@ -226,9 +226,9 @@ class SPL_Carousel {
 		$slide->format = 'news';
 
 		$slide->url = '/news/';
-		//$slide->img = 'img.png';
-		$slide->title = 'News Title';
-		$slide->subtitle = 'Subtitle';
+		$slide->img = 'http://news.spokanelibrary.org/wordpress/media/Shadle_Sunday_hours2-300x282.jpg';
+		$slide->title = 'New Year, New You, New Day for the Library';
+		//$slide->subtitle = 'Subtitle';
 		$slide->content = 'Content';
 
 		return $slide;
@@ -339,11 +339,9 @@ class SPL_Carousel {
 	  		$slide = new stdClass;
 
 				$slide->url = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+				$slide->img = wp_get_attachment_image_src($attachment->ID, $this->thumb);
+				$slide->img = $slide->img[0];
 				//$slide->img = $attachment->guid;
-				//if ( has_post_thumbnail() ) { 
-					$slide->img = wp_get_attachment_image_src($attachment->ID, $this->thumb);
-					$slide->img = $slide->img[0];
-				//}
 				$slide->title = $attachment->post_title;
 				$slide->subtitle = $attachment->post_excerpt;
 				$slide->content = $attachment->post_content;
