@@ -157,9 +157,9 @@ class SPL_Carousel {
 				$posts->the_post(); 
 
 				$slide = new stdClass();
-				$slide->id = $post->ID;
+				//$slide->id = $post->ID;
 				
-				$slides[] = $slide;
+				//$slides[] = $slide;
 			}
 	  }
 
