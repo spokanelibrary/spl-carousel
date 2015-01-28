@@ -186,8 +186,6 @@ class SPL_Carousel {
 
     switch ( $slide->format ) {
     	case 'news':
-    	case 'post':
-    	case 'promo':
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
 		    		$html .= '<img class="img-responsive img-rounded img-kiosk" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
@@ -197,10 +195,8 @@ class SPL_Carousel {
     			
     			$html .= '<div class="col-md-12">'.PHP_EOL;
     			$html .= '<h2 class="text-success" style="margin-top:0;">';
-	        $html .= $slide->title;
-	        if ( !empty($slide->subtitle) ) {
-	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
-	        }
+	        $html .= 'Library News: ';
+	        $html .= '<a href="'.$slide->url.'">'.$slide->title.'</a>';
 	        $html .= '</h2>'.PHP_EOL;
 	        $html .= '</div>'.PHP_EOL; // .col
 
@@ -238,6 +234,8 @@ class SPL_Carousel {
     		}
     		break;
 
+    	case 'promo':
+    	case 'post':
     	default:
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
