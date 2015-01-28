@@ -211,11 +211,9 @@ class SPL_Carousel {
 
 			    $html .= '<div class="carousel-caption">'.PHP_EOL;
 
-	        if ( !empty($slide->subtitle) ) {
-	        	$html .= '<h2 class="text-muted" style="margin-top:0;">';
-	          $html .= $slide->subtitle;
-	        	$html .= '</h2>'.PHP_EOL;
-	        }
+	        $html .= '<h2 class="text-muted" style="margin-top:0;">';
+	         $html .= 'also in this issue:';
+	        $html .= '</h2>'.PHP_EOL;
 	        
 	        $html .= '<p class="lead">'.$slide->content.'</p>'.PHP_EOL;
 
