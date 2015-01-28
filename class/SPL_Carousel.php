@@ -190,7 +190,7 @@ class SPL_Carousel {
 		    }
 		    $html .= '</div>'.PHP_EOL; // .col
 
-		    $html .= '<div class="col-md-7 col-lg-6">'.PHP_EOL;
+		    $html .= '<div class="col-md-7">'.PHP_EOL;
 
 		    $html .= '<div class="carousel-caption">'.PHP_EOL;
 
