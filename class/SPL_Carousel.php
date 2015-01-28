@@ -145,7 +145,7 @@ class SPL_Carousel {
 	  $args = array(
 	    'post_type' => 'post',
 	    'orderby'   => 'post_date',
-	    'order'     => 'DESC'
+	    'order'     => 'DESC',
 	    'post_status' => 'publish',
 	    'numberposts' => $limit,
 	    'category_name' => $category
