@@ -32,7 +32,11 @@ class SPL_Carousel {
 		//if ( in_array('kiosk', $this->params) ) {
 	    $this->kiosk = true;
 	  //}
-		
+		if ( $this->kiosk ) {
+			$this->thumb = 'full';
+		}
+
+
 		$slides = $this->getCarouselSlides();
 
 		if ( in_array('posts', $this->params) ) {
