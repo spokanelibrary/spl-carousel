@@ -52,7 +52,7 @@ class SPL_Carousel {
 	  	$carousel = $this->getCarouselFormatted();
 	  }
 
-	  //$carousel = '<pre>'.print_r($slides, true).'</pre>';
+	  $carousel = '<pre>'.print_r($slides, true).'</pre>';
 		return $carousel;
 	}
 
