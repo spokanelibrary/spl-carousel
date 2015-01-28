@@ -139,16 +139,34 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselPosts() {
-		$slide = new stdClass;
-		$slide->format = 'posts';
+		$slides = null; 
 
-		$slide->url = '/posts/';
-		$slide->img = 'img.png';
-		$slide->title = 'Featured posts';
-		$slide->subtitle = 'Subtitle';
-		$slide->content = 'Content';
+	  $orderby = 'menu_order';
+	  if ( in_array('random', $this->params) ) {
+	    $orderby = 'rand';
+	  }
 
-		return $slide;
+	  $carousel = null;
+	  $args = array(
+	    'post_type' => 'post',
+	    'orderby'   => $orderby,
+	    'order'     => 'ASC',
+	    'numberposts' => 3,
+	    'post_status' => null,
+	    'post_slug' => 'featured'
+	  ); 
+	  $posts = get_posts($args);
+
+	  return '<pre>'.print_r($posts, true).'</pre>';
+	  
+	  if ( is_array($attachments) ) {
+	  	foreach ( $attachments as $a => $attachment) {
+	  		$slides[] = $this->getCarouselSlide($attachment);
+	  	}
+
+	  }
+
+		return $slides;
 	}
 
 	protected function getCarouselSlides() {
