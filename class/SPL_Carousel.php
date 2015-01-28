@@ -66,7 +66,7 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselFormatted() {
-		$carousel = null;
+		$carousel = '';
 		
 		$auto = null;
 	  if ( in_array('auto', $this->params) ) {
@@ -79,24 +79,64 @@ class SPL_Carousel {
 	  }
 	  
 
-	  $carousel .= ''.PHP_EOL;
-    //$carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
+	  $carousel .= PHP_EOL;
+    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
+    if ( !in_array('kiosk', $this->params) ) {
+      $carousel .= '<div class="row">'.PHP_EOL;
+      $carousel .= '<div class="col-md-5">'.PHP_EOL;
+      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
+      // ToDo: news
+      $i = 0;
+      foreach ( $this->slides as $s => $slide ) {
+        $active = null;
+        if ( 0 == $i ) {
+          $active = ' class="active"';
+        } 
+        $carousel .= '<li data-target="#spl-carousel-'.$id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
+        $i++;
+      }
+      $carousel .= '</ol>'.PHP_EOL; 
+      $carousel .= '</div>'.PHP_EOL; // col
+      $carousel .= '</div>'.PHP_EOL; // row
+    } 
+
+    $carousel .= '<div class="carousel-inner">'.PHP_EOL;
 
 		$slides = null;
 		foreach ( $this->slides as $s => $slide ) {
-	  	$slides .= $this->getCarouselSlideFormatted($slide);
+	  	$slides .= $this->getCarouselSlideFormatted($slide, $s);
 	  }
 
-	  $carousel .= $slides;
+	  //$carousel .= $slides;
+
+	  $carousel .= '</div>'.PHP_EOL; //.carousel-inner
+	  $carousel .= '</div>'.PHP_EOL; //.carousel
+	  $carousel .= PHP_EOL;
 
 	  return $carousel;
 	}
 
-	protected function getCarouselSlideFormatted($slide) {
+	protected function getCarouselSlideFormatted($slide, $s) {
 		$html = null;
 
+		$active = '';
+    if ( 0 == $s ) {
+      $active = ' active';
+    } 
+
+    $html .= '<div class="item'.$active.'">'.PHP_EOL;
+
+    $html .= '<div class="row">'.PHP_EOL;
+
+    $html .= '<div class="col-md-5">'.PHP_EOL;
+    $html .= '</div>'.PHP_EOL; // .col
+
+    $html .= '<div class="col-md-7">'.PHP_EOL;
 		$html .= $slide->title.'<br>';
+		$html .= '</div>'.PHP_EOL; // .col
+		$html .= '</div>'.PHP_EOL; // .row
+		$html .= '</div>'.PHP_EOL; // .item
 
 		return $html;
 	}
