@@ -29,9 +29,9 @@ class SPL_Carousel {
 	public function getCarousel() {
 		$this->id = get_the_ID();
 
-		if ( in_array('kiosk', $this->params) ) {
+		//if ( in_array('kiosk', $this->params) ) {
 	    $this->kiosk = true;
-	  }
+	  //}
 		
 		$slides = $this->getCarouselSlides();
 
@@ -187,41 +187,47 @@ class SPL_Carousel {
     		//break;
 
     	default:
-		    $html .= '<div class="row">'.PHP_EOL;
+    		if ( $this->kiosk ) {
+    			if ( $slide->img ) {
+		    		$html .= '<img class="img-responsive img-rounded img-hero" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
+		    	}
+    		} else {
+			    $html .= '<div class="row">'.PHP_EOL;
 
-		    $html .= '<div class="col-md-5">'.PHP_EOL;
-		    if ( $slide->img ) {
-		    	$html .= '<img class="img-responsive img-rounded img-hero" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
-		    }
-		    $html .= '</div>'.PHP_EOL; // .col
+			    $html .= '<div class="col-md-5">'.PHP_EOL;
+			    if ( $slide->img ) {
+			    	$html .= '<img class="img-responsive img-rounded img-hero" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
+			    }
+			    $html .= '</div>'.PHP_EOL; // .col
 
 
-		    $html .= '<div class="col-md-7"">'.PHP_EOL;
+			    $html .= '<div class="col-md-7"">'.PHP_EOL;
 
-		    $html .= '<div class="carousel-caption">'.PHP_EOL;
+			    $html .= '<div class="carousel-caption">'.PHP_EOL;
 
-        $html .= '<h2 class="text-success" style="margin-top:0;">';
-        $html .= $slide->title;
-        if ( !empty($slide->subtitle) ) {
-          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
-        }
-        $html .= '</h2>'.PHP_EOL;
-        
-        $html .= '<p class="lead">'.$slide->content.'</p>'.PHP_EOL;
+	        $html .= '<h2 class="text-success" style="margin-top:0;">';
+	        $html .= $slide->title;
+	        if ( !empty($slide->subtitle) ) {
+	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
+	        }
+	        $html .= '</h2>'.PHP_EOL;
+	        
+	        $html .= '<p class="lead">'.$slide->content.'</p>'.PHP_EOL;
 
-        if ( !empty($slide->url) ) { 
-          $html .= '<p class="text-right">'.PHP_EOL;
-          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
-          $html .= 'More <span class="">&rarr;</span>'.PHP_EOL;
-          $html .= '</a>'.PHP_EOL;
-          $html .= '</p>'.PHP_EOL;
-        }
+	        if ( !empty($slide->url) ) { 
+	          $html .= '<p class="text-right">'.PHP_EOL;
+	          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
+	          $html .= 'More <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= '</a>'.PHP_EOL;
+	          $html .= '</p>'.PHP_EOL;
+	        }
 
-	     	$html .= '</div>'.PHP_EOL; // carousel-caption
+		     	$html .= '</div>'.PHP_EOL; // carousel-caption
 
-				$html .= '</div>'.PHP_EOL; // .col
-				$html .= '</div>'.PHP_EOL; // .row
-		}
+					$html .= '</div>'.PHP_EOL; // .col
+					$html .= '</div>'.PHP_EOL; // .row
+				}
+			}
 		$html .= '</div>'.PHP_EOL; // .item
 
 		return $html;
