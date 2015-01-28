@@ -339,6 +339,10 @@ class SPL_Carousel {
 
 				$slide->url = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
 				$slide->img = $attachment->guid;
+				if ( has_post_thumbnail() ) { 
+					$slide->img = wp_get_attachment_image_src($attachment->ID, 'medium');
+					$slide->img = $slide->img[0];
+				}
 				$slide->title = $attachment->post_title;
 				$slide->subtitle = $attachment->post_excerpt;
 				$slide->content = $attachment->post_content;
