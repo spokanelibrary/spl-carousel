@@ -8,6 +8,7 @@ class SPL_Carousel {
 
 	var $id;
 	var $kiosk;
+	var $thumb = 'large';
 	var $params;
 	var $slides;
 	
@@ -289,7 +290,7 @@ class SPL_Carousel {
 				$slide->format = 'post';
 				$slide->url = get_permalink();
 				if ( has_post_thumbnail() ) { 
-					$slide->img = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium');
+					$slide->img = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), $this->thumb);
 					$slide->img = $slide->img[0];
 				}
 				//$slide->id = get_the_ID();
@@ -340,7 +341,7 @@ class SPL_Carousel {
 				$slide->url = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
 				//$slide->img = $attachment->guid;
 				//if ( has_post_thumbnail() ) { 
-					$slide->img = wp_get_attachment_image_src($attachment->ID, 'medium');
+					$slide->img = wp_get_attachment_image_src($attachment->ID, $this->thumb);
 					$slide->img = $slide->img[0];
 				//}
 				$slide->title = $attachment->post_title;
