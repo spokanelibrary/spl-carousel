@@ -87,6 +87,26 @@ class SPL_Carousel {
 	  $carousel .= PHP_EOL;
     $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
+    if ( !$this->kiosk ) {
+			$carousel .= '<div class="spl-blue" style="position:relative; height:50px;">'.PHP_EOL;
+      $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
+      $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
+
+      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
+      $i = 0;
+      foreach ( $this->slides as $s => $slide ) {
+        $active = '';
+        if ( 0 == $i ) {
+          $active = ' class="active"';
+        } 
+        $carousel .= '<li data-target="#spl-carousel-'.$this->id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
+        $i++;
+      }
+      $carousel .= '</ol>'.PHP_EOL; 
+      //$carousel .= '&nbsp;'.PHP_EOL;
+      $carousel .= '</div>'.PHP_EOL; // .clearfix
+
+		}
 
     /*
     // indicator pips
@@ -115,49 +135,7 @@ class SPL_Carousel {
 	  }
 		$carousel .= '</div>'.PHP_EOL; // .carousel-inner
 
-
-
-		if ( !$this->kiosk ) {
-			$carousel .= '<div class="spl-blue" style="position:relative; height:50px;">'.PHP_EOL;
-      $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
-      $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
-
-      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
-      $i = 0;
-      foreach ( $this->slides as $s => $slide ) {
-        $active = '';
-        if ( 0 == $i ) {
-          $active = ' class="active"';
-        } 
-        $carousel .= '<li data-target="#spl-carousel-'.$this->id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
-        $i++;
-      }
-      $carousel .= '</ol>'.PHP_EOL; 
-      //$carousel .= '&nbsp;'.PHP_EOL;
-      $carousel .= '</div>'.PHP_EOL; // .clearfix
-
-		}
-		
 		/*
-		// indicator pips
-    if ( !$this->kiosk ) {
-      $carousel .= '<div class="row">'.PHP_EOL;
-      $carousel .= '<div class="col-md-5">'.PHP_EOL;
-      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
-      $i = 0;
-      foreach ( $this->slides as $s => $slide ) {
-        $active = '';
-        if ( 0 == $i ) {
-          $active = ' class="active"';
-        } 
-        $carousel .= '<li data-target="#spl-carousel-'.$this->id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
-        $i++;
-      }
-      $carousel .= '</ol>'.PHP_EOL; 
-      $carousel .= '</div>'.PHP_EOL; // .col
-      $carousel .= '</div>'.PHP_EOL; // .row
-    } 
-
 		// next/prev links
 	  if ( !$this->kiosk ) {
 
