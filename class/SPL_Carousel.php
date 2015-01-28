@@ -159,6 +159,7 @@ class SPL_Carousel {
 
 				$slide = new stdClass;
 				$slide->id = $page->ID;
+				$slide->title = get_the_title();
 				
 				$slides[] = $slide;
 			}
