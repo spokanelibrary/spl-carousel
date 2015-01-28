@@ -88,7 +88,7 @@ class SPL_Carousel {
     $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
     if ( !$this->kiosk ) {
-			$carousel .= '<div class="spl-green" style="position:relative; height:50px; margin-top:-4px; margin-bottom:16px;">'.PHP_EOL;
+			$carousel .= '<div class="carousel-controls">'.PHP_EOL;
       $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
       $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
 
@@ -103,8 +103,6 @@ class SPL_Carousel {
         $i++;
       }
       $carousel .= '</ol>'.PHP_EOL; 
-      //$carousel .= '&nbsp;'.PHP_EOL;
-      $carousel .= '<h4 class="text-center" style="color:#fff;">What\'s new</h4>'.PHP_EOL;
       $carousel .= '</div>'.PHP_EOL; // .clearfix
 
 		}
