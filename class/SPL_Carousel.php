@@ -170,6 +170,7 @@ class SPL_Carousel {
 					$slide->img = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium');
 					$slide->img = $slide->img[0];
 				}
+				$slide->content = get_the_excerpt();
 
 				$slides[] = $slide;
 			}
