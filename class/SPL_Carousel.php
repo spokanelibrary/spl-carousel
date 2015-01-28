@@ -151,7 +151,7 @@ class SPL_Carousel {
 	    'category_name' => $category
 	  ); 
 	  
-	  //$posts = new WP_query($args);
+	  $posts = new WP_query($args);
 	  //if ($posts->have_posts()) {
 	  	//while ($posts->have_posts()) {
 				//$posts->the_post(); 
