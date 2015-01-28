@@ -85,7 +85,7 @@ class SPL_Carousel {
 	  
 
 	  $carousel .= PHP_EOL;
-    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
+    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
     // indicator pips
     if ( !$this->kiosk ) {
@@ -126,6 +126,18 @@ class SPL_Carousel {
 	  $carousel .= '</div>'.PHP_EOL; // .carousel
 	  $carousel .= PHP_EOL;
 
+	  if ( isset($this->params['timeout']) ) {
+	    // convert minutes to microseconds
+	    $timeout = $atts['timeout'] * (1000 * 60);
+	    $carousel .= '
+	                <script>
+	                setTimeout(function(){
+	                   window.location.reload(1);
+	                }, '.$timeout.');
+	                </script>
+	                ';
+	  } 
+
 	  return $carousel;
 	}
 
@@ -140,10 +152,10 @@ class SPL_Carousel {
 
     switch ( $slide->format ) {
     	case 'news':
+    	case 'post':
     	case 'promo':
-    	case 'posts':
     		break;
-    		
+
     	default:
 		    $html .= '<div class="row">'.PHP_EOL;
 
