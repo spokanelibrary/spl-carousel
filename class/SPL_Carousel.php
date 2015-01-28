@@ -104,6 +104,7 @@ class SPL_Carousel {
       }
       $carousel .= '</ol>'.PHP_EOL; 
       //$carousel .= '&nbsp;'.PHP_EOL;
+      $carousel .= '<h4 class="text-center" style="color:#fff;">What\'s new</h4>'.PHP_EOL;
       $carousel .= '</div>'.PHP_EOL; // .clearfix
 
 		}
