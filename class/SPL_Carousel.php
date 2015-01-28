@@ -169,7 +169,7 @@ class SPL_Carousel {
 		foreach ( $posts as $post ) : setup_postdata( $post );
 			$slide = new stdClass;
 			$slide->id = $post->ID;
-			$slide->title = the_title();
+			$slide->title = get_the_title();
 
 			$slides[] = $slide;
 		endforeach; 
