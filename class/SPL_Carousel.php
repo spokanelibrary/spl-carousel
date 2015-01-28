@@ -152,16 +152,16 @@ class SPL_Carousel {
 	  ); 
 	  
 	  $posts = new WP_query($args);
-	  //if ($posts->have_posts()) {
-	  	//while ($posts->have_posts()) {
-				//$posts->the_post(); 
+	  if ($posts->have_posts()) {
+	  	while ($posts->have_posts()) {
+				$posts->the_post(); 
 
-				//$slide = new stdClass();
-				//$slide->id = $post->ID;
+				$slide = new stdClass;
+				$slide->id = $post->ID;
 				
-				//$slides[] = $slide;
-			//}
-	  //}
+				$slides[] = $slide;
+			}
+	  }
 
 	  //$posts = get_posts($args);
 
