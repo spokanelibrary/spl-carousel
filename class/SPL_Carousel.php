@@ -150,18 +150,42 @@ class SPL_Carousel {
 	    'numberposts' => $limit,
 	    'category_name' => $category
 	  ); 
-	  $posts = get_posts($args);
+	  
+	  $posts = new WP_query($args);
+	  if ($posts->have_posts()) {
+	  	while ($posts->have_posts()) {
+				$posts->the_post(); 
 
-	  return '<pre>'.print_r($posts, true).'</pre>';
+			}
+	  }
 
-	  if ( is_array($attachments) ) {
-	  	foreach ( $attachments as $a => $attachment) {
-	  		$slides[] = $this->getCarouselSlide($attachment);
+	  //$posts = get_posts($args);
+
+	  //return '<pre>'.print_r($posts, true).'</pre>';
+
+	  /*
+	  if ( is_array($posts) ) {
+	  	foreach ( $posts as $p => $post) {
+	  		$slides[] = $this->getCarouselPost($post);
 	  	}
 
 	  }
-
+		*/
 		return $slides;
+	}
+
+	protected function getCarouselPost($post) {
+		$slide = new stdClass;
+
+		$slide->id = $post->ID;
+		$slide->url = $post->post_name;
+		//$slide->img = $attachment->guid;
+		$slide->title = $post->post_title;
+		$slide->subtitle = //$attachment->post_excerpt;
+		$slide->content = $attachment->post_content;
+
+		//$slide = $attachment;
+		return $slide;
 	}
 
 	protected function getCarouselSlides() {
