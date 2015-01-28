@@ -139,6 +139,11 @@ class SPL_Carousel {
     $html .= '<div class="item'.$active.'">'.PHP_EOL;
 
     switch ( $slide->format ) {
+    	case 'news':
+    	case 'promo':
+    	case 'posts':
+    		break;
+    		
     	default:
 		    $html .= '<div class="row">'.PHP_EOL;
 
