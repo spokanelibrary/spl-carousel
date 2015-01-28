@@ -185,46 +185,7 @@ class SPL_Carousel {
 	  }
 	  wp_reset_postdata();
 
-	  /*
-	  $posts = get_posts( $args );
-		foreach ( $posts as $post ) : setup_postdata( $post );
-			$slide = new stdClass;
-			$slide->id = $post->ID;
-			$slide->title = get_the_title();
-
-			$slides[] = $slide;
-		endforeach; 
-		wp_reset_postdata();
-		*/
-	  //$posts = get_posts($args);
-
-	  //return '<pre>'.print_r($posts, true).'</pre>';
-
-	  /*
-	  if ( is_array($posts) ) {
-	  	foreach ( $posts as $p => $post) {
-	  		$slides[] = $this->getCarouselPost($post);
-	  	}
-
-	  }
-		*/
 		return $slides;
-	}
-
-	protected function getCarouselPost($post) {
-		/*
-		$slide = new stdClass;
-
-		$slide->id = $post->ID;
-		$slide->url = $post->post_name;
-		//$slide->img = $attachment->guid;
-		$slide->title = $post->post_title;
-		$slide->subtitle = //$attachment->post_excerpt;
-		$slide->content = $attachment->post_content;
-
-		//$slide = $attachment;
-		return $slide;
-		*/
 	}
 
 	protected function getCarouselSlides() {
@@ -257,7 +218,16 @@ class SPL_Carousel {
 
 	  if ( is_array($attachments) ) {
 	  	foreach ( $attachments as $a => $attachment) {
-	  		$slides[] = $this->getCarouselSlide($attachment);
+	  		$slide = new stdClass;
+
+				$slide->url = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+				$slide->img = $attachment->guid;
+				$slide->title = $attachment->post_title;
+				$slide->subtitle = $attachment->post_excerpt;
+				$slide->content = $attachment->post_content;
+
+				$slides[] = $slide;
+	  		//$slides[] = $this->getCarouselSlide($attachment);
 	  	}
 
 	  }
