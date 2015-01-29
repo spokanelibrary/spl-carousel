@@ -250,7 +250,7 @@ class SPL_Carousel {
 	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
 	        }
 	        $html .= '</h2>'.PHP_EOL;
-	        $html .= '<p class="lead">'.$slide->content.'</p>'.PHP_EOL;
+	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
@@ -260,7 +260,7 @@ class SPL_Carousel {
 	        }
 		     	$html .= '</div>'.PHP_EOL; // carousel-caption
 					$html .= '</div>'.PHP_EOL; // .col
-					
+
 					$html .= '</div>'.PHP_EOL; // .row
 				}
 			}
