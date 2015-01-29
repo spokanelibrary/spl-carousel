@@ -207,7 +207,7 @@ class SPL_Carousel {
   			
   			$html .= '<div class="col-md-12">'.PHP_EOL;
   			$html .= '<h2 class="text-success" style="margin-top:0;">';
-        $html .= 'Library News: ';
+        $html .= 'January News: ';
         $html .= '<a href="'.$slide->url.'">'.$slide->title.'</a>';
         $html .= '</h2>'.PHP_EOL;
         $html .= '</div>'.PHP_EOL; // .col
