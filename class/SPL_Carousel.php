@@ -181,6 +181,9 @@ class SPL_Carousel {
 	protected function getCarouselSlideFormatted($slide, $s) {
 		$html = '';
 
+		$col['left'] = 'col-md-5';
+		$col['right'] = 'col-md-7';
+
 		$active = null;
     if ( 0 == $s ) {
       $active = ' active';
@@ -189,50 +192,38 @@ class SPL_Carousel {
 
     switch ( $slide->format ) {
     	case 'news':
-    		if ( $this->kiosk ) {
-    			if ( $slide->img ) {
-		    		$html .= '<img class="img-responsive img-rounded img-kiosk" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
-		    	}
-    		} else {
-    			$html .= '<div class="row">'.PHP_EOL;
-    			
-    			$html .= '<div class="col-md-12">'.PHP_EOL;
-    			$html .= '<h2 class="text-success" style="margin-top:0;">';
-	        $html .= 'Library News: ';
-	        $html .= '<a href="'.$slide->url.'">'.$slide->title.'</a>';
-	        $html .= '</h2>'.PHP_EOL;
-	        $html .= '</div>'.PHP_EOL; // .col
+  			$html .= '<div class="row">'.PHP_EOL;
+  			
+  			$html .= '<div class="col-md-12">'.PHP_EOL;
+  			$html .= '<h2 class="text-success" style="margin-top:0;">';
+        $html .= 'Library News: ';
+        $html .= '<a href="'.$slide->url.'">'.$slide->title.'</a>';
+        $html .= '</h2>'.PHP_EOL;
+        $html .= '</div>'.PHP_EOL; // .col
 
-			    $html .= '<div class="col-md-5">'.PHP_EOL;
-			    if ( $slide->img ) {
-			    	$html .= '<img class="img-responsive img-rounded img-hero" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
-			    }
-			    $html .= '</div>'.PHP_EOL; // .col
+		    $html .= '<div class="'.$col['left'].'">'.PHP_EOL;
+		    if ( $slide->img ) {
+		    	$html .= '<img class="img-responsive img-rounded img-hero" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
+		    }
+		    $html .= '</div>'.PHP_EOL; // .col
 
+		    $html .= '<div class="'.$col['right'].'">'.PHP_EOL;
+		    $html .= '<div class="carousel-caption">'.PHP_EOL;
+        $html .= '<h2 class="text-muted" style="margin-top:0;">';
+        $html .= 'also in this issue&hellip;';
+        $html .= '</h2>'.PHP_EOL;
+        $html .= '<p class="lead">'.$slide->content.'</p>'.PHP_EOL;
+        if ( !empty($slide->url) && !$this->kiosk ) { 
+          $html .= '<p class="text-right">'.PHP_EOL;
+          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
+          $html .= 'Read Library News <span class="">&rarr;</span>'.PHP_EOL;
+          $html .= '</a>'.PHP_EOL;
+          $html .= '</p>'.PHP_EOL;
+        }
+	     	$html .= '</div>'.PHP_EOL; // carousel-caption
+				$html .= '</div>'.PHP_EOL; // .col
 
-			    $html .= '<div class="col-md-7"">'.PHP_EOL;
-
-			    $html .= '<div class="carousel-caption">'.PHP_EOL;
-
-	        $html .= '<h2 class="text-muted" style="margin-top:0;">';
-	         $html .= 'also in this issue&hellip;';
-	        $html .= '</h2>'.PHP_EOL;
-	        
-	        $html .= '<p class="lead">'.$slide->content.'</p>'.PHP_EOL;
-
-	        if ( !empty($slide->url) ) { 
-	          $html .= '<p class="text-right">'.PHP_EOL;
-	          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
-	          $html .= 'Read Library News <span class="">&rarr;</span>'.PHP_EOL;
-	          $html .= '</a>'.PHP_EOL;
-	          $html .= '</p>'.PHP_EOL;
-	        }
-
-		     	$html .= '</div>'.PHP_EOL; // carousel-caption
-
-					$html .= '</div>'.PHP_EOL; // .col
-					$html .= '</div>'.PHP_EOL; // .row
-    		}
+				$html .= '</div>'.PHP_EOL; // .row
     		break;
 
     	case 'promo':
@@ -245,26 +236,21 @@ class SPL_Carousel {
     		} else {
 			    $html .= '<div class="row">'.PHP_EOL;
 
-			    $html .= '<div class="col-md-5">'.PHP_EOL;
+			    $html .= '<div class="'.$col['left'].'">'.PHP_EOL;
 			    if ( $slide->img ) {
 			    	$html .= '<img class="img-responsive img-rounded img-hero" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
 			    }
 			    $html .= '</div>'.PHP_EOL; // .col
 
-
-			    $html .= '<div class="col-md-7"">'.PHP_EOL;
-
+			    $html .= '<div class="'.$col['right'].'">'.PHP_EOL;
 			    $html .= '<div class="carousel-caption">'.PHP_EOL;
-
 	        $html .= '<h2 class="text-success" style="margin-top:0;">';
 	        $html .= $slide->title;
 	        if ( !empty($slide->subtitle) ) {
 	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
 	        }
 	        $html .= '</h2>'.PHP_EOL;
-	        
 	        $html .= '<p class="lead">'.$slide->content.'</p>'.PHP_EOL;
-
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
@@ -272,10 +258,9 @@ class SPL_Carousel {
 	          $html .= '</a>'.PHP_EOL;
 	          $html .= '</p>'.PHP_EOL;
 	        }
-
 		     	$html .= '</div>'.PHP_EOL; // carousel-caption
-
 					$html .= '</div>'.PHP_EOL; // .col
+					
 					$html .= '</div>'.PHP_EOL; // .row
 				}
 			}
