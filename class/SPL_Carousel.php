@@ -116,7 +116,7 @@ class SPL_Carousel {
       $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
       $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
 
-      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
+      $carousel .= '<ol class="hidden-xs hidden-sm carousel-indicators">'.PHP_EOL;  
       $i = 0;
       foreach ( $this->slides as $s => $slide ) {
         $active = '';
