@@ -8,6 +8,7 @@ class SPL_Carousel {
 
 	var $id;
 	var $kiosk;
+	var $title;
 	var $thumb = 'large';
 	var $hover = 'hover'; // 'false'
 	var $params;
@@ -36,6 +37,9 @@ class SPL_Carousel {
 			$this->thumb = 'full';
 		}
 
+		if ( isset($this->params['title']) ) {
+			$this->title = $this->params['title'];
+		}
 
 		$slides = $this->getCarouselSlides();
 
@@ -102,13 +106,13 @@ class SPL_Carousel {
     
     if ( !$this->kiosk ) {
 			$carousel .= '<div class="carousel-controls spl-hero-panel spl-hero-success">'.PHP_EOL;
-      
-      $carousel .= '<div class="row">'.PHP_EOL;
-  		$carousel .= '<div class="col-md-5">'.PHP_EOL;
-      $carousel .= '<h3 class="hidden-xs text-center"><span class="serif">Read. Learn. Discover.</span></h3>'.PHP_EOL;
-      $carousel .= '</div>'.PHP_EOL; // .col
-			$carousel .= '</div>'.PHP_EOL; // .row
-
+      if ( !empty($this->title) ) {
+	      $carousel .= '<div class="row">'.PHP_EOL;
+	  		$carousel .= '<div class="col-md-5">'.PHP_EOL;
+	      $carousel .= '<h3 class="hidden-xs text-center"><span class="serif">'.$this->title.'</span></h3>'.PHP_EOL;
+	      $carousel .= '</div>'.PHP_EOL; // .col
+				$carousel .= '</div>'.PHP_EOL; // .row
+			}
       $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
       $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
 
