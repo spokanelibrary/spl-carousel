@@ -105,7 +105,7 @@ class SPL_Carousel {
       
       $carousel .= '<div class="row">'.PHP_EOL;
   		$carousel .= '<div class="col-md-5">'.PHP_EOL;
-      $carousel .= '<h3 class="hidden-xs text-center><span class="serif">Read. Learn. Discover.</span></h3>'.PHP_EOL;
+      $carousel .= '<h3 class="hidden-xs text-center"><span class="serif">Read. Learn. Discover.</span></h3>'.PHP_EOL;
       $carousel .= '</div>'.PHP_EOL; // .col
 			$carousel .= '</div>'.PHP_EOL; // .row
 
