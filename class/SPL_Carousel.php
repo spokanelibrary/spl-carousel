@@ -308,7 +308,7 @@ class SPL_Carousel {
 			    $html .= '<div class="row">'.PHP_EOL;
 
 			    $html .= '<div class="'.$col['left'].'">'.PHP_EOL;
-			    $html .= $slide->content.PHP_EOL;
+			    $html .= $slide->promo.PHP_EOL;
 			    $html .= '</div>'.PHP_EOL; // .col
 
 			    $html .= '<div class="'.$col['right'].'">'.PHP_EOL;
@@ -325,6 +325,7 @@ class SPL_Carousel {
 	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
 	        }
 	        $html .= '</h2>'.PHP_EOL;
+	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
@@ -421,8 +422,9 @@ class SPL_Carousel {
 				$slide->url = '/tech/';
 				//$slide->img = 'img.png';
 				$slide->title = 'Technology training & certification';
-				$slide->subtitle = 'Self-paced or instructor-led technology courses for all skill levels.';
-				$slide->content = '
+				//$slide->subtitle = '';
+				$slide->content = 'Self-paced or instructor-led technology courses for all skill levels.';
+				$slide->promo = '
 				<div class="clearfix" style="margin-bottom:10px;">
 			  	<a href="/it-academy/"><img class="img-responsive img-rounded" src="/assets/img/logos/itacademy.png"></a>
 					<span class="help-block">  		
