@@ -300,6 +300,44 @@ class SPL_Carousel {
 				}
     		break;
    		case 'promo':
+   			if ( $this->kiosk ) {
+    			if ( $slide->img ) {
+		    		$html .= '<img class="img-responsive img-rounded img-kiosk" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
+		    	}
+    		} else {
+			    $html .= '<div class="row">'.PHP_EOL;
+
+			    $html .= '<div class="'.$col['left'].'">'.PHP_EOL;
+			    $html .= $slide->content.PHP_EOL;
+			    $html .= '</div>'.PHP_EOL; // .col
+
+			    $html .= '<div class="'.$col['right'].'">'.PHP_EOL;
+			    $html .= '<div class="carousel-caption">'.PHP_EOL;
+	        $html .= '<h2 class="text-success" style="margin-top:0;">';
+	        if ( !empty($slide->url) ) {
+		    		$html .= '<a href="'.$slide->url.'">';
+		    	}
+	        $html .= $slide->title;
+	        if ( !empty($slide->url) ) {
+		    		$html .= '</a>';
+		    	}
+	        if ( !empty($slide->subtitle) ) {
+	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
+	        }
+	        $html .= '</h2>'.PHP_EOL;
+	        if ( !empty($slide->url) ) { 
+	          $html .= '<p class="text-right">'.PHP_EOL;
+	          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
+	          $html .= 'Learn more <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= '</a>'.PHP_EOL;
+	          $html .= '</p>'.PHP_EOL;
+	        }
+		     	$html .= '</div>'.PHP_EOL; // carousel-caption
+					$html .= '</div>'.PHP_EOL; // .col
+
+					$html .= '</div>'.PHP_EOL; // .row
+				}
+   			break;
     	default:
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
