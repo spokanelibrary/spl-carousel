@@ -392,7 +392,7 @@ class SPL_Carousel {
 		return $slide;
 	}
 
-	protected function getCarouselPosts($limit=3, $days=4, $category='featured') {
+	protected function getCarouselPosts($limit=3, $days=14, $category='featured') {
 		$slides = null; 
 
 	  $args = array(
