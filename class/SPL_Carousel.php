@@ -207,7 +207,7 @@ class SPL_Carousel {
   			
   			$html .= '<div class="col-md-12">'.PHP_EOL;
   			$html .= '<h2 class="text-success" style="margin-top:0;">';
-        $html .= 'January News: ';
+        $html .= $slide->date . ' News: ';
         $html .= '<a href="'.$slide->url.'">'.$slide->title.'</a>';
         $html .= '</h2>'.PHP_EOL;
         $html .= '</div>'.PHP_EOL; // .col
@@ -328,7 +328,7 @@ class SPL_Carousel {
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
-	          $html .= 'More <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= 'Learn more <span class="">&rarr;</span>'.PHP_EOL;
 	          $html .= '</a>'.PHP_EOL;
 	          $html .= '</p>'.PHP_EOL;
 	        }
@@ -352,6 +352,7 @@ class SPL_Carousel {
 		$slide->img = 'http://news.spokanelibrary.org/wordpress/media/Shadle_Sunday_hours2-300x282.jpg';
 		$slide->title = 'New Year, New You, New Day for the Library';
 		//$slide->subtitle = 'Subtitle';
+		$slide->date = 'Jan';
 		$slide->content = '
 		<ul class="text-muted">
     <li><a href="http://news.spokanelibrary.org/new-year-new-you/">What’s on your “to do” list for 2015? <small class="text-muted">&rarr;</small></a></li>
