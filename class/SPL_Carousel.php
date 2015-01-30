@@ -9,6 +9,7 @@ class SPL_Carousel {
 	var $id;
 	var $kiosk;
 	var $title;
+	var $subtitle;
 	var $thumb = 'large';
 	var $hover = 'hover'; // 'false'
 	var $params;
@@ -39,6 +40,10 @@ class SPL_Carousel {
 
 		if ( isset($this->params['title']) ) {
 			$this->title = $this->params['title'];
+		}
+
+		if ( isset($this->params['subtitle']) ) {
+			$this->subtitle = $this->params['subtitle'];
 		}
 
 		$slides = $this->getCarouselSlides();
