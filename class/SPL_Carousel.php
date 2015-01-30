@@ -390,24 +390,24 @@ class SPL_Carousel {
 				$slide->content = '
 				<div class="row">
 				<div class="col-md-6">
-			  	<a href="/it-academy/"><img class="img-responsive img-rounded" src="/assets/img/logos/itacademy.png"></a>
 					<span class="help-block">  		
 						<small>
 							Learn Microsoft products and qualify for certification testing.
 							<a class="pull-right" href="/it-academy/"><b>More</b> <small class="text-muted">&rarr;</small></a>
 				  	</small>
 				  </span>
+			  	<a href="/it-academy/"><img class="img-responsive img-rounded" src="/assets/img/logos/itacademy.png"></a>
 				</div>
 
 				<div class="col-md-6">
-			  	<a href="/gale-courses/"><img class="img-responsive img-rounded" src="/assets/img/logos/galecourses.png"></a>
 			  	<span class="help-block">
 						<small>
 							Online courses taught by college instructors and industry experts.
 							<a class="pull-right" href="/gale-courses/"><b>More</b> <small class="text-muted">&rarr;</small></a>
 				  	</small>
 				  </span>
-				</div>
+			  	<a href="/gale-courses/"><img class="img-responsive img-rounded" src="/assets/img/logos/galecourses.png"></a>
+			  </div>
 
 				</div><!-- /.row -->
 				';
