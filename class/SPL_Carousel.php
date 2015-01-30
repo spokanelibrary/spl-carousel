@@ -111,6 +111,9 @@ class SPL_Carousel {
 	  		$carousel .= '<div class="col-md-5">'.PHP_EOL;
 	      $carousel .= '<h3 class="hidden-xs hidden-sm text-center"><span class="">'.$this->title.'</span></h3>'.PHP_EOL;
 	      $carousel .= '</div>'.PHP_EOL; // .col
+	      $carousel .= '<div class="col-md-7">'.PHP_EOL;
+	      $carousel .= '<h3 class="hidden-xs hidden-sm text-center"><span class="">'.$this->subtitle.'</span></h3>'.PHP_EOL;
+	      $carousel .= '</div>'.PHP_EOL; // .col
 				$carousel .= '</div>'.PHP_EOL; // .row
 			}
       $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
