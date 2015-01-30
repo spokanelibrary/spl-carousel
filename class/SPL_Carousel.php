@@ -425,22 +425,26 @@ class SPL_Carousel {
 				$slide->subtitle = 'Self-paced or instructor-led courses for all skill levels.';
 				$slide->content = '<i>Windows, Office, SQL Server, Illustrator, InDesign,</i> and much more: Learn the latest applications and technologies from industry professionals.';
 				$slide->promo = '
-				<div class="clearfix" style="margin-bottom:10px;">
-			  	<a href="/it-academy/"><img class="img-responsive img-rounded" src="/assets/img/logos/itacademy.png"></a>
-					<p>  		
-						<small>
-							Learn Microsoft products and qualify for certification testing.
-				  	</small>				  	
-					</p>
-				</div>
+				<div style="width:auto; margin:auto;">
+					
+					<div class="clearfix" style="margin-bottom:10px;">
+				  	<a href="/it-academy/"><img class="img-responsive img-rounded" src="/assets/img/logos/itacademy.png"></a>
+						<p>  		
+							<small>
+								Learn Microsoft products and qualify for certification testing.
+					  	</small>				  	
+						</p>
+					</div>
 
-				<div class="clearfix">
-			  	<a href="/gale-courses/"><img class="img-responsive img-rounded" src="/assets/img/logos/galecourses.png"></a>
-			  	<p>
-						<small>
-							Taught by college instructors and industry experts.							
-				  	</small>
-					</p>
+					<div class="clearfix">
+				  	<a href="/gale-courses/"><img class="img-responsive img-rounded" src="/assets/img/logos/galecourses.png"></a>
+				  	<p>
+							<small>
+								Taught by college instructors and industry experts.							
+					  	</small>
+						</p>
+					</div>
+
 				</div>
 
 				';
