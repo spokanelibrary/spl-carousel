@@ -212,10 +212,6 @@ class SPL_Carousel {
     $html .= '<div class="item'.$active.'">'.PHP_EOL;
 
     switch ( $slide->format ) {
-    	case 'promo':
-    		$html .= $slide->content.PHP_EOL;
-    		break;
-
     	case 'news':
   			$html .= '<div class="row">'.PHP_EOL;
   			
@@ -251,6 +247,7 @@ class SPL_Carousel {
 				$html .= '</div>'.PHP_EOL; // .row
     		break;
 
+    	case 'promo':
     	case 'post':
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
@@ -388,28 +385,26 @@ class SPL_Carousel {
 				$slide->title = 'Technology training & certification';
 				$slide->subtitle = 'Self-paced or instructor-led technology courses for all skill levels.';
 				$slide->content = '
-				<div class="row">
-				<div class="col-md-6">
+				<div class="clearfix" style="margin-bottom:10px;">
+			  	<a href="/it-academy/"><img class="img-responsive img-rounded" src="/assets/img/logos/itacademy.png"></a>
 					<span class="help-block">  		
 						<small>
 							Learn Microsoft products and qualify for certification testing.
 							<a class="pull-right" href="/it-academy/"><b>More</b> <small class="text-muted">&rarr;</small></a>
 				  	</small>
 				  </span>
-			  	<a href="/it-academy/"><img class="img-responsive img-rounded" src="/assets/img/logos/itacademy.png"></a>
 				</div>
 
-				<div class="col-md-6">
+				<div class="clearfix">
+			  	<a href="/gale-courses/"><img class="img-responsive img-rounded" src="/assets/img/logos/galecourses.png"></a>
 			  	<span class="help-block">
 						<small>
 							Online courses taught by college instructors and industry experts.
 							<a class="pull-right" href="/gale-courses/"><b>More</b> <small class="text-muted">&rarr;</small></a>
 				  	</small>
 				  </span>
-			  	<a href="/gale-courses/"><img class="img-responsive img-rounded" src="/assets/img/logos/galecourses.png"></a>
-			  </div>
+				</div>
 
-				</div><!-- /.row -->
 				';
 				break;
 			default:
