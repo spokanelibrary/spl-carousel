@@ -378,13 +378,6 @@ class SPL_Carousel {
 				$slide->subtitle = 'Subtitle';
 				$slide->content = 'Content';
 				break;
-			case 'digital':
-				$slide->url = '/promo/';
-				//$slide->img = 'img.png';
-				$slide->title = 'My Promo';
-				$slide->subtitle = 'Subtitle';
-				$slide->content = 'Content';
-				break;
 			default:
 				/*
 				$slide->url = '';
@@ -409,7 +402,8 @@ class SPL_Carousel {
 	    'post_status' => 'publish',
 	    //'numberposts' => $limit,
 	    'posts_per_page' => $limit,
-	    'category_name' => $category
+	    'category_name' => $category,
+	    'after' => strtotime('-2 days')
 	  ); 
 	  
 	  $posts = new WP_query($args);
