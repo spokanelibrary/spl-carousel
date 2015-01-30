@@ -376,7 +376,7 @@ class SPL_Carousel {
 				//$slide->img = 'img.png';
 				$slide->title = 'Digital Promo';
 				$slide->subtitle = 'Subtitle';
-				$slide->content = 'Content';
+				$slide->content = print_r(strtotime('-4 days'),true);
 				break;
 			default:
 				/*
