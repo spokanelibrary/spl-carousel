@@ -388,7 +388,8 @@ class SPL_Carousel {
 				$slide->title = 'Technology training & certification';
 				$slide->subtitle = 'Self-paced or instructor-led technology courses for all skill levels.';
 				$slide->content = '
-				<div class="clearfix" style="margin-bottom:10px;">
+				<div class="row">
+				<div class="col-md-6">
 			  	<a href="/it-academy/"><img class="img-responsive img-rounded" src="/assets/img/logos/itacademy.png"></a>
 					<span class="help-block">  		
 						<small>
@@ -396,9 +397,9 @@ class SPL_Carousel {
 							<a class="pull-right" href="/it-academy/"><b>More</b> <small class="text-muted">&rarr;</small></a>
 				  	</small>
 				  </span>
-			</div>
+				</div>
 
-			<div class="clearfix">
+				<div class="col-md-6">
 			  	<a href="/gale-courses/"><img class="img-responsive img-rounded" src="/assets/img/logos/galecourses.png"></a>
 			  	<span class="help-block">
 						<small>
@@ -406,7 +407,9 @@ class SPL_Carousel {
 							<a class="pull-right" href="/gale-courses/"><b>More</b> <small class="text-muted">&rarr;</small></a>
 				  	</small>
 				  </span>
-			</div>
+				</div>
+
+				</div><!-- /.row -->
 				';
 				break;
 			default:
