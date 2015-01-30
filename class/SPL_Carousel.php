@@ -422,7 +422,7 @@ class SPL_Carousel {
 				$slide->url = '/tech/';
 				//$slide->img = 'img.png';
 				$slide->title = 'Technology training & certification';
-				$slide->subtitle = 'Self-paced or instructor-led technology courses for all skill levels.';
+				$slide->subtitle = 'Self-paced or instructor-led courses for all skill levels.';
 				$slide->content = 'Windows, Office, SQL Server, Illustrator, InDesign, and much more: Learn the latest applications and technologies from industry professionals.';
 				$slide->promo = '
 				<div class="clearfix" style="margin-bottom:10px;">
