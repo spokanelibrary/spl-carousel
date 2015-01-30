@@ -109,14 +109,14 @@ class SPL_Carousel {
       if ( !empty($this->title) ) {
 	      $carousel .= '<div class="row">'.PHP_EOL;
 	  		$carousel .= '<div class="col-md-5">'.PHP_EOL;
-	      $carousel .= '<h3 class="hidden-xs text-center"><span class="serif">'.$this->title.'</span></h3>'.PHP_EOL;
+	      $carousel .= '<h3 class="hidden-xs hidden-sm text-center"><span class="serif">'.$this->title.'</span></h3>'.PHP_EOL;
 	      $carousel .= '</div>'.PHP_EOL; // .col
 				$carousel .= '</div>'.PHP_EOL; // .row
 			}
       $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
       $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
 
-      $carousel .= '<ol class="hidden-xs hidden-sm carousel-indicators">'.PHP_EOL;  
+      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
       $i = 0;
       foreach ( $this->slides as $s => $slide ) {
         $active = '';
@@ -289,8 +289,8 @@ class SPL_Carousel {
 		$slide->title = 'New Year, New You, New Day for the Library';
 		//$slide->subtitle = 'Subtitle';
 		$slide->content = '
-		<ul class="nav nav-pills nav-stacked">
-    <li class="active"><a href="http://news.spokanelibrary.org/new-year-new-you/">What’s on your “to do” list for 2015? <small class="text-muted">&rarr;</small></a></li>
+		<ul class="nav nav-stacked">
+    <li><a href="http://news.spokanelibrary.org/new-year-new-you/">What’s on your “to do” list for 2015? <small class="text-muted">&rarr;</small></a></li>
     <li><a href="http://news.spokanelibrary.org/dewey_1-15/">Dewey’s (self) helpful side <small class="text-muted">&rarr;</small></a></li>
     <li><a href="http://news.spokanelibrary.org/5_magazines_1-15/">Five Magazines instead of Five Songs This Month <small class="text-muted">&rarr;</small></a></li>
     </ul>  
