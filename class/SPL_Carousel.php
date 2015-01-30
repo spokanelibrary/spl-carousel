@@ -238,6 +238,7 @@ class SPL_Carousel {
     		break;
 
     	case 'promo':
+    	case 'post':
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
 		    		$html .= '<img class="img-responsive img-rounded img-kiosk" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
@@ -289,7 +290,6 @@ class SPL_Carousel {
 					$html .= '</div>'.PHP_EOL; // .row
 				}
     		break;
-    	case 'post':
     	default:
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
