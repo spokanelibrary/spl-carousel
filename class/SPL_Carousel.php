@@ -392,7 +392,7 @@ class SPL_Carousel {
 		return $slide;
 	}
 
-	protected function getCarouselPosts($limit=3, $category='featured') {
+	protected function getCarouselPosts($limit=3, $days=14, $category='featured') {
 		$slides = null; 
 
 	  $args = array(
@@ -404,7 +404,7 @@ class SPL_Carousel {
 	    'posts_per_page' => $limit,
 	    'category_name' => $category,
 	    'date_query' => array( 'column' => 'post_date'
-	    											,'after' => '-14 days' )
+	    											,'after' => '-'.$days.' days' )
 	  ); 
 	  
 	  $posts = new WP_query($args);
