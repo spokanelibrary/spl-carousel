@@ -238,6 +238,8 @@ class SPL_Carousel {
     		break;
 
     	case 'promo':
+    		$html .= $slide->content.PHP_EOL;
+    		break;
     	case 'post':
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
@@ -352,7 +354,7 @@ class SPL_Carousel {
 		$slide->img = 'http://news.spokanelibrary.org/wordpress/media/Shadle_Sunday_hours2-300x282.jpg';
 		$slide->title = 'New Year, New You, New Day for the Library';
 		//$slide->subtitle = 'Subtitle';
-		$slide->date = 'Jan';
+		$slide->date = 'January';
 		$slide->content = '
 		<ul class="text-muted">
     <li><a href="http://news.spokanelibrary.org/new-year-new-you/">What’s on your “to do” list for 2015? <small class="text-muted">&rarr;</small></a></li>
