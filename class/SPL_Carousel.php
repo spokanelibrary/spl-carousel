@@ -249,14 +249,26 @@ class SPL_Carousel {
 
 			    $html .= '<div class="'.$col['left'].'">'.PHP_EOL;
 			    if ( $slide->img ) {
-			    	$html .= '<img class="img-responsive img-rounded img-hero" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
+			    	if ( !empty($slide->url) ) {
+			    		$html .= '<a href="'.$slide->url.'">';
+			    	}
+			    	$html .= '<img class="img-responsive img-rounded img-hero" src="'.$slide->img.'" alt="'.$slide->title.'">';
+			    	if ( !empty($slide->url) ) {
+			    		$html .= '</a>';
+			    	}
 			    }
 			    $html .= '</div>'.PHP_EOL; // .col
 
 			    $html .= '<div class="'.$col['right'].'">'.PHP_EOL;
 			    $html .= '<div class="carousel-caption">'.PHP_EOL;
 	        $html .= '<h2 class="text-success" style="margin-top:0;">';
+	        if ( !empty($slide->url) ) {
+		    		$html .= '<a href="'.$slide->url.'">';
+		    	}
 	        $html .= $slide->title;
+	        if ( !empty($slide->url) ) {
+		    		$html .= '</a>';
+		    	}
 	        if ( !empty($slide->subtitle) ) {
 	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
 	        }
