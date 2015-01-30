@@ -439,7 +439,7 @@ class SPL_Carousel {
 			  	<a href="/gale-courses/"><img class="img-responsive img-rounded" src="/assets/img/logos/galecourses.png"></a>
 			  	<span class="help-block">
 						<small>
-							Online courses taught by college instructors and industry experts.
+							Taught by college instructors and industry experts.
 							<a class="pull-right" href="/gale-courses/"><b>More</b> <small class="text-muted">&rarr;</small></a>
 				  	</small>
 				  </span>
