@@ -403,7 +403,7 @@ class SPL_Carousel {
 	    //'numberposts' => $limit,
 	    'posts_per_page' => $limit,
 	    'category_name' => $category,
-	    'date_query' => array( 'column' => 'post_date', 'after' => strtotime('- 3 days'), 'before'=>'tomorrow' )
+	    'date_query' => array( 'column' => 'post_date', 'after' => '-3 days' )
 	  ); 
 	  
 	  $posts = new WP_query($args);
