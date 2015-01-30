@@ -238,6 +238,8 @@ class SPL_Carousel {
     		break;
 
     	case 'promo':
+
+    		break;
     	case 'post':
     	default:
     		if ( $this->kiosk ) {
@@ -287,6 +289,7 @@ class SPL_Carousel {
 					$html .= '</div>'.PHP_EOL; // .row
 				}
 			}
+			break;
 		$html .= '</div>'.PHP_EOL; // .item
 
 		return $html;
