@@ -431,9 +431,7 @@ class SPL_Carousel {
 						<small>
 							Learn Microsoft products and qualify for certification testing.
 				  	</small>				  	
-						<br>
-						  <a class="pull-right" href="/it-academy/"><b>More</b> <small class="text-muted">&rarr;</small></a>
-				  </p>
+					</p>
 				</div>
 
 				<div class="clearfix">
@@ -442,9 +440,7 @@ class SPL_Carousel {
 						<small>
 							Taught by college instructors and industry experts.							
 				  	</small>
-						<br>
-						<a class="pull-right" href="/gale-courses/"><b>More</b> <small class="text-muted">&rarr;</small></a>
-				  </p>
+					</p>
 				</div>
 
 				';
