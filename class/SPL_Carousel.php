@@ -404,7 +404,7 @@ class SPL_Carousel {
 	    'posts_per_page' => $limit,
 	    'category_name' => $category,
 	    'date_query' => array( 'column' => 'post_date'
-	    											,'after' => '-5 days' )
+	    											,'after' => '-14 days' )
 	  ); 
 	  
 	  $posts = new WP_query($args);
