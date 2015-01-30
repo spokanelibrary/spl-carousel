@@ -209,7 +209,7 @@ class SPL_Carousel {
     if ( 0 == $s ) {
       $active = ' active';
     } 
-    $html .= '<div class="item'.$active.'">'.PHP_EOL;
+    $html .= '<div class="item'.$active.'" style="max-height:200px; overflow:hidden;">'.PHP_EOL;
 
     switch ( $slide->format ) {
     	case 'news':
