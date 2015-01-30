@@ -114,7 +114,7 @@ class SPL_Carousel {
       if ( !empty($this->title) ) {
 	      $carousel .= '<div class="row">'.PHP_EOL;
 	  		$carousel .= '<div class="col-md-5">'.PHP_EOL;
-	      $carousel .= '<h3 class="hidden-xs hidden-sm text-center"><em>'.$this->title.'</em></h3>'.PHP_EOL;
+	      $carousel .= '<h3 class="hidden-xs hidden-sm text-center serif">'.$this->title.'</h3>'.PHP_EOL;
 	      $carousel .= '</div>'.PHP_EOL; // .col
 	      if ( !empty($this->subtitle) ) {
 		      $carousel .= '<div class="col-md-7">'.PHP_EOL;
