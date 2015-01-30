@@ -11,7 +11,7 @@ class SPL_Carousel {
 	var $title;
 	var $subtitle;
 	var $thumb = 'large';
-	var $hover = 'hover'; // 'false'
+	var $hover = 'false'; // 'false' or 'hover'
 	var $params;
 	var $slides;
 	
