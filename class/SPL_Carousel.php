@@ -103,7 +103,7 @@ class SPL_Carousel {
 	    $hover = 'hover';
 	  }
 	  if ( 'false' == $hover ) {
-	  	$pause = 'data-hover="'.$hover.'" ';
+	  	$pause = 'data-pause="'.$hover.'" ';
 	  }
 
 	  $carousel .= PHP_EOL;
