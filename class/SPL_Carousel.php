@@ -423,7 +423,7 @@ class SPL_Carousel {
 				//$slide->img = 'img.png';
 				$slide->title = 'Technology training & certification';
 				$slide->subtitle = 'Self-paced or instructor-led technology courses for all skill levels.';
-				$slide->content = 'Windows, Office, SQL Server, Illustrator, InDesign, and much more: Learn the latest applications and technologies from industry professionals. The programs listed here are run by library partners and offered entirely online.'
+				$slide->content = 'Windows, Office, SQL Server, Illustrator, InDesign, and much more: Learn the latest applications and technologies from industry professionals. The programs listed here are run by library partners and offered entirely online.';
 				$slide->promo = '
 				<div class="clearfix" style="margin-bottom:10px;">
 			  	<a href="/it-academy/"><img class="img-responsive img-rounded" src="/assets/img/logos/itacademy.png"></a>
