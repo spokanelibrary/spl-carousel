@@ -404,9 +404,9 @@ class SPL_Carousel {
 		$slide->date = 'January';
 		$slide->content = '
 		<ul class="text-muted">
-    <li><a href="http://news.spokanelibrary.org/new-year-new-you/">What’s on your “to do” list for 2015? <small class="text-muted">&rarr;</small></a></li>
-    <li><a href="http://news.spokanelibrary.org/dewey_1-15/">Dewey’s (self) helpful side <small class="text-muted">&rarr;</small></a></li>
-    <li><a href="http://news.spokanelibrary.org/5_magazines_1-15/">Five Magazines instead of Five Songs This Month <small class="text-muted">&rarr;</small></a></li>
+    <li><a href="http://news.spokanelibrary.org/new-year-new-you/"><b>What’s on your “to do” list for 2015?</b> <small class="text-muted">&rarr;</small></a></li>
+    <li><a href="http://news.spokanelibrary.org/dewey_1-15/"><b>Dewey’s (self) helpful side</b> <small class="text-muted">&rarr;</small></a></li>
+    <li><a href="http://news.spokanelibrary.org/5_magazines_1-15/"><b>Five Magazines instead of Five Songs This Month</b> <small class="text-muted">&rarr;</small></a></li>
     </ul>  
 		';
 
