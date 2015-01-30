@@ -288,8 +288,8 @@ class SPL_Carousel {
 
 					$html .= '</div>'.PHP_EOL; // .row
 				}
+				break;
 			}
-			break;
 		$html .= '</div>'.PHP_EOL; // .item
 
 		return $html;
