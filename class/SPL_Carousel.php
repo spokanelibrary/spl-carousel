@@ -181,6 +181,38 @@ class SPL_Carousel {
     }
     */
 
+    if ( !$this->kiosk ) {
+			$carousel .= '<div class="carousel-controls spl-hero-panel spl-hero-success">'.PHP_EOL;
+      if ( !empty($this->title) ) {
+	      $carousel .= '<div class="row">'.PHP_EOL;
+	  		$carousel .= '<div class="col-md-5">'.PHP_EOL;
+	      $carousel .= '<h3 class="hidden-xs hidden-sm text-center serif">'.$this->title.'</h3>'.PHP_EOL;
+	      $carousel .= '</div>'.PHP_EOL; // .col
+	      if ( !empty($this->subtitle) ) {
+		      $carousel .= '<div class="col-md-7">'.PHP_EOL;
+		      $carousel .= '<h3 class="hidden-xs hidden-sm text-center"><small>'.$this->subtitle.'</small></h3>'.PHP_EOL;
+		      $carousel .= '</div>'.PHP_EOL; // .col
+	    	}
+				$carousel .= '</div>'.PHP_EOL; // .row
+			}
+      $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
+      $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$this->id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
+
+      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
+      $i = 0;
+      foreach ( $this->slides as $s => $slide ) {
+        $active = '';
+        if ( 0 == $i ) {
+          $active = ' class="active"';
+        } 
+        $carousel .= '<li data-target="#spl-carousel-'.$this->id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
+        $i++;
+      }
+      $carousel .= '</ol>'.PHP_EOL; 
+      $carousel .= '</div>'.PHP_EOL; // .clearfix
+
+		}
+
 	  $carousel .= '</div>'.PHP_EOL; // .carousel
 	  $carousel .= PHP_EOL;
 
