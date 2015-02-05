@@ -434,8 +434,20 @@ class SPL_Carousel {
 	protected function getCarouselNews() {
 		$slide = new stdClass;
 		$slide->format = 'news';
-
 		$slide->url = '/news/';
+
+		$slide->img = 'http://news.spokanelibrary.org/wordpress/media/HoF-SpotlightIcon-300x181.jpg';
+		$slide->title = 'Short Month, Not Short on Opportunities at Your Library!';
+		$slide->date = 'February';
+		$slide->content = '
+		<ul class="text-muted">
+    <li><a href="http://news.spokanelibrary.org/rfid_mobius/"><b>ch-ch-changes...</b> <small class="text-muted">&rarr;</small></a></li>
+    <li><a href="http://news.spokanelibrary.org/habla-espanol/"><b>Habla Español?</b> <small class="text-muted">&rarr;</small></a></li>
+    <li><a href="http://news.spokanelibrary.org/dewey_2-15/"><b>Dewey Celebrates African American History Month</b> <small class="text-muted">&rarr;</small></a></li>
+    <li><a href="http://news.spokanelibrary.org/5-songs-2-15/"><b>Prepping for the Symphony with Freegal</b> <small class="text-muted">&rarr;</small></a></li>
+    </ul>  
+		';
+		/*
 		$slide->img = 'http://news.spokanelibrary.org/wordpress/media/Shadle_Sunday_hours2-300x282.jpg';
 		$slide->title = 'New Year, New You, New Day for the Library';
 		//$slide->subtitle = 'Subtitle';
@@ -447,6 +459,7 @@ class SPL_Carousel {
     <li><a href="http://news.spokanelibrary.org/5_magazines_1-15/"><b>Five Magazines instead of Five Songs This Month</b> <small class="text-muted">&rarr;</small></a></li>
     </ul>  
 		';
+		*/
 
 		return $slide;
 	}
