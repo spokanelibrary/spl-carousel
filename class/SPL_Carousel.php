@@ -647,7 +647,7 @@ class SPL_Carousel {
 
 		    $event->url = esc_url( $item->get_permalink() );
     	  $event->date = $item->get_date('j F Y | g:i a');
-	      $event->title = esc_html( $item->get_title() )
+	      $event->title = esc_html( $item->get_title() );
 
 		   	if ( is_array($customfields) ) {
 		   		foreach( $customfields as $f => $field ) {
