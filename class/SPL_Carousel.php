@@ -75,6 +75,15 @@ class SPL_Carousel {
 	    }
 	  }
 
+	  if ( in_array('pages', $this->params) ) {
+	    $pages = $this->getCarouselPages();
+	    if ( is_array( $pages ) ) {
+	    	foreach ( $pages as $p => $page ) {
+	    		$slides[] = $page; 		
+	    	}
+	    }
+	  }
+
 		if ( isset($this->params['promo']) ) {
 			$promos = explode(',', $this->params['promo']);
 			if ( is_array($promos) ) {
@@ -679,6 +688,10 @@ class SPL_Carousel {
 		}
 
 		return $slide;
+	}
+
+	protected function getCarouselPages($limit=3) {
+
 	}
 
 	protected function getCarouselBrowseList($limit=3) {
