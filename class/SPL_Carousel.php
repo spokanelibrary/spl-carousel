@@ -691,7 +691,16 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselPages($limit=3) {
+		
+		$slide = new stdClass();
 
+		$slide->url = './';
+		//$slide->img = 'img.png';
+		$slide->title = 'Featured page';
+		$slide->subtitle = 'a subtitle';
+		$slide->content = 'A featured page is like a featured post. Only different.';
+
+		$slides[] = $slide;
 	}
 
 	protected function getCarouselBrowseList($limit=3) {
