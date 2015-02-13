@@ -67,7 +67,7 @@ class SPL_Carousel {
 	  }
 
 	  if ( in_array('browse', $this->params) ) {
-	    $list = $this->getCarouselBrowseList();
+	    //$list = $this->getCarouselBrowseList();
 	    if ( is_array( $list ) ) {
 	    	foreach ( $list as $i => $item ) {
 	    		//$slides[] = $item; 		
