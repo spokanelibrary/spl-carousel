@@ -602,7 +602,7 @@ class SPL_Carousel {
         $maxitems = $rss->get_item_quantity( $limit ); 
         $feed = $rss->get_items( 0, $maxitems );
     }
-    /*
+
     $data = null;
     if ( is_array($feed) ) {
     	$data = array();
@@ -640,7 +640,7 @@ class SPL_Carousel {
         if ( !empty($location[0]['data']) ) {
         	if ( !empty($branch) ) {
 			    	$event->branch = $branch;
-			    	$event->location =- esc_html( $location[0]['data'] );
+			    	$event->location = esc_html( $location[0]['data'] );
 			  	}
 		  	}
         $event->datetime = esc_html( $formatteddatetime[0]['data'] );
@@ -670,7 +670,7 @@ class SPL_Carousel {
     	  $data[] = $event;
       }
     }
-    */
+    
     return $data;
 	}
 
