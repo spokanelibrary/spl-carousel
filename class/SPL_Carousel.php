@@ -572,6 +572,8 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselCalendar($limit=3) {
+		$slides = $this->getCarouselCalendarData($limit);
+		return $slides;
 		$slides = array();
 
 		$slide->format = 'calendar';
