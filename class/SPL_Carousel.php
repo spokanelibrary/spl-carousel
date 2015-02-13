@@ -97,8 +97,7 @@ class SPL_Carousel {
 		if ( in_array('news', $this->params) ) {
 	    $slides[] = $this->getCarouselNews();
 	  }
-		
-		
+
 	  if ( is_array($slides) ) {
 	  	$slides = array_reverse($slides);
 			if ( in_array('shuffle', $this->params) ) {
@@ -108,12 +107,10 @@ class SPL_Carousel {
 		  	$slides = array_slice($slides, 0, $this->limit);	
 		  }
 	  	
-	  	$this->slides = $slides;
-	  	$carousel = $this->getCarouselFormatted();
 	  }
 
-	  //$carousel = '<pre>'.print_r($slides, true).'</pre>';
-		return $carousel;
+	  $this->slides = $slides;
+		return $this->getCarouselFormatted();;
 	}
 
 	protected function getCarouselFormatted() {
