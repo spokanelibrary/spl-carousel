@@ -571,7 +571,7 @@ class SPL_Carousel {
 		return $slide;
 	}
 
-	protected function getCarouselCalendar($limit=3, $days=14) {
+	protected function getCarouselCalendar($limit=3) {
 		$slides = array();
 
 		$slide->format = 'calendar';
@@ -582,7 +582,7 @@ class SPL_Carousel {
 		$slide->branch = '/sh/';
 		$slide->title = 'Mobile Office with Council Members Mumm and Stratton';
 		//$slide->subtitle = '';
-		$slide->content = '<pre>'.print_r($this->getCarouselCalendarData, true).'</pre>';
+		$slide->content = '<pre>'.print_r($this->getCarouselCalendarData($limit), true).'</pre>';
 
 		$slides[] = $slide;
 
