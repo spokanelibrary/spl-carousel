@@ -12,6 +12,7 @@ class SPL_Carousel {
 	var $subtitle;
 	var $thumb = 'large';
 	var $hover = 'false'; // 'false' or 'hover'
+	var $limit = 12;
 	var $params;
 	var $slides;
 	
@@ -97,14 +98,16 @@ class SPL_Carousel {
 	    $slides[] = $this->getCarouselNews();
 	  }
 		
-		$slides = array_reverse($slides);
-
-		if ( in_array('shuffle', $this->params) ) {
-	    shuffle($slides);
-	  }
-
+		
 	  if ( is_array($slides) ) {
-	  	//$slides = array_slice($slides, 0, 12);
+	  	$slides = array_reverse($slides);
+			if ( in_array('shuffle', $this->params) ) {
+		    shuffle($slides);
+		  }
+		  if ( isset($this->limit) && $this->limit > 1 ) {
+		  	$slides = array_slice($slides, 0, $this->limit);	
+		  }
+	  	
 	  	$this->slides = $slides;
 	  	$carousel = $this->getCarouselFormatted();
 	  }
