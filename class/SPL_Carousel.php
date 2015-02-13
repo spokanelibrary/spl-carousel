@@ -592,10 +592,16 @@ class SPL_Carousel {
 	protected function getCarouselCalendarData($limit=3) {
 		$feed = null;
 
-		$uri = 'http://www.trumba.com/calendars/spls-calendar.rss';
-		//$uri = 'http://www.trumba.com/calendars/spl-web-feed.rss';
+		$uri = 'http://www.trumba.com/calendars/spl-web-feed.rss';
 
+		add_filter( 'wp_feed_cache_transient_lifetime', function() {
+         return 0;
+    });
+		
 		$rss = fetch_feed( $uri );
+		
+		remove_all_filters( 'wp_feed_cache_transient_lifetime' );
+
     if ( ! is_wp_error( $rss ) ) {
         $maxitems = $rss->get_item_quantity( $limit ); 
         $feed = $rss->get_items( 0, $maxitems );
