@@ -67,10 +67,10 @@ class SPL_Carousel {
 	  }
 
 	  if ( in_array('browse', $this->params) ) {
-	    //$list = $this->getCarouselBrowseList();
+	    $list = $this->getCarouselBrowseList();
 	    if ( is_array( $list ) ) {
 	    	foreach ( $list as $i => $item ) {
-	    		//$slides[] = $item; 		
+	    		$slides[] = $item; 		
 	    	}
 	    }
 	  }
@@ -604,7 +604,7 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselBrowseList($limit=3) {
-		$list = $this->curlPostProxy('http://api.spokanelibrary.org/browse/'.$browse);
+		$list = $this->curlPostProxy('http://api.spokanelibrary.org/browse/star');
 		$list = json_decode($list);
 		if ( is_array($list->titles) ) {
 			$slides = array();
