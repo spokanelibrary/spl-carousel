@@ -608,16 +608,18 @@ class SPL_Carousel {
 		$list = json_decode($list);
 		if ( is_array($list->titles) ) {
 			$slides = array();
-			$titles = array_slice($list->titles, 0, $limit);
+			$titles = array_slice($list->titles, 0, $limit*2);
 			unset($list);
 			foreach ( $titles as $title ) {
-				$slide = new stdClass();
-				$slide->content = '<pre>'.print_r($title, true).'</pre>'; 
-				
+				if ( !empty($title->summary) && !empty($title->isbn) ) {
+					$slide = new stdClass();
+					$slide->content = '<pre>'.print_r($title, true).'</pre>'; 
+				}
 				$slides[] = $slide;
 			}
 		}
-		
+		$slides = array_slice($slides, 0, $limit);
+
 		return $slides;
 	}
 
