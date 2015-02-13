@@ -586,11 +586,13 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselExcerpt($content, $chars=175, $elide='&hellip;') {
-		$str = substr($content,0,$chars);
- 		$str = substr($str,0,strrpos($str,' '));
- 		if (substr($str, -1) != '.') {
- 			$str = $str.$elide;
- 		}
+		if ( strlen($content) > $chars) {		
+			$str = substr($content,0,$chars);
+	 		$str = substr($str,0,strrpos($str,' '));
+	 		if (substr($str, -1) != '.') {
+	 			$str = $str.$elide;
+	 		}
+	 	}
 
  		return $str;
 	}
