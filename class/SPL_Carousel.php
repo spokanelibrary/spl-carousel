@@ -117,6 +117,11 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselFormatted() {
+
+		if ( !is_array($this->slides) ) {
+			return;
+		}
+
 		$carousel = '';
 		
 		$auto = null;
