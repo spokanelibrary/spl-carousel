@@ -609,7 +609,7 @@ class SPL_Carousel {
 				$description = substr($description,0,200);
      		$description = substr($description,0,strrpos($description," "));
      		if (substr($description, -1) != '.') {
-     			$description = $description.' &hellip;';
+     			$description = $description.'&hellip;';
      		}
      		$event->content = $description;
 
