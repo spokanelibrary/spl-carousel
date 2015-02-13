@@ -506,6 +506,15 @@ class SPL_Carousel {
 	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
 	        }
 	        $html .= '</h2>'.PHP_EOL;
+
+	        /*
+	        if ( !empty($slide->author) ) {
+	        	$html .= '<h4>';
+	          $html .= 'by '.$slide->author;
+	        	$html .= '</h4>';
+	        }
+	        *.
+	        
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
