@@ -57,6 +57,15 @@ class SPL_Carousel {
 	    }
 	  }
 
+	  if ( in_array('calendar', $this->params) ) {
+	    $calendar = $this->getCarouselCalendar();
+	    if ( is_array( $calendar ) ) {
+	    	foreach ( $calendar as $c => $cal ) {
+	    		$slides[] = $cal; 		
+	    	}
+	    }
+	  }
+
 		if ( isset($this->params['promo']) ) {
 			$promos = explode(',', $this->params['promo']);
 			if ( is_array($promos) ) {
@@ -511,6 +520,23 @@ class SPL_Carousel {
 		}
 
 		return $slide;
+	}
+
+	protected function getCarouselCalendar($limit=3, $days=14) {
+		$slides = array();
+
+		$slide->url = '/tech/';
+		$slide->img = 'http://www.trumba.com/i/DgD8evs2TYiWb%2AlKFvUyCNK3.jpg';
+		$slide->datetime = 'Tuesday, February 17, 2015, 1:30 - 2:30pm';
+		$slide->location = 'Shadle Library';
+		$slide->branch = '/sh/';
+		$slide->title = 'Mobile Office with Council Members Mumm and Stratton';
+		//$slide->subtitle = '';
+		//$slide->content = '';
+
+		$slides[] = $slide;
+
+		return $slides;
 	}
 
 	protected function getCarouselPosts($limit=3, $days=14, $category='featured') {
