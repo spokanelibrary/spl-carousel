@@ -697,7 +697,7 @@ class SPL_Carousel {
 		$slide->url = './';
 		//$slide->img = 'img.png';
 		$slide->title = 'Featured page';
-		$slide->subtitle = 'a subtitle';
+		$slide->subtitle = 'subtitle';
 		$slide->content = 'A featured page is like a featured post. Only different.';
 
 		$slides[] = $slide;
