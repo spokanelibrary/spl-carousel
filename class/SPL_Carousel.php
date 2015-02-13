@@ -701,6 +701,8 @@ class SPL_Carousel {
 		$slide->content = 'A featured page is like a featured post. Only different.';
 
 		$slides[] = $slide;
+
+		return $slides();
 	}
 
 	protected function getCarouselBrowseList($limit=3) {
