@@ -12,7 +12,7 @@ class SPL_Carousel {
 	var $subtitle;
 	var $thumb = 'large';
 	var $hover = 'false'; // 'false' or 'hover'
-	var $limit = 12;
+	var $limit = 16;
 	var $params;
 	var $slides;
 	
@@ -462,7 +462,7 @@ class SPL_Carousel {
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
-	          $html .= '<a class="btn btn-alt" href="'.$slide->url.'"> ';
+	          $html .= '<a class="btn btn-primary" href="'.$slide->url.'"> ';
 	          $html .= '<b>';
 	          $html .= 'Read more';
 	          $html .= '</b>';
