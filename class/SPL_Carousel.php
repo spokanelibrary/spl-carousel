@@ -104,6 +104,7 @@ class SPL_Carousel {
 	  }
 
 	  if ( is_array($slides) ) {
+	  	$slides = array_slice($slides, 12);
 	  	$this->slides = $slides;
 	  	$carousel = $this->getCarouselFormatted();
 	  }
