@@ -582,11 +582,27 @@ class SPL_Carousel {
 		$slide->branch = '/sh/';
 		$slide->title = 'Mobile Office with Council Members Mumm and Stratton';
 		//$slide->subtitle = '';
-		$slide->content = '<pre>'.print_r(do_shortcode('[spl_widget calendar-view widget-data limit=6]'), true).'</pre>';
+		$slide->content = '<pre>'.print_r($this->getCarouselCalendarData, true).'</pre>';
 
 		$slides[] = $slide;
 
 		return $slides;
+	}
+
+	protected function getCarouselCalendarData($limit=3) {
+		$feed = null;
+
+		$uri = 'http://www.trumba.com/calendars/spls-calendar.rss';
+		//$uri = 'http://www.trumba.com/calendars/spl-web-feed.rss';
+
+		$rss = fetch_feed( $uri );
+    if ( ! is_wp_error( $rss ) ) {
+        $maxitems = $rss->get_item_quantity( $limit ); 
+        $feed = $rss->get_items( 0, $maxitems );
+    }
+
+
+
 	}
 
 	protected function getCarouselPosts($limit=3, $days=14, $category='featured') {
