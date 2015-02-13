@@ -104,7 +104,7 @@ class SPL_Carousel {
 	  }
 
 	  if ( is_array($slides) ) {
-	  	//$slides = array_slice($slides, 12);
+	  	$slides = array_slice($slides, 0, 12); // some kind of limit
 	  	$this->slides = $slides;
 	  	$carousel = $this->getCarouselFormatted();
 	  }
