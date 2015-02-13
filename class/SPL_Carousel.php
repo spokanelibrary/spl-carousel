@@ -417,7 +417,7 @@ class SPL_Carousel {
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
-	          $html .= '<a class="btn btn-info" href="'.$slide->url.'"> ';
+	          $html .= '<a class="btn btn-primary" href="'.$slide->url.'"> ';
 	          $html .= '<b>';
 	          $html .= 'Read more';
 	          $html .= '</b>';
@@ -462,7 +462,7 @@ class SPL_Carousel {
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
-	          $html .= '<a class="btn btn-primary" href="'.$slide->url.'"> ';
+	          $html .= '<a class="btn btn-info" href="'.$slide->url.'"> ';
 	          $html .= '<b>';
 	          $html .= 'Read more';
 	          $html .= '</b>';
