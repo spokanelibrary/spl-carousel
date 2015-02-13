@@ -690,21 +690,6 @@ class SPL_Carousel {
 		return $slide;
 	}
 
-	protected function getCarouselPages($limit=3) {
-		
-		$slide = new stdClass();
-
-		$slide->url = './';
-		//$slide->img = 'img.png';
-		$slide->title = 'Featured page';
-		$slide->subtitle = 'subtitle';
-		$slide->content = 'A featured page is like a featured post. Only different.';
-
-		$slides[] = $slide;
-
-		return $slides;
-	}
-
 	protected function getCarouselBrowseList($limit=3) {
 		$list = SPL_Widget::curlPostProxy('http://api.spokanelibrary.org/browse/star');
 		$list = json_decode($list);
@@ -807,6 +792,59 @@ class SPL_Carousel {
     	  $slides[] = $event;
       }
     }
+
+		return $slides;
+	}
+
+	protected function getCarouselPages($limit=12, $meta='featured') {
+		/*
+		$slide = new stdClass();
+
+		$slide->url = './';
+		//$slide->img = 'img.png';
+		$slide->title = 'Featured page';
+		$slide->subtitle = 'subtitle';
+		$slide->content = 'A featured page is like a featured post. Only different.';
+
+		$slides[] = $slide;
+		*/
+		$slides = null; 
+
+	  $args = array(
+	    'post_type' => 'page',
+	    'orderby'   => 'post_date',
+	    'order'     => 'DESC',
+	    'post_status' => 'publish',
+	    //'numberposts' => $limit,
+	    'posts_per_page' => $limit,
+	    'meta_key'	=> 'featured'
+	    //'category_name' => $category,
+	    //'date_query' => array( 'column' => 'post_date'
+	    //											,'after' => '-'.$days.' days' )
+	  ); 
+	  
+	  $posts = new WP_query($args);
+	  if ($posts->have_posts()) {
+			add_filter( 'excerpt_more', 'spl_carousel_excerpt_more' );
+			while ($posts->have_posts()) {
+				$posts->the_post(); 
+
+				$slide = new stdClass;
+				$slide->format = 'post';
+				$slide->url = get_permalink();
+				if ( has_post_thumbnail() ) { 
+					$slide->img = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), $this->thumb);
+					$slide->img = $slide->img[0];
+				}
+				//$slide->id = get_the_ID();
+				$slide->title = get_the_title();
+				$slide->content = get_the_excerpt();
+
+				$slides[] = $slide;
+			}
+			remove_filter( 'excerpt_more', 'spl_carousel_excerpt_more' );
+	  }
+	  wp_reset_postdata();
 
 		return $slides;
 	}
