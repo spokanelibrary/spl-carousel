@@ -474,7 +474,11 @@ class SPL_Carousel {
     		} else {
 			    $html .= '<div class="row">'.PHP_EOL;
 
-			    
+			    $html .= '<div class="col-md-12">'.PHP_EOL;
+	  			$html .= '<h2 class="text-muted" style="margin-top:0;">';
+	  			$html .= 'On our reading list';
+	        $html .= '</h2>'.PHP_EOL;
+	        $html .= '</div>'.PHP_EOL; // .col
 
 			    $html .= '<div class="'.$col['left'].'">'.PHP_EOL;
 			    if ( $slide->img ) {
