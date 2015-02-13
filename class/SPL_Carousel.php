@@ -427,7 +427,8 @@ class SPL_Carousel {
 	        	$html .= '<h3 class="text-succes" style="margin-top:0;">'.PHP_EOL;
  						if ( !empty($slide->url) ) { 
  							$html .= '<a href="'.$slide->url.'">';
-		        	$html .= '@ ' . $slide->location;
+		        	$html .= '<small>@</small>';
+		        	$html .= '<span class="text-success">' . $slide->location.'</span>';
 		        	$html .= '</a>'.PHP_EOL;
 		      	} else {
 		      		$html .= '@ ' . $slide->location.PHP_EOL;
@@ -435,7 +436,7 @@ class SPL_Carousel {
 		      	$html .= '</h3>'.PHP_EOL;
 	      	}
 
-	        $html .= '<h4 class="text-warning text-center">'.PHP_EOL;
+	        $html .= '<h4 class="text-warning">'.PHP_EOL;
 	        $html .= '<i class="glyphicon glyphicon-time"></i>'.PHP_EOL;
 	        $html .= $slide->datetime.PHP_EOL;
 	        $html .= '</h4>'.PHP_EOL;
