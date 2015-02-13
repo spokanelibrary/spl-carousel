@@ -430,7 +430,6 @@ class SPL_Carousel {
  							$html .= '<a href="'.$slide->url.'">';
 		        	$html .= '<span class="text-success">' . $slide->location.'</span>';
 		        	$html .= '</a>'.PHP_EOL;
-		        	$html .= '&rarr;'.PHP_EOL;
 		      	} else {
 		      		$html .= '@ ' . $slide->location.PHP_EOL;
 		      	}
