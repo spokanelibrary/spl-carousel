@@ -606,7 +606,7 @@ class SPL_Carousel {
 				$event->location = esc_html( $location[0]['data'] );
 
 				$description = esc_html( $description[0]['data'] );
-				$description = substr($description,0,100);
+				$description = substr($description,0,150);
      		$description = substr($description,0,strrpos($description," "));
      		$event->content = $description.' &hellip;';
 
