@@ -592,6 +592,8 @@ class SPL_Carousel {
 	 		if (substr($str, -1) != '.') {
 	 			$str = $str.$elide;
 	 		}
+	 	} else {
+	 		$str = $content;
 	 	}
 
  		return $str;
