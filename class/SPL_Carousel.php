@@ -521,6 +521,16 @@ class SPL_Carousel {
 		return $html;
 	}
 
+	protected function getCarouselExcerpt($content, $chars=175, $elide='&hellip;') {
+		$str = substr($content,0,$chars);
+ 		$str = substr($str,0,strrpos($str,' '));
+ 		if (substr($str, -1) != '.') {
+ 			$str = $str.$elide;
+ 		}
+
+ 		return $str;
+	}
+
 	protected function getCarouselNews() {
 		$slide = new stdClass;
 		$slide->format = 'news';
@@ -617,8 +627,7 @@ class SPL_Carousel {
 					$slide->author = $title->author;
 					$slide->img = 'http://contentcafe2.btol.com/ContentCafe/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value='.$title->isbn;
 					$slide->url = '/bib/'.$title->bib.'/';
-					$slide->content = $title->summary;
-					//$slide->content = '<pre>'.print_r($title, true).'</pre>'; 
+					$slide->content = $this->getCarouselExcerpt($title->summary);
 					$slides[] = $slide;
 				}
 			}
