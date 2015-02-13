@@ -406,7 +406,7 @@ class SPL_Carousel {
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-alt" href="'.$slide->url.'"> ';
 	          $html .= '<i class="glyphicon glyphicon-info-sign"></i>'.PHP_EOL;
-	          $html .= 'Read more <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= 'Learn more <span class="">&rarr;</span>'.PHP_EOL;
 	          $html .= '</a>'.PHP_EOL;
 	          $html .= '</p>'.PHP_EOL;
 	        }
