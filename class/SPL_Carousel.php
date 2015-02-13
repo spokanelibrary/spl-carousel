@@ -424,13 +424,13 @@ class SPL_Carousel {
 			    $html .= '<div class="carousel-caption">'.PHP_EOL;
 	        
 	        if ( !empty($slide->location) ) {
-	        	$html .= '<h3 class="text-succes" style="margin-top:0;">'.PHP_EOL;
+	        	$html .= '<h3 class="text-muted" style="margin-top:0;">'.PHP_EOL;
  						if ( !empty($slide->url) ) { 
- 							$html .= '<span class="text-muted">@</span>'.PHP_EOL;
+ 							$html .= '@'.PHP_EOL;
  							$html .= '<a href="'.$slide->url.'">';
 		        	$html .= '<span class="text-success">' . $slide->location.'</span>';
 		        	$html .= '</a>'.PHP_EOL;
-		        	$html .= '<span class="text-muted">&rarr;</span>'.PHP_EOL;
+		        	$html .= '&rarr;'.PHP_EOL;
 		      	} else {
 		      		$html .= '@ ' . $slide->location.PHP_EOL;
 		      	}
