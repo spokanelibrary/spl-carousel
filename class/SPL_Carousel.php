@@ -606,7 +606,6 @@ class SPL_Carousel {
 	protected function getCarouselBrowseList($limit=3) {
 		$list = SPL_Widget::curlPostProxy('http://api.spokanelibrary.org/browse/star');
 		$list = json_decode($list);
-		print_r($list);
 		if ( is_array($list->titles) ) {
 			$slides = array();
 			$titles = array_slice($list->titles, 0, $limit);
@@ -614,6 +613,8 @@ class SPL_Carousel {
 			foreach ( $titles as $title ) {
 				$slide = new stdClass();
 				$slide->content = '<pre>'.print_r($title, true).'</pre>'; 
+				
+				$slides[] = $slide;
 			}
 		}
 		
