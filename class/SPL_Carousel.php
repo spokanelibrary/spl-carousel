@@ -494,7 +494,7 @@ class SPL_Carousel {
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
-	          $html .= '<a class="btn btn-lg btn-link" href="'.$slide->url.'"> ';
+	          $html .= '<a class="btn btn-inverse" href="'.$slide->url.'"> ';
 	          $html .= '<i class="glyphicon glyphicon-info-sign"></i>'.PHP_EOL;
 	          $html .= 'Learn more <span class="">&rarr;</span>'.PHP_EOL;
 	          $html .= '</a>'.PHP_EOL;
