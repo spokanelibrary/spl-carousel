@@ -590,6 +590,7 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselCalendarData($limit=3) {
+		/*
 		$feed = null;
 		$uri = 'http://www.trumba.com/calendars/spl-web-feed.rss';
 		add_filter( 'wp_feed_cache_transient_lifetime', function() {
@@ -669,7 +670,7 @@ class SPL_Carousel {
     	  $data[] = $event;
       }
     }
-
+    */
     return $data;
 	}
 
