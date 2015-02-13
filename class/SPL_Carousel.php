@@ -423,12 +423,16 @@ class SPL_Carousel {
 			    $html .= '<div class="'.$col['right'].'">'.PHP_EOL;
 			    $html .= '<div class="carousel-caption">'.PHP_EOL;
 	        
+	        $html .= '<h4>'.PHP_EOL;
+	        $html .= $slide->datetime.PHP_EOL;
+	        $html .= '</h4>'.PHP_EOL;
+
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-default" href="'.$slide->url.'"> ';
 	          $html .= '<i class="glyphicon glyphicon-info-sign"></i>'.PHP_EOL;
-	          $html .= 'Read more on the library blog <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= 'Read more on our calendar <span class="">&rarr;</span>'.PHP_EOL;
 	          $html .= '</a>'.PHP_EOL;
 	          $html .= '</p>'.PHP_EOL;
 	        }
