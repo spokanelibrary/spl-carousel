@@ -601,8 +601,8 @@ class SPL_Carousel {
         $feed = $rss->get_items( 0, $maxitems );
     }
 
-
-
+    $data = $feed;
+    return $data;
 	}
 
 	protected function getCarouselPosts($limit=3, $days=14, $category='featured') {
