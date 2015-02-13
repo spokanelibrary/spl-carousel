@@ -70,7 +70,7 @@ class SPL_Carousel {
 	    $list = $this->getCarouselBrowseList();
 	    if ( is_array( $list ) ) {
 	    	foreach ( $list as $i => $item ) {
-	    		$slides[] = $item; 		
+	    		//$slides[] = $item; 		
 	    	}
 	    }
 	  }
