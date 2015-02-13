@@ -304,8 +304,11 @@ class SPL_Carousel {
         if ( !empty($slide->url) && !$this->kiosk ) { 
           $html .= '<p class="text-right">'.PHP_EOL;
           $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
-          $html .= '<i class="glyphicon glyphicon-info-sign"></i>'.PHP_EOL;
-          $html .= 'Read Library News <span class="">&rarr;</span>'.PHP_EOL;
+          $html .= '<b>';
+          $html .= 'Read Library News';
+          $html .= '<b>';
+          $html .= ' ';
+          $html .= '<i class="glyphicon glyphicon-arrow-right"></i>';
           $html .= '</a>'.PHP_EOL;
           $html .= '</p>'.PHP_EOL;
         }
