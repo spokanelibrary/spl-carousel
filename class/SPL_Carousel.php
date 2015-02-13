@@ -591,23 +591,85 @@ class SPL_Carousel {
 
 	protected function getCarouselCalendarData($limit=3) {
 		$feed = null;
-
 		$uri = 'http://www.trumba.com/calendars/spl-web-feed.rss';
-
 		add_filter( 'wp_feed_cache_transient_lifetime', function() {
          return 0;
     });
-		
 		$rss = fetch_feed( $uri );
-		
 		remove_all_filters( 'wp_feed_cache_transient_lifetime' );
-
     if ( ! is_wp_error( $rss ) ) {
         $maxitems = $rss->get_item_quantity( $limit ); 
         $feed = $rss->get_items( 0, $maxitems );
     }
 
-    $data = $feed;
+    $data = null;
+    if ( is_array($feed) ) {
+    	$data = array();
+    	foreach ( $feed as $item ) {
+        $event = new stdClass();
+
+        $location = $item->get_item_tags('urn:ietf:params:xml:ns:xcal', 'location');
+        $formatteddatetime = $item->get_item_tags('http://schemas.trumba.com/rss/x-trumba', 'formatteddatetime');
+        $customfields = $item->get_item_tags('http://schemas.trumba.com/rss/x-trumba', 'customfield');
+
+        $branch = null;
+        switch ( $location[0]['data'] ) {
+		    	case 'East Side Library':
+		    			$branch = 'east-side';
+		    		break;
+		    	case 'Hillyard Library':
+		    		$branch = 'hillyard';
+		    		break;
+		    	case 'Indian Trail Library':
+		    		$branch = 'indian-trail';
+		    		break;
+		    	case 'Shadle Library':
+		    		$branch = 'shadle';
+		    		break;
+		    	case 'South Hill Library':
+		    		$branch = 'south-hill';
+		    		break;
+		    	case 'Downtown Library':
+		    		$branch = 'downtown';
+		    		break;
+		    	default:
+		    		break;
+		    }
+
+        if ( !empty($location[0]['data']) ) {
+        	if ( !empty($branch) ) {
+			    	$event->branch = $branch;
+			    	$event->location =- esc_html( $location[0]['data'] );
+			  	}
+		  	}
+        $event->datetime = esc_html( $formatteddatetime[0]['data'] );
+
+		    $event->url = esc_url( $item->get_permalink() );
+    	  $event->date = $item->get_date('j F Y | g:i a');
+	      $event->title = esc_html( $item->get_title() )
+
+		   	if ( is_array($customfields) ) {
+		   		foreach( $customfields as $f => $field ) {
+		   			$fieldname = trim($field['attribs']['']['name']);
+		   			switch ( $fieldname ) 	{
+		   				case 'Event image':
+		   					$event->img = $field['data'];
+		   					break;
+		   				default:
+		   					//$field['attribs']['']['name'];
+		   					//$field['data'];
+		   					break;
+		   			}
+			  	}
+		   	}
+
+        //esc_url( $item->get_permalink() )
+    	  //$item->get_date('j F Y | g:i a')
+
+    	  $data[] = $event;
+      }
+    }
+
     return $data;
 	}
 
