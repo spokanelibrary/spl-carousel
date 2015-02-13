@@ -108,7 +108,7 @@ class SPL_Carousel {
 	  }
 
 	  $hover = $this->hover;
-		if ( isset($this->params['pause']) ) {
+		if ( in_array('pause', $this->params) ) {
 	    $hover = 'hover';
 	  }
 	  if ( 'false' == $hover ) {
