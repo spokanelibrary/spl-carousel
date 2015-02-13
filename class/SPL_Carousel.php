@@ -605,6 +605,9 @@ class SPL_Carousel {
         $event->datetime = esc_html( $formatteddatetime[0]['data'] );
 				$event->location = esc_html( $location[0]['data'] );
 				$event->content = esc_html( $description[0]['data'] );
+				$event->content = substr($event->content,0,50);
+     		$event->content = substr($event->content,0,strrpos($event->content," "));
+
         switch ( $location[0]['data'] ) {
 		    	case 'East Side Library':
 		    		$event->branch = 'east-side';
