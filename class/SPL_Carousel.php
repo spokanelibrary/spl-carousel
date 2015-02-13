@@ -599,6 +599,7 @@ class SPL_Carousel {
         $description = $item->get_item_tags('urn:ietf:params:xml:ns:xcal', 'description');
         $customfields = $item->get_item_tags('http://schemas.trumba.com/rss/x-trumba', 'customfield');
 
+        $event->format = 'calendar';
         $event->title = esc_html( $item->get_title() );
         $event->url = esc_url( $item->get_permalink() );
         $event->datetime = esc_html( $formatteddatetime[0]['data'] );
