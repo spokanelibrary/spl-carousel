@@ -474,21 +474,6 @@ class SPL_Carousel {
     		} else {
 			    $html .= '<div class="row">'.PHP_EOL;
 
-			    $html .= '<div class="col-md-12">'.PHP_EOL;
-	  			$html .= '<h2 class="text-success" style="margin-top:0;">';
-	        if ( !empty($slide->url) ) {
-		    		$html .= '<a href="'.$slide->url.'">';
-		    	}
-	        $html .= $slide->title;
-	        if ( !empty($slide->url) ) {
-		    		$html .= '</a>';
-		    	}
-	        if ( !empty($slide->subtitle) ) {
-	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
-	        }
-	        $html .= '</h2>'.PHP_EOL;
-	        $html .= '</div>'.PHP_EOL; // .col
-
 			    $html .= '<div class="'.$col['left'].'">'.PHP_EOL;
 			    if ( $slide->img ) {
 			    	if ( !empty($slide->url) ) {
@@ -503,7 +488,18 @@ class SPL_Carousel {
 
 			    $html .= '<div class="'.$col['right'].'">'.PHP_EOL;
 			    $html .= '<div class="carousel-caption">'.PHP_EOL;
-	        
+	        $html .= '<h2 class="text-success" style="margin-top:0;">';
+	        if ( !empty($slide->url) ) {
+		    		$html .= '<a href="'.$slide->url.'">';
+		    	}
+	        $html .= $slide->title;
+	        if ( !empty($slide->url) ) {
+		    		$html .= '</a>';
+		    	}
+	        if ( !empty($slide->subtitle) ) {
+	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
+	        }
+	        $html .= '</h2>'.PHP_EOL;
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
