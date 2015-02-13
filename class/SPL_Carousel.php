@@ -582,7 +582,7 @@ class SPL_Carousel {
 		$slide->branch = '/sh/';
 		$slide->title = 'Mobile Office with Council Members Mumm and Stratton';
 		//$slide->subtitle = '';
-		//$slide->content = '';
+		$slide->content = do_shortcode('[spl_widget calendar-view widget-data limit=6]');;
 
 		$slides[] = $slide;
 
