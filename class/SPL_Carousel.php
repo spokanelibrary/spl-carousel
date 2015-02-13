@@ -702,7 +702,7 @@ class SPL_Carousel {
 
 		$slides[] = $slide;
 
-		return $slides();
+		return $slides;
 	}
 
 	protected function getCarouselBrowseList($limit=3) {
