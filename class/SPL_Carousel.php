@@ -417,7 +417,7 @@ class SPL_Carousel {
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
-	          $html .= '<a class="btn btn-alt" href="'.$slide->url.'"> ';
+	          $html .= '<a class="btn btn-info" href="'.$slide->url.'"> ';
 	          $html .= '<b>';
 	          $html .= 'Read more';
 	          $html .= '</b>';
@@ -462,9 +462,12 @@ class SPL_Carousel {
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
-	          $html .= '<a class="btn btn-info" href="'.$slide->url.'"> ';
-	          $html .= '<i class="glyphicon glyphicon-info-sign"></i>'.PHP_EOL;
-	          $html .= 'Learn more <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= '<a class="btn btn-alt" href="'.$slide->url.'"> ';
+	          $html .= '<b>';
+	          $html .= 'Read more';
+	          $html .= '</b>';
+	          $html .= ' ';
+	          $html .= '<i class="glyphicon glyphicon-arrow-right"></i>';
 	          $html .= '</a>'.PHP_EOL;
 	          $html .= '</p>'.PHP_EOL;
 	        }
@@ -474,6 +477,7 @@ class SPL_Carousel {
 					$html .= '</div>'.PHP_EOL; // .row
 				}
    			break;
+
    		case 'calendar':
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
@@ -535,8 +539,11 @@ class SPL_Carousel {
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-warning" href="'.$slide->url.'"> ';
-	          $html .= '<i class="glyphicon glyphicon-info-sign"></i>'.PHP_EOL;
-	          $html .= 'Learn more or sign up <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= '<b>';
+	          $html .= 'Learn more or sign up';
+	          $html .= '</b>';
+	          $html .= ' ';
+	          $html .= '<i class="glyphicon glyphicon-arrow-right"></i>';
 	          $html .= '</a>'.PHP_EOL;
 	          $html .= '</p>'.PHP_EOL;
 	        }
@@ -546,6 +553,7 @@ class SPL_Carousel {
 					$html .= '</div>'.PHP_EOL; // .row
 				}
 				break;
+
 			case 'browse':
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
@@ -599,8 +607,11 @@ class SPL_Carousel {
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-inverse" href="'.$slide->url.'"> ';
-	          $html .= '<i class="glyphicon glyphicon-info-sign"></i>'.PHP_EOL;
-	          $html .= 'Find this title in the catalog <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= '<b>';
+	          $html .= 'Find this title in the catalog';
+	          $html .= '</b>';
+	          $html .= ' ';
+	          $html .= '<i class="glyphicon glyphicon-arrow-right"></i>';
 	          $html .= '</a>'.PHP_EOL;
 	          $html .= '</p>'.PHP_EOL;
 	        }
@@ -610,6 +621,7 @@ class SPL_Carousel {
 					$html .= '</div>'.PHP_EOL; // .row
 				}
     		break;
+
     	default:
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
@@ -648,8 +660,11 @@ class SPL_Carousel {
 	        if ( !empty($slide->url) ) { 
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-primary" href="'.$slide->url.'"> ';
-	          $html .= '<i class="glyphicon glyphicon-info-sign"></i>'.PHP_EOL;
-	          $html .= 'Learn more <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= '<b>';
+	          $html .= 'Learn more';
+	          $html .= '</b>';
+	          $html .= ' ';
+	          $html .= '<i class="glyphicon glyphicon-arrow-right"></i>';
 	          $html .= '</a>'.PHP_EOL;
 	          $html .= '</p>'.PHP_EOL;
 	        }
