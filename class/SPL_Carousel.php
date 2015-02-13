@@ -306,7 +306,7 @@ class SPL_Carousel {
           $html .= '<a class="btn btn-success" href="'.$slide->url.'"> ';
           $html .= '<b>';
           $html .= 'Read Library News';
-          $html .= '<b>';
+          $html .= '</b>';
           $html .= ' ';
           $html .= '<i class="glyphicon glyphicon-arrow-right"></i>';
           $html .= '</a>'.PHP_EOL;
