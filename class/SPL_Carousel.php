@@ -594,6 +594,22 @@ class SPL_Carousel {
 		return $slide;
 	}
 
+	protected function geteCarouselBrowseList($limit=3) {
+		$list = $this->curlPostProxy('http://api.spokanelibrary.org/browse/'.$browse);
+		$list = json_decode($list);
+		if ( is_array($list->titles) ) {
+			$slides = array();
+			$titles = array_slice($list->titles, 0, $limit);
+			unset($list);
+			foreach ( $titles as $title ) {
+				$slide = new stdClass();
+				$slide->content = '<pre>'.print_r($title, true).'</pre>'; 
+			}
+		}
+		
+		return $slides;
+	}
+
 	protected function getCarouselCalendar($limit=3, $chars=175) {
 		$feed = null;
 		$uri = 'http://www.trumba.com/calendars/spl-web-feed.rss';
