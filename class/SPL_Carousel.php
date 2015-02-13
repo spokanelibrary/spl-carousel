@@ -423,9 +423,17 @@ class SPL_Carousel {
 			    $html .= '<div class="'.$col['right'].'">'.PHP_EOL;
 			    $html .= '<div class="carousel-caption">'.PHP_EOL;
 	        
-	        $html .= '<h3 style="margin-top:0;">'.PHP_EOL;
-	        $html .= $slide->location.PHP_EOL;
-	        $html .= '</h3>'.PHP_EOL;
+	        if ( !empty($slide->location) ) {
+	        	$html .= '<h3 style="margin-top:0;">'.PHP_EOL;
+ 						if ( !empty($slide->url) ) { 
+ 							$html .= '<a href="'.$slide->url.'">';
+		        	$html .= '@ ' . $slide->location;
+		        	$html .= '</a>'.PHP_EOL;
+		      	} else {
+		      		$html .= '@ ' . $slide->location.PHP_EOL;
+		      	}
+		      	$html .= '</h3>'.PHP_EOL;
+	      	}
 
 	        $html .= '<h4 class="text-warning">'.PHP_EOL;
 	        $html .= '<i class="glyphicon glyphicon-time"></i>'.PHP_EOL;
@@ -437,7 +445,7 @@ class SPL_Carousel {
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-default" href="'.$slide->url.'"> ';
 	          $html .= '<i class="glyphicon glyphicon-info-sign"></i>'.PHP_EOL;
-	          $html .= 'Read more on our calendar <span class="">&rarr;</span>'.PHP_EOL;
+	          $html .= 'Read more or sign up on our calendar <span class="">&rarr;</span>'.PHP_EOL;
 	          $html .= '</a>'.PHP_EOL;
 	          $html .= '</p>'.PHP_EOL;
 	        }
