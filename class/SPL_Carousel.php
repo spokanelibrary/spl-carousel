@@ -423,7 +423,7 @@ class SPL_Carousel {
 			    $html .= '<div class="'.$col['right'].'">'.PHP_EOL;
 			    $html .= '<div class="carousel-caption">'.PHP_EOL;
 	        
-	        $html .= '<h3>'.PHP_EOL;
+	        $html .= '<h3 style="margin-top:0;">'.PHP_EOL;
 	        $html .= $slide->location.PHP_EOL;
 	        $html .= '</h3>'.PHP_EOL;
 
