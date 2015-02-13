@@ -513,7 +513,7 @@ class SPL_Carousel {
 	          $html .= 'by '.$slide->author;
 	        	$html .= '</h4>';
 	        }
-	        *.
+	        */
 	        
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
 	        if ( !empty($slide->url) ) { 
