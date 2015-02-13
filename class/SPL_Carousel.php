@@ -502,8 +502,8 @@ class SPL_Carousel {
 	        if ( !empty($slide->url) ) {
 		    		$html .= '</a>';
 		    	}
-	        if ( !empty($slide->author) ) {
-	          $html .= ' <small style="color:#666;">'.$slide->author.'</small>';
+	        if ( !empty($slide->subtitle) ) {
+	          $html .= ' <small style="color:#666;">'.$slide->subtitle.'</small>';
 	        }
 	        $html .= '</h2>'.PHP_EOL;
 	        $html .= '<p class="lead"><b>'.$slide->content.'</b></p>'.PHP_EOL;
