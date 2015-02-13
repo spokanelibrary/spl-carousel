@@ -613,42 +613,32 @@ class SPL_Carousel {
         $formatteddatetime = $item->get_item_tags('http://schemas.trumba.com/rss/x-trumba', 'formatteddatetime');
         $customfields = $item->get_item_tags('http://schemas.trumba.com/rss/x-trumba', 'customfield');
 
-        $branch = null;
+        $event->title = esc_html( $item->get_title() );
+        $event->url = esc_url( $item->get_permalink() );
+        $event->datetime = esc_html( $formatteddatetime[0]['data'] );
+				$event->location = esc_html( $location[0]['data'] );
         switch ( $location[0]['data'] ) {
 		    	case 'East Side Library':
-		    			$branch = 'east-side';
+		    		$event->branch = 'east-side';
 		    		break;
 		    	case 'Hillyard Library':
-		    		$branch = 'hillyard';
+		    		$event->branch = 'hillyard';
 		    		break;
 		    	case 'Indian Trail Library':
-		    		$branch = 'indian-trail';
+		    		$event->branch = 'indian-trail';
 		    		break;
 		    	case 'Shadle Library':
-		    		$branch = 'shadle';
+		    		$event->branch = 'shadle';
 		    		break;
 		    	case 'South Hill Library':
-		    		$branch = 'south-hill';
+		    		$event->branch = 'south-hill';
 		    		break;
 		    	case 'Downtown Library':
-		    		$branch = 'downtown';
+		    		$event->branch = 'downtown';
 		    		break;
 		    	default:
 		    		break;
 		    }
-
-        if ( !empty($location[0]['data']) ) {
-        	if ( !empty($branch) ) {
-			    	$event->branch = $branch;
-			    	$event->location = esc_html( $location[0]['data'] );
-			  	}
-		  	}
-        $event->datetime = esc_html( $formatteddatetime[0]['data'] );
-
-		    $event->url = esc_url( $item->get_permalink() );
-    	  $event->date = $item->get_date('j F Y | g:i a');
-	      $event->title = esc_html( $item->get_title() );
-
 		   	if ( is_array($customfields) ) {
 		   		foreach( $customfields as $f => $field ) {
 		   			$fieldname = trim($field['attribs']['']['name']);
@@ -663,10 +653,6 @@ class SPL_Carousel {
 		   			}
 			  	}
 		   	}
-
-        //esc_url( $item->get_permalink() )
-    	  //$item->get_date('j F Y | g:i a')
-
     	  $data[] = $event;
       }
     }
