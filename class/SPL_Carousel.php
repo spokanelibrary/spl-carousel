@@ -594,7 +594,7 @@ class SPL_Carousel {
 		return $slide;
 	}
 
-	protected function getCarouselCalendar($limit=3) {
+	protected function getCarouselCalendar($limit=3, $chars=175) {
 		$feed = null;
 		$uri = 'http://www.trumba.com/calendars/spl-web-feed.rss';
 		add_filter( 'wp_feed_cache_transient_lifetime', function() {
@@ -625,7 +625,7 @@ class SPL_Carousel {
 				$event->location = esc_html( $location[0]['data'] );
 
 				$description = esc_html( $description[0]['data'] );
-				$description = substr($description,0,200);
+				$description = substr($description,0,$chars);
      		$description = substr($description,0,strrpos($description," "));
      		if (substr($description, -1) != '.') {
      			$description = $description.'&hellip;';
