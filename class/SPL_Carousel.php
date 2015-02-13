@@ -572,21 +572,71 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselCalendar($limit=3) {
-		$slides = $this->getCarouselCalendarData($limit);
-		return $slides;
-		$slides = array();
+		$feed = null;
+		$uri = 'http://www.trumba.com/calendars/spl-web-feed.rss';
+		add_filter( 'wp_feed_cache_transient_lifetime', function() {
+         return 0;
+    });
+		$rss = fetch_feed( $uri );
+		remove_all_filters( 'wp_feed_cache_transient_lifetime' );
+    if ( ! is_wp_error( $rss ) ) {
+        $maxitems = $rss->get_item_quantity( $limit ); 
+        $feed = $rss->get_items( 0, $maxitems );
+    }
 
-		$slide->format = 'calendar';
-		$slide->url = 'http://beta.spokanelibrary.org/calendar/?trumbaEmbed=view%3Devent%26eventid%3D113423240';
-		$slide->img = 'http://www.trumba.com/i/DgD8evs2TYiWb%2AlKFvUyCNK3.jpg';
-		$slide->datetime = 'Tuesday, February 17, 2015, 1:30 - 2:30pm';
-		$slide->location = 'Shadle Library';
-		$slide->branch = '/sh/';
-		$slide->title = 'Mobile Office with Council Members Mumm and Stratton';
-		//$slide->subtitle = '';
-		$slide->content = '<pre>'.print_r($this->getCarouselCalendarData($limit), true).'</pre>';
+    $slides = null;
+    if ( is_array($feed) ) {
+    	$slides = array();
+    	foreach ( $feed as $item ) {
+        $event = new stdClass();
 
-		$slides[] = $slide;
+        $location = $item->get_item_tags('urn:ietf:params:xml:ns:xcal', 'location');
+        $formatteddatetime = $item->get_item_tags('http://schemas.trumba.com/rss/x-trumba', 'formatteddatetime');
+        $customfields = $item->get_item_tags('http://schemas.trumba.com/rss/x-trumba', 'customfield');
+
+        $event->title = esc_html( $item->get_title() );
+        $event->url = esc_url( $item->get_permalink() );
+        $event->datetime = esc_html( $formatteddatetime[0]['data'] );
+				$event->location = esc_html( $location[0]['data'] );
+        switch ( $location[0]['data'] ) {
+		    	case 'East Side Library':
+		    		$event->branch = 'east-side';
+		    		break;
+		    	case 'Hillyard Library':
+		    		$event->branch = 'hillyard';
+		    		break;
+		    	case 'Indian Trail Library':
+		    		$event->branch = 'indian-trail';
+		    		break;
+		    	case 'Shadle Library':
+		    		$event->branch = 'shadle';
+		    		break;
+		    	case 'South Hill Library':
+		    		$event->branch = 'south-hill';
+		    		break;
+		    	case 'Downtown Library':
+		    		$event->branch = 'downtown';
+		    		break;
+		    	default:
+		    		break;
+		    }
+		   	if ( is_array($customfields) ) {
+		   		foreach( $customfields as $f => $field ) {
+		   			$fieldname = trim($field['attribs']['']['name']);
+		   			switch ( $fieldname ) 	{
+		   				case 'Event image':
+		   					$event->img = $field['data'];
+		   					break;
+		   				default:
+		   					//$field['attribs']['']['name'];
+		   					//$field['data'];
+		   					break;
+		   			}
+			  	}
+		   	}
+    	  $slides[] = $event;
+      }
+    }
 
 		return $slides;
 	}
