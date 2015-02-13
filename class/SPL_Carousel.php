@@ -435,7 +435,7 @@ class SPL_Carousel {
 		      	$html .= '</h3>'.PHP_EOL;
 	      	}
 
-	        $html .= '<h4 class="text-warning">'.PHP_EOL;
+	        $html .= '<h4 class="text-warning text-center">'.PHP_EOL;
 	        $html .= '<i class="glyphicon glyphicon-time"></i>'.PHP_EOL;
 	        $html .= $slide->datetime.PHP_EOL;
 	        $html .= '</h4>'.PHP_EOL;
