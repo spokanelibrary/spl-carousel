@@ -596,12 +596,14 @@ class SPL_Carousel {
 
         $location = $item->get_item_tags('urn:ietf:params:xml:ns:xcal', 'location');
         $formatteddatetime = $item->get_item_tags('http://schemas.trumba.com/rss/x-trumba', 'formatteddatetime');
+        $description = $item->get_item_tags('urn:ietf:params:xml:ns:xcal', 'description');
         $customfields = $item->get_item_tags('http://schemas.trumba.com/rss/x-trumba', 'customfield');
 
         $event->title = esc_html( $item->get_title() );
         $event->url = esc_url( $item->get_permalink() );
         $event->datetime = esc_html( $formatteddatetime[0]['data'] );
 				$event->location = esc_html( $location[0]['data'] );
+				$event->content = esc_html( $description[0]['data'] );
         switch ( $location[0]['data'] ) {
 		    	case 'East Side Library':
 		    		$event->branch = 'east-side';
