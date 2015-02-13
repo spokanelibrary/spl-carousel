@@ -605,9 +605,9 @@ class SPL_Carousel {
         $feed = $rss->get_items( 0, $maxitems );
     }
 
-    $data = null;
+    $slides = null;
     if ( is_array($feed) ) {
-    	$data = array();
+    	$slides = array();
     	foreach ( $feed as $item ) {
         $event = new stdClass();
 
@@ -655,11 +655,11 @@ class SPL_Carousel {
 		   			}
 			  	}
 		   	}
-    	  $data[] = $event;
+    	  $slides[] = $event;
       }
     }
     
-    return $data;
+    return $slides;
 	}
 
 	protected function getCarouselPosts($limit=3, $days=14, $category='featured') {
