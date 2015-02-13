@@ -423,7 +423,8 @@ class SPL_Carousel {
 			    $html .= '<div class="'.$col['right'].'">'.PHP_EOL;
 			    $html .= '<div class="carousel-caption">'.PHP_EOL;
 	        
-	        $html .= '<h4>'.PHP_EOL;
+	        $html .= '<h4 class="text-warning">'.PHP_EOL;
+	        $html .= '<i class="glyphicon glyphicon-time"></i>'.PHP_EOL;
 	        $html .= $slide->datetime.PHP_EOL;
 	        $html .= '</h4>'.PHP_EOL;
 
