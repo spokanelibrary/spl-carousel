@@ -604,7 +604,7 @@ class SPL_Carousel {
 	}
 
 	protected function getCarouselBrowseList($limit=3) {
-		//$list = $this->curlPostProxy('http://api.spokanelibrary.org/browse/star');
+		$list = SPL_Widget::curlPostProxy('http://api.spokanelibrary.org/browse/star');
 		/*
 		$list = json_decode($list);
 		if ( is_array($list->titles) ) {
