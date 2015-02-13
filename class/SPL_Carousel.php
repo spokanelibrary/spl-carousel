@@ -606,9 +606,12 @@ class SPL_Carousel {
 				$event->location = esc_html( $location[0]['data'] );
 
 				$description = esc_html( $description[0]['data'] );
-				$description = substr($description,0,150);
+				$description = substr($description,0,200);
      		$description = substr($description,0,strrpos($description," "));
-     		$event->content = $description.' &hellip;';
+     		if (substr($description, -1) != '.') {
+     			$description = $description.' &hellip;';
+     		}
+     		$event->content = $description;
 
         switch ( $location[0]['data'] ) {
 		    	case 'East Side Library':
