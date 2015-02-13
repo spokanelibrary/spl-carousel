@@ -692,7 +692,7 @@ class SPL_Carousel {
 				if ( !empty($title->summary) && !empty($title->isbn) ) {
 					$slide = new stdClass();
 					$slide->format = 'browse';
-					$slide->title = $this->getCarouselExcerpt($title->title, 75, '');
+					$slide->title = $this->getCarouselExcerpt($title->title, 65);
 					$slide->author = $title->author;
 					$slide->img = 'http://contentcafe2.btol.com/ContentCafe/jacket.aspx?UserID=ebsco-test&Password=ebsco-test&Return=T&Type=M&Value='.$title->isbn;
 					$slide->url = '/bib/'.$title->bib.'/';
