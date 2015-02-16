@@ -39,6 +39,10 @@ class SPL_Carousel {
 			$this->thumb = 'full';
 		}
 
+		if ( isset($this->params['limit']) ) {
+			$this->limit = $this->params['limit'];
+		}
+
 		if ( isset($this->params['title']) ) {
 			$this->title = $this->params['title'];
 		}
