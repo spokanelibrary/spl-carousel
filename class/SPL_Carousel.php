@@ -428,7 +428,7 @@ class SPL_Carousel {
 	          $html .= '<p class="text-right">'.PHP_EOL;
 	          $html .= '<a class="btn btn-primary" href="'.$slide->url.'"> ';
 	          $html .= '<b>';
-	          $html .= 'Read more';
+	          $html .= 'Continue reading';
 	          $html .= '</b>';
 	          $html .= ' ';
 	          $html .= '<i class="glyphicon glyphicon-arrow-right"></i>';
