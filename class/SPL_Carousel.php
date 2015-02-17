@@ -219,7 +219,7 @@ class SPL_Carousel {
       $carousel .= '</div>'.PHP_EOL; // row
     }
     */
-    /*
+    
     if ( !$this->kiosk ) {
 			$carousel .= '<div class="carousel-controls spl-hero-panel spl-hero-success">'.PHP_EOL;
       if ( !empty($this->title) ) {
@@ -251,7 +251,7 @@ class SPL_Carousel {
       $carousel .= '</div>'.PHP_EOL; // .clearfix
 
 		}
-		*/
+
 	  $carousel .= '</div>'.PHP_EOL; // .carousel
 	  $carousel .= PHP_EOL;
 
