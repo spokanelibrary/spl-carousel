@@ -146,7 +146,7 @@ class SPL_Carousel {
 	  $carousel .= PHP_EOL;
     $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.$pause.$interval.'>'.PHP_EOL;
     
-    /*
+    
     if ( !$this->kiosk ) {
 			$carousel .= '<div class="carousel-controls spl-hero-panel spl-hero-success">'.PHP_EOL;
       if ( !empty($this->title) ) {
@@ -178,9 +178,9 @@ class SPL_Carousel {
       $carousel .= '</div>'.PHP_EOL; // .clearfix
 
 		}
-		*/
+		
 
-    /*
+    
     // indicator pips
     if ( !$this->kiosk ) {
       $carousel .= '<div class="row">'.PHP_EOL;
@@ -199,7 +199,7 @@ class SPL_Carousel {
       $carousel .= '</div>'.PHP_EOL; // .col
       $carousel .= '</div>'.PHP_EOL; // .row
     } 
-		*/
+		
     // slides
     $carousel .= '<div class="carousel-inner">'.PHP_EOL;
 		foreach ( $this->slides as $s => $slide ) {
@@ -207,7 +207,7 @@ class SPL_Carousel {
 	  }
 		$carousel .= '</div>'.PHP_EOL; // .carousel-inner
 
-		/*
+		
 		// next/prev links
 	  if ( !$this->kiosk ) {
 
@@ -218,8 +218,8 @@ class SPL_Carousel {
       $carousel .= '</div>'.PHP_EOL; // col
       $carousel .= '</div>'.PHP_EOL; // row
     }
-    */
-
+    
+    /*
     if ( !$this->kiosk ) {
 			$carousel .= '<div class="carousel-controls spl-hero-panel spl-hero-success">'.PHP_EOL;
       if ( !empty($this->title) ) {
@@ -251,7 +251,7 @@ class SPL_Carousel {
       $carousel .= '</div>'.PHP_EOL; // .clearfix
 
 		}
-
+		*/
 	  $carousel .= '</div>'.PHP_EOL; // .carousel
 	  $carousel .= PHP_EOL;
 
