@@ -493,6 +493,8 @@ class SPL_Carousel {
    			break;
 
    		case 'calendar':
+   			$html .= '<div class="row">'.PHP_EOL;
+   			$html .= '<div class="col-sm-12">'.PHP_EOL;
    			$html .= '<div class="spl-tile spl-tile-success">'.PHP_EOL;
     		$html .= '<h6 class="text-success uppercase">Event</h6>'.PHP_EOL;
     		if ( $slide->location ) {
@@ -519,6 +521,8 @@ class SPL_Carousel {
 	    		$html .= '</div>'.PHP_EOL;
     		}
     		//$html .= '<small>'.$slide->content.'</small>'.PHP_EOL;
+    		$html .= '</div>'.PHP_EOL;
+    		$html .= '</div>'.PHP_EOL;
     		$html .= '</div>'.PHP_EOL;
     		/*
     		if ( $this->kiosk ) {
