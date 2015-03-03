@@ -152,7 +152,7 @@ class SPL_Carousel {
     
     // TOP NAV
     if ( !$this->kiosk ) {
-			
+			/*
 			$carousel .= '<div class="carousel-controls spl-hero-panel spl-hero-success">'.PHP_EOL;
       if ( !empty($this->title) ) {
 	      $carousel .= '<div class="row">'.PHP_EOL;
@@ -181,7 +181,7 @@ class SPL_Carousel {
       }
       $carousel .= '</ol>'.PHP_EOL; 
       $carousel .= '</div>'.PHP_EOL; // .clearfix
-      
+      */
 
 		}
 		// END TOP NAV
