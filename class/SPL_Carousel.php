@@ -152,7 +152,7 @@ class SPL_Carousel {
     
     // TOP NAV
     if ( !$this->kiosk ) {
-			/*
+			
 			$carousel .= '<div class="carousel-controls spl-hero-panel spl-hero-success">'.PHP_EOL;
       if ( !empty($this->title) ) {
 	      $carousel .= '<div class="row">'.PHP_EOL;
@@ -181,7 +181,6 @@ class SPL_Carousel {
       }
       $carousel .= '</ol>'.PHP_EOL; 
       $carousel .= '</div>'.PHP_EOL; // .clearfix
-      */
 
 		}
 		// END TOP NAV
@@ -493,6 +492,7 @@ class SPL_Carousel {
    			break;
 
    		case 'calendar':
+   			/*
    			$html .= '<div class="spl-tile spl-tile-success">'.PHP_EOL;
     		$html .= '<h6 class="text-success uppercase">Event</h6>'.PHP_EOL;
     		if ( $slide->location ) {
@@ -520,7 +520,8 @@ class SPL_Carousel {
     		}
     		//$html .= '<small>'.$slide->content.'</small>'.PHP_EOL;
     		$html .= '</div>'.PHP_EOL;
-    		/*
+    		*/
+    		
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
 		    		$html .= '<img class="img-responsive img-rounded img-kiosk" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
@@ -594,7 +595,7 @@ class SPL_Carousel {
 
 					$html .= '</div>'.PHP_EOL; // .row
 				}
-				*/
+				
 				break;
 
 			case 'browse':
