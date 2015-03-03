@@ -51,8 +51,11 @@ class SPL_Carousel {
 			$this->subtitle = $this->params['subtitle'];
 		}
 
-		$slides = $this->getCarouselSlides();
-
+		$slides = array();
+		if ( in_array('slides', $this->params) ) {
+			$slides = $this->getCarouselSlides();
+		}
+		
 		if ( in_array('posts', $this->params) ) {
 	    $posts = $this->getCarouselPosts();
 	    if ( is_array( $posts ) ) {
@@ -488,6 +491,34 @@ class SPL_Carousel {
    			break;
 
    		case 'calendar':
+   			$html .= '<div class="spl-tile spl-tile-success">'.PHP_EOL;
+    		$html .= '<h6 class="text-success uppercase">Event</h6>'.PHP_EOL;
+    		if ( $slide->location ) {
+	    		$html .= '<h6 class="normal">'.PHP_EOL;
+	    		if ( $slide->branch ) {
+	    			$html .= '<a href="'.$slide->branch.'">'.'@ '.$slide->location.'</a>'.PHP_EOL;
+	    		} else {
+	    			$html .= '@ '.$slide->location.PHP_EOL;
+	    		}
+	    		$html .= '</h6>'.PHP_EOL;
+    		}
+    		$html .= '<h5>'.PHP_EOL;
+    		if ( $slide->url ) {
+    			$html .= '<a href="'.$slide->url.'">'.$slide->title.'</a>'.PHP_EOL;
+    		} else {
+    			$html .= $slide->title.PHP_EOL;
+    		}
+    		$html .= '</h5>'.PHP_EOL;
+    		$html .= '<h5 class="normal">'.$slide->datetime.'</h5 >'.PHP_EOL;
+    		if ( $slide->img ) {
+    			//$html .= '<img class="img-responsive img-rounded" src="'.$slide->img.'">'.PHP_EOL;
+    			$html .= '<div style="height:40px; background-image:url('.$slide->img.'); background-repeat:no-repeat; background-position:center;">'.PHP_EOL;
+  	  		$html .= '&nbsp;'.PHP_EOL;
+	    		$html .= '</div>'.PHP_EOL;
+    		}
+    		//$html .= '<small>'.$slide->content.'</small>'.PHP_EOL;
+    		$html .= '</div>'.PHP_EOL;
+    		/*
     		if ( $this->kiosk ) {
     			if ( $slide->img ) {
 		    		$html .= '<img class="img-responsive img-rounded img-kiosk" src="'.$slide->img.'" alt="'.$slide->title.'">'.PHP_EOL;
@@ -561,6 +592,7 @@ class SPL_Carousel {
 
 					$html .= '</div>'.PHP_EOL; // .row
 				}
+				*/
 				break;
 
 			case 'browse':
