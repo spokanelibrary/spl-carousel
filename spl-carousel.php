@@ -290,20 +290,6 @@ function wp_spl_carousel_photo($atts) {
     }
     
     $carousel .= '</div>'.PHP_EOL;
-
-    if ( !in_array('kiosk', $atts) ) {
-      $i = 0;
-      $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
-      foreach ($attachments as $attachment) {
-        $active = null;
-        if ( 0 == $i ) {
-          $active = ' class="active"';
-        } 
-        $carousel .= '<li data-target="#spl-carousel-'.$id.'" data-slide-to="'.$i.'"'.$active.'></li>'.PHP_EOL;
-        $i++;
-      }
-      $carousel .= '</ol>'.PHP_EOL; 
-    } 
     
     if ( !in_array('kiosk', $atts) ) {
       $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
