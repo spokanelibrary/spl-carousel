@@ -250,7 +250,7 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '<div class="row">'.PHP_EOL;
         $carousel .= '<div class="col-sm-8 col-sm-offset-8 col-md-6 col-md-offset-6">'.PHP_EOL;
         $carousel .= '<div style="position:relative;">'.PHP_EOL;
-        $carousel .= '<div style="background:#fff; position:absolute; bottom:0; width:100%">'.PHP_EOL;
+        $carousel .= '<div style="background:#fff; position:absolute; bottom:0; width:100%; margin:10px;">'.PHP_EOL;
         $carousel .= '<div class="carousel-caption">'.PHP_EOL;
 
         if ( !empty($alt) ) { 
