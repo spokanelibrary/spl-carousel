@@ -236,12 +236,12 @@ function wp_spl_carousel_photo($atts) {
         $active = ' active';
       } 
 
-      $carousel .= '<div class="item'.$active.'">'.PHP_EOL;
+      $carousel .= '<div class="item'.$active.' carousel-photo">'.PHP_EOL;
 
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
       }
-      $carousel .= '<img class="img-rounded" style="border:1px solid #ccc;" src="'.$attachment->guid.'" alt="'.$attachment->post_title.'">'.PHP_EOL;
+      $carousel .= '<img class="img-rounded" src="'.$attachment->guid.'" alt="'.$attachment->post_title.'">'.PHP_EOL;
       if ( !empty($alt) ) { 
         $carousel .= '</a>'.PHP_EOL;
       }
