@@ -253,21 +253,20 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '<div class="carousel-photo-overlay">'.PHP_EOL;
         $carousel .= '<div class="carousel-caption" style="margin:10px;">'.PHP_EOL;
 
+        $carousel .= '<h4>';
+        $carousel .= $attachment->post_title;
+        $carousel .= '</h4>'.PHP_EOL;
+        if ( !empty($attachment->post_excerpt) ) {
+          $carousel .= ' <h5 class="uppercase" style="color:#666;">'.$attachment->post_excerpt.'</h5>';
+        }
+
+        $carousel .= '<p>'.$attachment->post_content.'</p>'.PHP_EOL;
+
         if ( !empty($alt) ) { 
           $carousel .= '<a class="" href="'.$alt.'"> ';
           $carousel .= '<b>More</b> <span class="text-muted">&rarr;</span>'.PHP_EOL;
           $carousel .= '</a>'.PHP_EOL;
         }
-
-
-        $carousel .= '<h4>';
-        $carousel .= $attachment->post_title;
-        if ( !empty($attachment->post_excerpt) ) {
-          $carousel .= ' <small style="color:#666;">'.$attachment->post_excerpt.'</small>';
-        }
-        $carousel .= '</h4>'.PHP_EOL;
-        
-        $carousel .= '<p>'.$attachment->post_content.'</p>'.PHP_EOL;
 
         $carousel .= '</div>'.PHP_EOL;
         $carousel .= '</div>'.PHP_EOL;
