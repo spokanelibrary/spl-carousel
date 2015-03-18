@@ -110,7 +110,7 @@ class SPL_Carousel {
 			if ( in_array('shuffle', $this->params) ) {
 		    shuffle($slides);
 		  }
-		  if ( isset($this->limit) && $this->limit > 1 ) {
+		  if ( isset($this->limit) ) {
 		  	$slides = array_slice($slides, 0, $this->limit);	
 		  }
 	  	
