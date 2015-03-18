@@ -266,7 +266,7 @@ function wp_spl_carousel_photo($atts) {
           $carousel .= ' <h6 class="uppercase">'.$attachment->post_excerpt.'</h6>';
         }
 
-        $carousel .= '<p><small>'.$attachment->post_content.'</small></p>'.PHP_EOL;
+        $carousel .= '<h6 class="normal">'.$attachment->post_content.'</h6>'.PHP_EOL;
 
         if ( !empty($alt) ) { 
           $carousel .= '<h6 class="text-right">'.PHP_EOL;
