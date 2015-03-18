@@ -247,7 +247,7 @@ function wp_spl_carousel_photo($atts) {
       }
 
       if ( !in_array('kiosk', $atts) ) {
-        $carousel .= '<div style="background:#fff; width: 50%; position:absolute; top:0; right:0; margin-bottom:0;">'.PHP_EOL;
+        $carousel .= '<div style="background:#fff; width: 50%; position:absolute; bottom:0; right:0; margin-bottom:0;">'.PHP_EOL;
         $carousel .= '<div class="carousel-caption">'.PHP_EOL;
 
         if ( !empty($alt) ) { 
