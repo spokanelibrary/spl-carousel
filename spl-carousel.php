@@ -263,7 +263,7 @@ function wp_spl_carousel_photo($atts) {
         }
         $carousel .= '</h3>'.PHP_EOL;
         if ( !empty($attachment->post_excerpt) ) {
-          $carousel .= ' <h6 class="uppercase">'.$attachment->post_excerpt.'</h6>';
+          $carousel .= ' <h5 class="uppercase">'.$attachment->post_excerpt.'</h5>';
         }
 
         $carousel .= '<h5 class="normal">'.$attachment->post_content.'</h5>'.PHP_EOL;
