@@ -266,6 +266,8 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '<p>'.$attachment->post_content.'</p>'.PHP_EOL;
 
         $carousel .= '</div>'.PHP_EOL;
+        $carousel .= '<div class="clearfix"></div>'.PHP_EOL;
+
       }
       $carousel .= '</div>'.PHP_EOL;
 
