@@ -254,7 +254,7 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '<div class="carousel-caption" style="margin:10px;">'.PHP_EOL;
 
         if ( !empty($alt) ) { 
-          $carousel .= '<a class="pull-right" href="'.$alt.'"> ';
+          $carousel .= '<a class="" href="'.$alt.'"> ';
           $carousel .= '<b>More</b> <span class="text-muted">&rarr;</span>'.PHP_EOL;
           $carousel .= '</a>'.PHP_EOL;
         }
