@@ -254,10 +254,16 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '<div class="carousel-caption" style="margin:10px;">'.PHP_EOL;
 
         $carousel .= '<h4>';
+        if ( !empty($alt) ) { 
+          $carousel .= '<a class="" href="'.$alt.'"> ';
+        }
         $carousel .= $attachment->post_title;
+        if ( !empty($alt) ) { 
+          $carousel .= '</a> ';
+        }
         $carousel .= '</h4>'.PHP_EOL;
         if ( !empty($attachment->post_excerpt) ) {
-          $carousel .= ' <h6 class="uppercase" style="color:#666;">'.$attachment->post_excerpt.'</h6>';
+          $carousel .= ' <h6 class="uppercase">'.$attachment->post_excerpt.'</h6>';
         }
 
         $carousel .= '<p><small>'.$attachment->post_content.'</small></p>'.PHP_EOL;
