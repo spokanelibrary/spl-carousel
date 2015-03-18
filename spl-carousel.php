@@ -241,7 +241,7 @@ function wp_spl_carousel_photo($atts) {
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
       }
-      $carousel .= '<img class="img-responsive" src="'.$attachment->guid.'" alt="'.$attachment->post_title.'">'.PHP_EOL;
+      $carousel .= '<img class="img-rounded" src="'.$attachment->guid.'" alt="'.$attachment->post_title.'">'.PHP_EOL;
       if ( !empty($alt) ) { 
         $carousel .= '</a>'.PHP_EOL;
       }
