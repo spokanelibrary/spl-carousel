@@ -269,12 +269,12 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '<p><small>'.$attachment->post_content.'</small></p>'.PHP_EOL;
 
         if ( !empty($alt) ) { 
-          $carousel .= '<p class="text-right">'.PHP_EOL;
+          $carousel .= '<h6 class="text-right">'.PHP_EOL;
           $carousel .= '<a class="" href="'.$alt.'"> ';
           $carousel .= 'More';
           $carousel .= '</a>'.PHP_EOL;
           $carousel .= '<small class="text-muted">&rarr;</small>';
-          $carousel .= '</p>'.PHP_EOL;
+          $carousel .= '</h6>'.PHP_EOL;
         }
 
         $carousel .= '</div>'.PHP_EOL;
