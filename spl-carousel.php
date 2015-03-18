@@ -260,7 +260,7 @@ function wp_spl_carousel_photo($atts) {
           $carousel .= ' <h6 class="uppercase" style="color:#666;">'.$attachment->post_excerpt.'</h6>';
         }
 
-        $carousel .= '<p>'.$attachment->post_content.'</p>'.PHP_EOL;
+        $carousel .= '<p><small>'.$attachment->post_content.'</small></p>'.PHP_EOL;
 
         if ( !empty($alt) ) { 
           $carousel .= '<a class="" href="'.$alt.'"> ';
