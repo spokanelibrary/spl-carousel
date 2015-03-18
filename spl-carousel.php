@@ -236,7 +236,7 @@ function wp_spl_carousel_photo($atts) {
         $active = ' active';
       } 
 
-      $carousel .= '<div class="item'.$active.' carousel-photo">'.PHP_EOL;
+      $carousel .= '<div class="item'.$active.' carousel-photo-slide">'.PHP_EOL;
 
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
