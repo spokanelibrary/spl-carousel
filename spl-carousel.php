@@ -237,9 +237,7 @@ function wp_spl_carousel_photo($atts) {
       } 
 
       $carousel .= '<div class="item'.$active.' carousel-photo-slide">'.PHP_EOL;
-
-      $carousel .= '<div style="position:absolute; top:0; right:0;">Slug</div>'.PHP_EOL;
-
+      /*
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
       }
@@ -247,7 +245,7 @@ function wp_spl_carousel_photo($atts) {
       if ( !empty($alt) ) { 
         $carousel .= '</a>'.PHP_EOL;
       }
-
+      */
       if ( !in_array('kiosk', $atts) ) {
         $carousel .= '<div class="row">'.PHP_EOL;
         $carousel .= '<div class="col-sm-8 col-sm-offset-4 col-md-7 col-md-offset-5">'.PHP_EOL;
@@ -285,6 +283,13 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '</div>'.PHP_EOL;
         $carousel .= '</div>'.PHP_EOL;
 
+      }
+      if ( !empty($alt) ) { 
+        $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
+      }
+      $carousel .= '<img class="img-rounded" src="'.$attachment->guid.'" alt="'.$attachment->post_title.'">'.PHP_EOL;
+      if ( !empty($alt) ) { 
+        $carousel .= '</a>'.PHP_EOL;
       }
       $carousel .= '</div>'.PHP_EOL;
 
