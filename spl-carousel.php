@@ -208,7 +208,7 @@ function wp_spl_carousel_photo($atts) {
 
   if ($attachments) {
     $carousel .= ''.PHP_EOL;
-    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel-photo carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
+    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel-photo img-rounded carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
     if ( !in_array('kiosk', $atts) ) {
       $i = 0;
@@ -302,7 +302,7 @@ function wp_spl_carousel_photo($atts) {
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
       }
-      $carousel .= '<img class="img-rounded" src="'.$attachment->guid.'" alt="'.$attachment->post_title.'">'.PHP_EOL;
+      $carousel .= '<img class="" src="'.$attachment->guid.'" alt="'.$attachment->post_title.'">'.PHP_EOL;
       if ( !empty($alt) ) { 
         $carousel .= '</a>'.PHP_EOL;
       }
