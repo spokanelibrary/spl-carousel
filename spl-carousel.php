@@ -293,7 +293,7 @@ function wp_spl_carousel_photo($atts) {
 
         if ( !empty($alt) ) { 
           
-          $carousel .= '<h6 class="pull-right">'.PHP_EOL;
+          $carousel .= '<h6 class="text-right">'.PHP_EOL;
           $carousel .= '<a class="" href="'.$alt.'"> ';
           $carousel .= 'More';
           $carousel .= '</a>'.PHP_EOL;
