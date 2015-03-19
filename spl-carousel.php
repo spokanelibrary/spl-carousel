@@ -261,6 +261,8 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '</a>'.PHP_EOL;
       }
       */
+
+      /*
       if ( !in_array('kiosk', $atts) ) {
         $carousel .= '<div class="row">'.PHP_EOL;
         $carousel .= '<div class="col-sm-8 col-sm-offset-4 col-md-7 col-md-offset-5">'.PHP_EOL;
@@ -299,6 +301,8 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '</div>'.PHP_EOL;
 
       }
+      */
+
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
       }
