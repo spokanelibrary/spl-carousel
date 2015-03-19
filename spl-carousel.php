@@ -288,9 +288,10 @@ function wp_spl_carousel_photo($atts) {
         if ( !empty($alt) ) { 
           $carousel .= '<h6 class="text-right">'.PHP_EOL;
           $carousel .= '<a class="" href="'.$alt.'"> ';
-          $carousel .= 'More';
+          //$carousel .= 'More';
+          $carousel .= '<i class="glyphicon glyphicon-arrow-right"></i>';
           $carousel .= '</a>'.PHP_EOL;
-          $carousel .= '<small class="text-muted">&rarr;</small>';
+          //$carousel .= '<small class="text-muted">&rarr;</small>';
           $carousel .= '</h6>'.PHP_EOL;
         }
 
