@@ -278,6 +278,7 @@ function wp_spl_carousel_photo($atts) {
         if ( !empty($alt) ) { 
           $carousel .= '</a> ';
         }
+        $carousel .= '<small class="text-muted">&rarr;</small>';
         $carousel .= '</h3>'.PHP_EOL;
         if ( !empty($attachment->post_excerpt) ) {
           $carousel .= ' <h5 class="uppercase" style="color:#444;">'.$attachment->post_excerpt.'</h5>';
@@ -286,13 +287,14 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '<h5 class="normal">'.$attachment->post_content.'</h5>'.PHP_EOL;
 
         if ( !empty($alt) ) { 
+          /*
           $carousel .= '<h6 class="text-right">'.PHP_EOL;
           $carousel .= '<a class="" href="'.$alt.'"> ';
-          //$carousel .= 'More';
-          $carousel .= '<i class="glyphicon glyphicon-arrow-right"></i>';
+          $carousel .= 'More';
           $carousel .= '</a>'.PHP_EOL;
-          //$carousel .= '<small class="text-muted">&rarr;</small>';
+          $carousel .= '<small class="text-muted">&rarr;</small>';
           $carousel .= '</h6>'.PHP_EOL;
+          */
         }
 
         $carousel .= '</div>'.PHP_EOL;
