@@ -282,7 +282,7 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '</h3>'.PHP_EOL;
 
         if ( !empty($attachment->post_excerpt) || !empty($attachment->post_content) ) {
-          $carousel .= '<blockquote>'.PHP_EOL;
+          //$carousel .= '<blockquote>'.PHP_EOL;
         }
 
         if ( !empty($attachment->post_excerpt) ) {
@@ -303,7 +303,7 @@ function wp_spl_carousel_photo($atts) {
         }
 
         if ( !empty($attachment->post_excerpt) || !empty($attachment->post_content) ) {
-          $carousel .= '</blockquote>'.PHP_EOL;
+          //$carousel .= '</blockquote>'.PHP_EOL;
         }
 
         $carousel .= '</div>'.PHP_EOL;
