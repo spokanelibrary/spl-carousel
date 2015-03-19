@@ -298,6 +298,7 @@ function wp_spl_carousel_photo($atts) {
     
     $carousel .= '</div>'.PHP_EOL;
 
+    $carousel .= '<div class="carousel-controls">'.PHP_EOL;
     if ( !in_array('kiosk', $atts) ) {
       $i = 0;
       $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
@@ -316,6 +317,7 @@ function wp_spl_carousel_photo($atts) {
       $carousel .= '<a class="left carousel-control" href="#spl-carousel-'.$id.'" data-slide="prev"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>'.PHP_EOL;
       $carousel .= '<a class="right carousel-control" href="#spl-carousel-'.$id.'" data-slide="next"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>'.PHP_EOL;
     }
+    $carousel .= '</div>'.PHP_EOL;
 
     $carousel .= '</div>'.PHP_EOL;
     
