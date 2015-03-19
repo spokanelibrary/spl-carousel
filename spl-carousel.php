@@ -281,8 +281,6 @@ function wp_spl_carousel_photo($atts) {
         //$carousel .= '<small class="text-muted">&rarr;</small>';
         $carousel .= '</h3>'.PHP_EOL;
 
-        $carousel .= '<hr class="visible-md visible-lg">'.PHP_EOL;
-
         if ( !empty($attachment->post_excerpt) || !empty($attachment->post_content) ) {
           //$carousel .= '<blockquote>'.PHP_EOL;
         }
