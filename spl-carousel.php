@@ -208,8 +208,8 @@ function wp_spl_carousel_photo($atts) {
 
   if ($attachments) {
     $carousel .= ''.PHP_EOL;
-    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel-photo carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
-    /*
+    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
+    
     if ( !in_array('kiosk', $atts) ) {
       $i = 0;
       $carousel .= '<ol class="carousel-indicators">'.PHP_EOL;  
@@ -223,7 +223,7 @@ function wp_spl_carousel_photo($atts) {
       }
       $carousel .= '</ol>'.PHP_EOL; 
     } 
-    */
+
     /*
     if ( !in_array('kiosk', $atts) ) {
       $i = 0;
@@ -315,7 +315,6 @@ function wp_spl_carousel_photo($atts) {
 
     $carousel .= '</div>'.PHP_EOL;
 
-    /*
     if ( !in_array('kiosk', $atts) ) {
       $carousel .= '<div style="position: relative;">'.PHP_EOL;
       $carousel .= '<div style="position: absolute; bottom:40px; width:100%;" class="carousel-controls">'.PHP_EOL;
@@ -324,7 +323,7 @@ function wp_spl_carousel_photo($atts) {
       $carousel .= '</div>'.PHP_EOL;
       $carousel .= '</div>'.PHP_EOL;
     }
-    */
+
     
 
     $carousel .= '</div>'.PHP_EOL;
