@@ -296,9 +296,6 @@ function wp_spl_carousel_photo($atts) {
       $i++;
     }
     
-    
-
-    $carousel .= '</div>'.PHP_EOL;
 
     if ( !in_array('kiosk', $atts) ) {
       $carousel .= '<div style="position: relative;">'.PHP_EOL;
@@ -308,6 +305,9 @@ function wp_spl_carousel_photo($atts) {
       $carousel .= '</div>'.PHP_EOL;
       $carousel .= '</div>'.PHP_EOL;
     }
+    
+
+    $carousel .= '</div>'.PHP_EOL;
 
     if ( !in_array('kiosk', $atts) ) {
       $i = 0;
