@@ -315,6 +315,7 @@ function wp_spl_carousel_photo($atts) {
 
     $carousel .= '</div>'.PHP_EOL;
 
+    /*
     if ( !in_array('kiosk', $atts) ) {
       $carousel .= '<div style="position: relative;">'.PHP_EOL;
       $carousel .= '<div style="position: absolute; bottom:40px; width:100%;" class="carousel-controls">'.PHP_EOL;
@@ -323,7 +324,7 @@ function wp_spl_carousel_photo($atts) {
       $carousel .= '</div>'.PHP_EOL;
       $carousel .= '</div>'.PHP_EOL;
     }
-
+    */
     
 
     $carousel .= '</div>'.PHP_EOL;
