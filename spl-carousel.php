@@ -270,7 +270,7 @@ function wp_spl_carousel_photo($atts) {
         $carousel .= '<div class="carousel-photo-overlay">'.PHP_EOL;
         $carousel .= '<div class="carousel-caption" style="margin:10px;">'.PHP_EOL;
 
-        $carousel .= '<h4>';
+        $carousel .= '<h3>';
         if ( !empty($alt) ) { 
           $carousel .= '<a class="" href="'.$alt.'"> ';
         }
@@ -278,7 +278,7 @@ function wp_spl_carousel_photo($atts) {
         if ( !empty($alt) ) { 
           $carousel .= '</a> ';
         }
-        $carousel .= '</h4>'.PHP_EOL;
+        $carousel .= '</h3>'.PHP_EOL;
         if ( !empty($attachment->post_excerpt) ) {
           $carousel .= ' <h5 class="uppercase" style="color:#444;">'.$attachment->post_excerpt.'</h5>';
         }
