@@ -297,7 +297,7 @@ function wp_spl_carousel_photo($atts) {
           $carousel .= '<a class="" href="'.$alt.'"> ';
           $carousel .= 'Learn More';
           $carousel .= '</a>'.PHP_EOL;
-          $carousel .= '<small class="text-muted">&rarr;</small>';
+          $carousel .= '<span class="text-muted">&rarr;</span>';
           $carousel .= '</h5>'.PHP_EOL;
           
         }
