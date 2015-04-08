@@ -265,7 +265,7 @@ function wp_spl_carousel_photo($atts) {
       
       if ( !in_array('kiosk', $atts) ) {
         $carousel .= '<div class="row">'.PHP_EOL;
-        $carousel .= '<div class="col-sm-8 col-sm-offset-4 col-md-7 col-md-offset-5">'.PHP_EOL;
+        $carousel .= '<div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-4">'.PHP_EOL;
         $carousel .= '<div class="carousel-photo-caption">'.PHP_EOL;
         $carousel .= '<div class="carousel-photo-overlay">'.PHP_EOL;
         $carousel .= '<div class="carousel-caption">'.PHP_EOL;
