@@ -208,7 +208,7 @@ function wp_spl_carousel_photo($atts) {
 
   if ($attachments) {
     $carousel .= ''.PHP_EOL;
-    $carousel .= '<div id="spl-carousel-'.$id.'" class="carousel-photo carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
+    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$id.'" class="carousel-photo carousel slide" '.$auto.' '.$interval.'>'.PHP_EOL;
     
     if ( !in_array('kiosk', $atts) ) {
       $i = 0;
