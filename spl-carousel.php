@@ -263,7 +263,7 @@ function wp_spl_carousel_photo($atts) {
       */
 
       
-      if ( !in_array('kiosk', $atts) ) {
+      if ( !in_array('kiosk', $atts) && isset($attachment->post_title) ) {
         $carousel .= '<div class="row">'.PHP_EOL;
         $carousel .= '<div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-4">'.PHP_EOL;
         $carousel .= '<div class="carousel-photo-caption">'.PHP_EOL;
