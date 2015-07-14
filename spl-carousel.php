@@ -294,7 +294,7 @@ function wp_spl_carousel_photo($atts) {
         if ( !empty($alt) ) { 
           
           $carousel .= '<h5 class="text-right">'.PHP_EOL;
-          $carousel .= '<a class="" href="'.$alt.'"> ';
+          $carousel .= '<a class="" href="'.$alt.'" title="'.$attachment->post_excerpt.'"> ';
           $carousel .= 'Learn More';
           $carousel .= '</a>'.PHP_EOL;
           $carousel .= '<span class="text-muted">&rarr;</span>';
