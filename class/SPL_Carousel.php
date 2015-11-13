@@ -147,7 +147,7 @@ class SPL_Carousel {
 	  }
 
 	  $carousel .= PHP_EOL;
-    $carousel .= '<div style="width:100%;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.$pause.$interval.'>'.PHP_EOL;
+    $carousel .= '<div style="width:100%; z-index:1;" id="spl-carousel-'.$this->id.'" class="carousel carousel-hero slide" '.$auto.$pause.$interval.'>'.PHP_EOL;
     
     
     // TOP NAV
