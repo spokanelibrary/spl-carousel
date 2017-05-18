@@ -318,7 +318,8 @@ function wp_spl_carousel_photo($atts) {
       if ( !empty($alt) ) { 
         $carousel .= '<a href="'.$alt.'">'.PHP_EOL;
       }
-      $carousel .= '<img class="img-responsive" src="'.$attachment->guid.'" alt="'.$attachment->post_excerpt.'">'.PHP_EOL;
+      $https_img = preg_replace("/^http:/i", "https:", $attachment->guid);
+      $carousel .= '<img class="img-responsive" src="'.$https_img.'" alt="'.$attachment->post_excerpt.'">'.PHP_EOL;
       if ( !empty($alt) ) { 
         $carousel .= '</a>'.PHP_EOL;
       }
